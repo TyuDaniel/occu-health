@@ -13,18 +13,13 @@ export function PackagesSection() {
             <span>3</span> packages. <span>1</span> mission.
             <strong>A healthier workplace.</strong>
           </h2>
-          <p>
-            A clear Bronze, Silver and Gold structure for onsite workforce
-            wellness screening, scaled around depth of assessment and clinical
-            input.
-          </p>
         </Reveal>
 
         <Reveal className="packages-board" delay={90}>
           <div className="packages-board__header">
             <div className="packages-board__intro">
               <span className="package-ring" aria-hidden="true" />
-              <h3>What is inside our Wellness Packages</h3>
+              <h3>What's inside our Wellness Packages</h3>
             </div>
             {wellnessPackages.map((item) => (
               <article className={`package-tier package-tier--${item.tone}`} key={item.id}>

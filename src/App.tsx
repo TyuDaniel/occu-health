@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BusinessCase } from './components/BusinessCase'
 import { ContactCTA } from './components/ContactCTA'
 import { Footer } from './components/Footer'
@@ -13,6 +14,34 @@ import { WhyOccuhealth } from './components/WhyOccuhealth'
 import './App.css'
 
 function App() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const id = window.location.hash.slice(1)
+
+      if (!id) return
+
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(decodeURIComponent(id))
+
+        if (!target) return
+
+        const root = document.documentElement
+        const previousScrollBehavior = root.style.scrollBehavior
+
+        root.style.scrollBehavior = 'auto'
+        target.scrollIntoView({ block: 'start' })
+        root.style.scrollBehavior = previousScrollBehavior
+      })
+    }
+
+    scrollToHash()
+    window.addEventListener('hashchange', scrollToHash)
+
+    return () => {
+      window.removeEventListener('hashchange', scrollToHash)
+    }
+  }, [])
+
   return (
     <>
       <Navbar />

@@ -29,7 +29,7 @@ export function Hero() {
 
         <div className="hero-actions" aria-label="Primary actions">
           <a className="button button--lime" href="#contact">
-            Speak to Our Team <ArrowRight aria-hidden="true" />
+            Speak to Our Team Today <ArrowRight aria-hidden="true" />
           </a>
           <a className="button button--outline" href="#services">
             Explore Our Services <ArrowRight aria-hidden="true" />

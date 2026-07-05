@@ -1,5 +1,4 @@
-import { ArrowRight } from 'lucide-react'
-import { services } from '../data/siteContent'
+import { complianceNote, services } from '../data/siteContent'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
@@ -12,8 +11,8 @@ export function Services() {
             accent="What"
             title="We Deliver"
           >
-            Integrated services across Occupational Health, EHS, absence,
-            compliance and workforce wellbeing.
+            Clear, practical and solutions-driven outcomes that support both
+            compliance and business performance.
           </SectionHeading>
         </Reveal>
 
@@ -38,13 +37,16 @@ export function Services() {
                     <li key={point}>{point}</li>
                   ))}
                 </ul>
-                <a href="#contact">
-                  Learn more <ArrowRight aria-hidden="true" />
-                </a>
               </Reveal>
             )
           })}
         </div>
+
+        <Reveal className="compliance-note" delay={120}>
+          <h3>{complianceNote.title}</h3>
+          <p>{complianceNote.description}</p>
+          <p>{complianceNote.standards}</p>
+        </Reveal>
       </div>
     </section>
   )

@@ -21,20 +21,24 @@ export function WhoWeAre() {
           <p>
             Occuhealth Ireland provides a comprehensive range of Occupational
             Health and Environmental Health & Safety services to SMEs, national
-            and global organisations across Ireland.
+            and global organisations across Ireland, delivering clear,
+            practical and solutions-driven outcomes that support both compliance
+            and business performance.
           </p>
           <p>
-            We combine clinical Occupational Health expertise with workplace
-            risk intelligence, helping employers make decisions that are
-            practical, compliant and centred on their people.
+            What sets us apart is our ability to integrate Occupational Health
+            with Environmental Health & Safety. We provide a multi-faceted
+            solution tailored to your business, delivering both operational
+            efficiencies and cost synergies.
           </p>
           <p>
-            That joined-up view means hazards, health trends, absence patterns
-            and safety obligations can be understood together rather than in
-            isolated silos.
+            By understanding both the clinical and workplace risk perspectives
+            simultaneously, we deliver aligned, holistic solutions that support
+            employee wellbeing, strengthen safety frameworks and enhance
+            organisational performance.
           </p>
           <div className="clinical-statement">
-            Clinical insight meets workplace risk intelligence.
+            Clear, practical and solutions-driven outcomes.
           </div>
         </Reveal>
       </div>

@@ -7,16 +7,19 @@ export function BusinessCase() {
       <div className="page-shell business-case__inner">
         <Reveal>
           <h2 id="business-case-title">
-            A stronger case for
-            <span>prevention.</span>
+            The Business
+            <span>Case.</span>
           </h2>
         </Reveal>
 
         <div className="proof-list">
           {businessCase.map((item, index) => (
-            <Reveal className="proof-item" delay={index * 70} key={item}>
+            <Reveal className="proof-item" delay={index * 70} key={item.stat}>
               <span>{String(index + 1).padStart(2, '0')}</span>
-              <p>{item}</p>
+              <div>
+                <strong>{item.stat}</strong>
+                <p>{item.description}</p>
+              </div>
             </Reveal>
           ))}
         </div>

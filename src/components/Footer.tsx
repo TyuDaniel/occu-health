@@ -40,10 +40,6 @@ export function Footer() {
 
       <div className="page-shell footer-bottom">
         <p>© {year} Occuhealth Ireland</p>
-        <div>
-          <a href="#top">Privacy Policy</a>
-          <a href="#top">Cookie Policy</a>
-        </div>
       </div>
     </footer>
   )

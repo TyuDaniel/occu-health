@@ -20,8 +20,8 @@ export function WhyOccuhealth() {
             <span>Complete Coverage.</span>
           </h2>
           <p>
-            Occupational Health and Environmental Health & Safety, aligned
-            around your people and your organisation.
+            One partner managing Occupational Health and Environmental Health &
+            Safety obligations, with no gaps, no duplication and full alignment.
           </p>
 
           <div className="differentiators">

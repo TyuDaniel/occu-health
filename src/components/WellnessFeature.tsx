@@ -13,7 +13,7 @@ export function WellnessFeature() {
           </h2>
           <p>
             Occupational health-led corporate wellness screening, clinically
-            governed, GDPR-conscious and delivered at your workplace across
+            governed, GDPR-compliant and delivered at your workplace across
             Ireland.
           </p>
         </Reveal>

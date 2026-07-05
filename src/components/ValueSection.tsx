@@ -9,35 +9,37 @@ export function ValueSection() {
       <div className="page-shell">
         <Reveal>
           <SectionHeading title="We Bring" accent="The Value" inverse>
-            A single partner view across workforce health, safety obligations
-            and practical business outcomes.
+            Integrated Occupational Health and EHS support for your organisation,
+            your employees and your key outcomes.
           </SectionHeading>
         </Reveal>
 
-        <div className="value-columns">
-          {valueColumns.map((column, index) => (
-            <Reveal className="value-column" delay={index * 90} key={column.title}>
-              <h3>{column.title}</h3>
-              <ul>
-                {column.items.map((item) => (
-                  <li key={item}>
-                    <Check aria-hidden="true" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
-        </div>
+        <div className="value-layout-grid">
+          <div className="value-columns">
+            {valueColumns.map((column, index) => (
+              <Reveal className="value-column" delay={index * 90} key={column.title}>
+                <h3>{column.title}</h3>
+                <ul>
+                  {column.items.map((item) => (
+                    <li key={item}>
+                      <Check aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
 
-        <div className="outcomes-grid">
-          {keyOutcomes.map((outcome, index) => (
-            <Reveal className="outcome" delay={index * 75} key={outcome.title}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <h3>{outcome.title}</h3>
-              <p>{outcome.description}</p>
-            </Reveal>
-          ))}
+          <div className="outcomes-grid">
+            {keyOutcomes.map((outcome, index) => (
+              <Reveal className="outcome" delay={index * 75} key={outcome.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <h3>{outcome.title}</h3>
+                <p>{outcome.description}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

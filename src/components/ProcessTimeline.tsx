@@ -10,6 +10,9 @@ export function ProcessTimeline() {
             Simple. Seamless.
             <span>Delivered at Your Workplace.</span>
           </h2>
+          <p>
+            From first contact to completed clinic in as little as 3 weeks.
+          </p>
         </Reveal>
 
         <div className="timeline" aria-label="Wellness delivery process">

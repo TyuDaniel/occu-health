@@ -4,18 +4,14 @@ import {
   BadgeCheck,
   BarChart3,
   Building2,
-  CalendarCheck,
   ClipboardCheck,
   ClipboardList,
-  Factory,
   GraduationCap,
-  HandHeart,
   HeartPulse,
   LockKeyhole,
   MapPin,
   ShieldCheck,
   Stethoscope,
-  UsersRound,
 } from 'lucide-react'
 
 export type Service = {
@@ -38,6 +34,11 @@ export type ProcessStep = {
   description: string
 }
 
+export type BusinessCaseItem = {
+  stat: string
+  description: string
+}
+
 export type WellnessPackage = {
   id: 'bronze' | 'silver' | 'gold'
   name: string
@@ -57,8 +58,6 @@ export type PackageRow = {
 export const images = {
   hero:
     'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=80',
-  consultation:
-    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80',
   workplace:
     'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80',
 }
@@ -76,7 +75,7 @@ export const services: Service[] = [
     id: 'occupational-health',
     title: 'Occupational Health Management',
     description:
-      'Clinical Occupational Health support that helps organisations make fair, informed and timely workforce decisions.',
+      'Fitness for work assessments, pre-employment screening, health surveillance and return to work support, defensible clinical guidance every time.',
     points: [
       'Fitness for work assessments',
       'Pre-employment screening',
@@ -87,10 +86,36 @@ export const services: Service[] = [
     featured: true,
   },
   {
+    id: 'absence',
+    title: 'Absence & Case Management',
+    description:
+      'Structured, evidence based management of short and long-term absence, reducing costs, supporting employees and enabling fair HR decisions.',
+    points: [
+      'Short and long-term absence',
+      'Reducing costs',
+      'Supporting employees',
+      'Fair HR decisions',
+    ],
+    icon: ClipboardList,
+  },
+  {
+    id: 'compliance',
+    title: 'Statutory Compliance',
+    description:
+      'Fully compliant with Irish, European and global legislative frameworks.',
+    points: [
+      'Safety, Health & Welfare at Work Act',
+      'Chemical Regulations',
+      'EU Occupational Safety and Health Directives',
+      'REACH',
+    ],
+    icon: BadgeCheck,
+  },
+  {
     id: 'ehs',
     title: 'Environmental Health & Safety',
     description:
-      'Practical EHS support built around the real risk profile of each workplace, from audit to action.',
+      'Risk assessments, safety statements, EHS audits and incident investigation, seamlessly integrated with your occupational health programme.',
     points: [
       'Risk assessments',
       'Safety statements',
@@ -103,33 +128,26 @@ export const services: Service[] = [
     id: 'wellbeing',
     title: 'Workforce Wellbeing Programmes',
     description:
-      'Evidence-based wellbeing initiatives designed to support resilience, engagement and long-term performance.',
-    points: ['Employee resilience', 'Engagement', 'Targeted programmes'],
+      'Evidence based wellbeing initiatives that strengthen employee resilience, engagement and long-term performance.',
+    points: [
+      'Employee resilience',
+      'Engagement',
+      'Long-term performance',
+    ],
     icon: HeartPulse,
   },
   {
     id: 'advisory',
     title: 'Strategic Advisory, Workshops & Training',
     description:
-      'Expert consultancy, policy development and practical manager or employee workshops shaped around your organisation.',
-    points: ['Policy development', 'Manager workshops', 'Employee workshops'],
+      'Expert consultancy, policy development, training, and tailored workshops for managers and employees, designed to align with your organisation\'s culture and specific risk profile.',
+    points: [
+      'Expert consultancy',
+      'Policy development',
+      'Training',
+      'Tailored workshops',
+    ],
     icon: GraduationCap,
-  },
-  {
-    id: 'absence',
-    title: 'Absence & Case Management',
-    description:
-      'Support for short and long-term absence, helping HR teams balance employee care with defensible decisions.',
-    points: ['Case management', 'Employee support', 'Cost reduction'],
-    icon: ClipboardList,
-  },
-  {
-    id: 'compliance',
-    title: 'Statutory Compliance',
-    description:
-      'Structured support for Irish and European workplace health and safety obligations, without overcomplication.',
-    points: ['Compliance frameworks', 'Defensible process', 'Clear records'],
-    icon: BadgeCheck,
   },
 ]
 
@@ -137,23 +155,25 @@ export const valueColumns = [
   {
     title: 'For Your Organisation',
     items: [
-      'Health and safety compliance',
-      'Stronger recruitment support',
-      'Better absence management',
-      'Improved retention',
-      'Sustainable OH and EHS strategy',
-      'Single-vendor simplicity',
+      'Comply with health & safety legislation',
+      'Support and strengthen recruitment processes',
+      'Manage absence effectively and reduce absenteeism',
+      'Improve employee retention and reduce turnover',
+      'Develop a strategic, sustainable approach to occupational health and EHS',
+      'Lower insurance and liability exposure through proactive risk management',
+      'Single-vendor simplicity across OH and EHS disciplines',
     ],
   },
   {
     title: 'For Your Employees',
     items: [
       'Improved physical and mental wellbeing',
-      'Safer working environments',
+      'Safer, healthier working environments',
+      'Increased productivity and performance',
+      'Confidence that health, safety and wellbeing are actively supported',
       'Faster access to clinical guidance',
-      'Joined-up health and workplace risk support',
-      'Prevention before escalation',
-      'Better support at critical moments',
+      'A joined-up approach to health risks and physical workplace hazards',
+      'Proactive programmes that prevent issues before they escalate',
     ],
   },
 ]
@@ -162,17 +182,17 @@ export const keyOutcomes = [
   {
     title: 'Integrated Risk Intelligence',
     description:
-      'Clinical OH insight and EHS risk management work together, so workplace hazards inform health decisions and health insights shape safety priorities.',
+      'Clinical OH insight and EHS risk management working together; hazard identification informs health decisions, health data shapes safety priorities.',
   },
   {
     title: 'Unified Compliance Assurance',
     description:
-      'One partner managing OH and EHS obligations reduces gaps, duplication and fragmented responsibility.',
+      'One partner managing both OH and EHS obligations means no gaps, no duplication and full alignment across audits, inspections and regulatory reviews.',
   },
   {
     title: 'Performance-Driven Outcomes',
     description:
-      'Reduced absenteeism, lower incident rates and a healthier workforce support productivity, cost control and stronger ESG outcomes.',
+      'Reduced absenteeism, lower incident rates and a healthier workforce translate directly into cost savings, productivity gains and stronger ESG credentials.',
   },
 ]
 
@@ -180,34 +200,47 @@ export const wellnessFeatures: Feature[] = [
   {
     title: 'Clinician-Led',
     description:
-      'Assessments delivered by qualified Occupational Health professionals and trained clinicians.',
+      'Every assessment is delivered by registered Occupational Health Nurses and trained clinicians, not generic wellness vendors.',
     icon: Stethoscope,
   },
   {
-    title: 'Confidential by Design',
+    title: 'GDPR Guaranteed',
     description:
-      'Individual health information remains confidential, with employer insights provided at an appropriate anonymised group level.',
+      'Individual results are strictly confidential. Employers receive only anonymised, group-level reports. Zero individual data sharing.',
     icon: LockKeyhole,
   },
   {
     title: 'Actionable Insights',
     description:
-      'Workforce-level trends help inform targeted and practical wellbeing priorities.',
+      'Your anonymous employer report benchmarks your workforce against national Irish data (Healthy Ireland / SLAN) and provides prioritised recommendations.',
     icon: BarChart3,
   },
   {
     title: 'Onsite Delivery',
     description:
-      'Occuhealth clinicians bring the screening clinic to the workplace, reducing disruption and improving accessibility.',
+      'We come to you. Our clinicians set up a fully equipped screening clinic at your premises, with minimal disruption and maximum uptake.',
     icon: MapPin,
   },
 ]
 
-export const businessCase = [
-  'Workforce health risks often go undetected.',
-  'Absence carries a significant operational cost.',
-  'Preventative wellbeing programmes can create measurable organisational value.',
-  'Lifestyle factors contribute to long-term workforce health challenges.',
+export const businessCase: BusinessCaseItem[] = [
+  {
+    stat: '1 in 4',
+    description: 'Irish employees has undiagnosed high blood pressure',
+  },
+  {
+    stat: '€1,500+',
+    description: 'average employer cost per employee absent day (IBEC)',
+  },
+  {
+    stat: 'ROI 3:1',
+    description: 'average return on corporate wellness investment',
+  },
+  {
+    stat: '37%',
+    description:
+      'of long-term absences are due to preventable lifestyle conditions',
+  },
 ]
 
 export const wellnessPackages: WellnessPackage[] = [
@@ -229,7 +262,7 @@ export const wellnessPackages: WellnessPackage[] = [
     id: 'gold',
     name: 'Gold',
     duration: '30-45 minutes per employee',
-    title: 'Premium OH-led Programme',
+    title: 'Premium OH-Led Programme',
     tone: 'gold',
   },
 ]
@@ -260,13 +293,7 @@ export const packageRows: PackageRow[] = [
     gold: true,
   },
   {
-    label: 'Personal wellness summary',
-    bronze: true,
-    silver: true,
-    gold: true,
-  },
-  {
-    label: 'Anonymous employer trend report',
+    label: 'Personal wellness summary and anonymous employer trend report',
     bronze: true,
     silver: true,
     gold: true,
@@ -339,46 +366,47 @@ export const processSteps: ProcessStep[] = [
   {
     title: 'Book a Consultation',
     description:
-      'Discuss organisation needs, workforce size and the appropriate service.',
+      'Contact Occuhealth to discuss your organisation\'s needs, headcount and preferred package. We provide a tailored quote and sign a Data Processing Agreement before any clinic takes place.',
   },
   {
     title: 'We Plan Your Clinic',
     description:
-      'Confirm requirements, employee information and the clinic schedule.',
+      'We confirm your room requirements, send employee information sheets and set the clinic schedule with appointment slots depending on package.',
   },
   {
     title: 'Clinic Day',
     description:
-      'Clinicians arrive onsite and establish a private screening area.',
+      'Our clinicians arrive onsite, set up a private confidential screening area and conduct individual assessments using pre-calibrated, quality-controlled equipment.',
   },
   {
     title: 'Results Delivered',
     description:
-      'Employees receive appropriate personal outcomes and employer-level reporting is prepared.',
+      'Employees receive their personal wellness summary on the day. Your anonymised employer report is delivered within 10 working days of the clinic.',
   },
   {
     title: 'Act on the Insights',
     description:
-      'Use the findings to guide targeted workplace wellbeing and HR strategy.',
+      'Use your tailored recommendations to design targeted wellbeing interventions, support your HR strategy and evidence your ESG commitments.',
   },
 ]
 
 export const differentiators: Feature[] = [
   {
-    title: 'Integrated Expertise',
-    description: 'Clinical and workplace risk perspectives working together.',
+    title: 'Integrated Occupational Health and EHS',
+    description:
+      'We integrate Occupational Health with Environmental Health & Safety, delivering operational efficiencies and cost synergies.',
     icon: Activity,
   },
   {
-    title: 'Flexible Service Model',
+    title: 'Modular Service Model',
     description:
-      'From ad hoc SME support to contracted onsite services for larger organisations.',
+      'Our modular service model adapts to every client, from ad hoc engagements for SMEs to contracted on-site services for large enterprises.',
     icon: Building2,
   },
   {
-    title: 'Practical Outcomes',
+    title: 'Right Expertise, Right Time',
     description:
-      'Clear, solutions-driven support designed around compliance, workforce wellbeing and business performance.',
+      'The right expertise, at the right time, without unnecessary cost or complexity.',
     icon: ClipboardCheck,
   },
 ]
@@ -388,14 +416,14 @@ export const contactPeople = [
     name: 'Sharon Cleary',
     role: 'Co-Founder | Director',
     initials: 'SC',
-    image: '/images/sharon-portrait.jpg',
-    imagePosition: 'center 58%',
+    image: '/images/sharon-portrait.webp',
+    imagePosition: 'center 38%',
   },
   {
     name: "Cathy O'Reilly",
     role: 'Co-Founder | Director',
     initials: 'CO',
-    image: '/images/cathy-portrait.jpg',
+    image: '/images/cathy-portrait.webp',
     imagePosition: 'center 46%',
   },
 ]
@@ -408,19 +436,27 @@ export const trustItems = [
 
 export const proofSignals = [
   {
-    label: 'Integrated OH and EHS',
-    icon: HandHeart,
+    label: 'Reduced Absenteeism',
+    icon: ClipboardList,
   },
   {
-    label: 'Workplace-led delivery',
-    icon: UsersRound,
+    label: 'Lower Regulatory Risk',
+    icon: ShieldCheck,
   },
   {
-    label: 'Practical clinical guidance',
-    icon: CalendarCheck,
+    label: 'Increased Productivity',
+    icon: BarChart3,
   },
   {
-    label: 'Compliance-focused support',
-    icon: Factory,
+    label: 'Compliance Focused',
+    icon: BadgeCheck,
   },
 ]
+
+export const complianceNote = {
+  title: 'Statutory Compliance',
+  description:
+    'We are fully compliant with Irish, European and global legislative frameworks. This includes the Safety, Health & Welfare at Work Act, Chemical Regulations, EU Occupational Safety and Health Directives, REACH, and all sector-specific obligations.',
+  standards:
+    'Our approach reflects international best practice, drawing on standards such as ISO 45001, ISO 14001 and OHSAS guidelines.',
+}

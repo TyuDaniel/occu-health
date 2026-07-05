@@ -8,12 +8,14 @@ export function ContactCTA() {
       <div className="page-shell contact-layout">
         <Reveal className="contact-copy">
           <h2>
-            Ready to Make Business Health
-            <span>More Personal?</span>
+            Get
+            <span>In Touch.</span>
           </h2>
           <p>
-            Speak to the Occuhealth team about your Occupational Health, EHS or
-            workforce wellbeing requirements.
+            Ready to make Occuhealth your preferred Occupational Health &
+            Safety partner? Speak to our team today, we'd love to understand
+            your challenges and show you what fully integrated Occupational
+            Health and EHS can deliver for your organisation.
           </p>
           <div className="contact-actions">
             <a className="button button--lime" href="mailto:enquiries@occuhealth.ie">
@@ -27,7 +29,7 @@ export function ContactCTA() {
         </Reveal>
 
         <Reveal className="contact-panel" delay={100}>
-          <p className="contact-panel__label">Your first conversation</p>
+          <p className="contact-panel__label">Occuhealth Ireland</p>
           <div className="contact-people">
             {contactPeople.map((person) => (
               <article className="contact-person-card" key={person.name}>
