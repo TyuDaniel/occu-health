@@ -1,10 +1,7 @@
 import type { LucideIcon } from 'lucide-react'
 import {
-  Activity,
   BadgeCheck,
   BarChart3,
-  Building2,
-  ClipboardCheck,
   ClipboardList,
   GraduationCap,
   HeartPulse,
@@ -58,14 +55,11 @@ export type PackageRow = {
 export const images = {
   hero:
     'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=80',
-  workplace:
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=80',
 }
 
 export const navLinks = [
   { label: 'Who We Are', href: '#who-we-are' },
   { label: 'Services', href: '#services' },
-  { label: 'Why Occuhealth', href: '#why-occuhealth' },
   { label: 'Wellness', href: '#wellness' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -390,31 +384,12 @@ export const processSteps: ProcessStep[] = [
   },
 ]
 
-export const differentiators: Feature[] = [
-  {
-    title: 'Integrated Occupational Health and EHS',
-    description:
-      'We integrate Occupational Health with Environmental Health & Safety, delivering operational efficiencies and cost synergies.',
-    icon: Activity,
-  },
-  {
-    title: 'Modular Service Model',
-    description:
-      'Our modular service model adapts to every client, from ad hoc engagements for SMEs to contracted on-site services for large enterprises.',
-    icon: Building2,
-  },
-  {
-    title: 'Right Expertise, Right Time',
-    description:
-      'The right expertise, at the right time, without unnecessary cost or complexity.',
-    icon: ClipboardCheck,
-  },
-]
-
 export const contactPeople = [
   {
     name: 'Sharon Cleary',
     role: 'Co-Founder | Director',
+    phone: '083 885 1340',
+    phoneHref: 'tel:+353838851340',
     initials: 'SC',
     image: '/images/sharon-portrait.webp',
     imagePosition: 'center 38%',
@@ -422,6 +397,8 @@ export const contactPeople = [
   {
     name: "Cathy O'Reilly",
     role: 'Co-Founder | Director',
+    phone: '086 309 5495',
+    phoneHref: 'tel:+353863095495',
     initials: 'CO',
     image: '/images/cathy-portrait.webp',
     imagePosition: 'center 46%',
@@ -448,7 +425,7 @@ export const proofSignals = [
     icon: BarChart3,
   },
   {
-    label: 'Compliance Focused',
+    label: 'Compliant Focused',
     icon: BadgeCheck,
   },
 ]

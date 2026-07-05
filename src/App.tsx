@@ -10,7 +10,6 @@ import { Services } from './components/Services'
 import { ValueSection } from './components/ValueSection'
 import { WellnessFeature } from './components/WellnessFeature'
 import { WhoWeAre } from './components/WhoWeAre'
-import { WhyOccuhealth } from './components/WhyOccuhealth'
 import './App.css'
 
 function App() {
@@ -54,7 +53,6 @@ function App() {
         <PackagesSection />
         <BusinessCase />
         <ProcessTimeline />
-        <WhyOccuhealth />
         <ContactCTA />
       </main>
       <Footer />
