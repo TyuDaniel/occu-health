@@ -392,7 +392,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353838851340',
     initials: 'SC',
     image: '/images/sharon-portrait.webp',
-    imagePosition: 'center 38%',
+    imagePosition: 'center 68%',
   },
   {
     name: "Cathy O'Reilly",
@@ -401,7 +401,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353863095495',
     initials: 'CO',
     image: '/images/cathy-portrait.webp',
-    imagePosition: 'center 46%',
+    imagePosition: 'center 62%',
   },
 ]
 

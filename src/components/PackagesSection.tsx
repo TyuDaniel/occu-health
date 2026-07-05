@@ -4,15 +4,37 @@ import { Reveal } from './Reveal'
 
 const packageIds = wellnessPackages.map((item) => item.id)
 
+function getDurationParts(duration: string) {
+  const minutes = duration.replace(' minutes per employee', '')
+
+  return {
+    minutes,
+    label: 'minutes per employee',
+    full: duration,
+  }
+}
+
 export function PackagesSection() {
   return (
     <section className="packages-section" id="packages">
       <div className="page-shell">
         <Reveal className="packages-heading">
+          <p className="section-label">Wellness Packages</p>
           <h2>
             <span>3</span> packages. <span>1</span> mission.
             <strong>A healthier workplace.</strong>
           </h2>
+          <div className="packages-heading__note">
+            <p>
+              Choose the right level of occupational health-led screening for your
+              workforce, from essential checks to a premium OH-led programme.
+            </p>
+            <div className="packages-heading__tiers" aria-hidden="true">
+              {wellnessPackages.map((item) => (
+                <span key={item.id}>{item.name}</span>
+              ))}
+            </div>
+          </div>
         </Reveal>
 
         <Reveal className="packages-board" delay={90}>
@@ -21,16 +43,25 @@ export function PackagesSection() {
               <span className="package-ring" aria-hidden="true" />
               <h3>What's inside our Wellness Packages</h3>
             </div>
-            {wellnessPackages.map((item) => (
-              <article className={`package-tier package-tier--${item.tone}`} key={item.id}>
-                <span className="package-medal" aria-hidden="true" />
-                <div>
-                  <h4>{item.name}</h4>
-                  <p>{item.duration}</p>
-                  <strong>{item.title}</strong>
-                </div>
-              </article>
-            ))}
+            {wellnessPackages.map((item) => {
+              const duration = getDurationParts(item.duration)
+
+              return (
+                <article className={`package-tier package-tier--${item.tone}`} key={item.id}>
+                  <span className="package-medal" aria-hidden="true" />
+                  <div className="package-tier__body">
+                    <div className="package-tier__top">
+                      <h4>{item.name}</h4>
+                      <span className="package-tier__time" aria-label={duration.full}>
+                        <b>{duration.minutes}</b>
+                        <small>{duration.label}</small>
+                      </span>
+                    </div>
+                    <p className="package-tier__promise">{item.title}</p>
+                  </div>
+                </article>
+              )
+            })}
           </div>
 
           <div className="package-rows" role="table" aria-label="Wellness package comparison">

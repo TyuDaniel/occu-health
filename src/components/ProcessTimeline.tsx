@@ -1,5 +1,6 @@
 import { processSteps } from '../data/siteContent'
 import { Reveal } from './Reveal'
+import type { CSSProperties } from 'react'
 
 export function ProcessTimeline() {
   return (
@@ -15,17 +16,28 @@ export function ProcessTimeline() {
           </p>
         </Reveal>
 
-        <div className="timeline" aria-label="Wellness delivery process">
-          {processSteps.map((step, index) => (
-            <Reveal className="timeline-step" delay={index * 70} key={step.title}>
-              <div className="timeline-node">
-                <span>{String(index + 1).padStart(2, '0')}</span>
-              </div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="timeline-shell" delay={80}>
+          <div className="timeline" aria-label="Wellness delivery process">
+            {processSteps.map((step, index) => (
+              <article
+                className="timeline-step"
+                key={step.title}
+                style={
+                  {
+                    '--node-delay': `${260 + index * 130}ms`,
+                    '--step-delay': `${180 + index * 130}ms`,
+                  } as CSSProperties
+                }
+              >
+                <div className="timeline-node">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   )

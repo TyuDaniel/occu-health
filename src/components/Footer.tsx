@@ -33,7 +33,7 @@ export function Footer() {
           <a href="mailto:enquiries@occuhealth.ie">enquiries@occuhealth.ie</a>
           <a href="tel:+353838851340">083 885 1340</a>
           <a href="tel:+353863095495">086 309 5495</a>
-          <span>Portlaoise, Co. Laois</span>
+          <span>Portlaoise, County Laois</span>
         </address>
       </div>
 

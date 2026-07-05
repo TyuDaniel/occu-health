@@ -16,19 +16,33 @@ export function ValueSection() {
 
         <div className="value-layout-grid">
           <div className="value-columns">
-            {valueColumns.map((column, index) => (
-              <Reveal className="value-column" delay={index * 90} key={column.title}>
-                <h3>{column.title}</h3>
-                <ul>
-                  {column.items.map((item) => (
-                    <li key={item}>
-                      <Check aria-hidden="true" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
+            <Reveal className="value-column value-column--organisation">
+              <h3>{valueColumns[0].title}</h3>
+              <ul>
+                {valueColumns[0].items.map((item) => (
+                  <li key={item}>
+                    <Check aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <div className="value-divider" aria-hidden="true">
+              <span>Aligned impact</span>
+            </div>
+
+            <Reveal className="value-column value-column--employees" delay={90}>
+              <h3>{valueColumns[1].title}</h3>
+              <ul>
+                {valueColumns[1].items.map((item) => (
+                  <li key={item}>
+                    <Check aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
 
           <div className="outcomes-grid">
