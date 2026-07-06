@@ -1,4 +1,4 @@
-import { BadgeCheck, FileCheck2, Scale } from 'lucide-react'
+import { FileCheck2, Scale } from 'lucide-react'
 import { complianceNote, services } from '../data/siteContent'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
@@ -46,7 +46,7 @@ export function Services() {
 
           <Reveal className="compliance-note" delay={120}>
             <div className="compliance-note__seal" aria-hidden="true">
-              <BadgeCheck />
+              <img src="/logos/oo-master-transparent.webp" alt="" aria-hidden="true" />
             </div>
             <div className="compliance-note__copy">
               <h3>{complianceNote.title}</h3>

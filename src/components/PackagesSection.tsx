@@ -4,16 +4,6 @@ import { Reveal } from './Reveal'
 
 const packageIds = wellnessPackages.map((item) => item.id)
 
-function getDurationParts(duration: string) {
-  const minutes = duration.replace(' minutes per employee', '')
-
-  return {
-    minutes,
-    label: 'minutes per employee',
-    full: duration,
-  }
-}
-
 export function PackagesSection() {
   return (
     <section className="packages-section" id="packages">
@@ -24,44 +14,38 @@ export function PackagesSection() {
             <span>3</span> packages. <span>1</span> mission.
             <strong>A healthier workplace.</strong>
           </h2>
-          <div className="packages-heading__note">
-            <p>
-              Choose the right level of occupational health-led screening for your
-              workforce, from essential checks to a premium OH-led programme.
-            </p>
-            <div className="packages-heading__tiers" aria-hidden="true">
-              {wellnessPackages.map((item) => (
-                <span key={item.id}>{item.name}</span>
-              ))}
-            </div>
-          </div>
+          <p>
+            Choose the right level of occupational health-led screening for your
+            workforce, from essential checks to a premium OH-led programme.
+          </p>
         </Reveal>
 
         <Reveal className="packages-board" delay={90}>
           <div className="packages-board__header">
             <div className="packages-board__intro">
-              <span className="package-ring" aria-hidden="true" />
+              <img
+                className="package-ring"
+                src="/logos/oo-master-white-transparent.webp"
+                alt=""
+                aria-hidden="true"
+              />
               <h3>What's inside our Wellness Packages</h3>
             </div>
-            {wellnessPackages.map((item) => {
-              const duration = getDurationParts(item.duration)
-
-              return (
-                <article className={`package-tier package-tier--${item.tone}`} key={item.id}>
-                  <span className="package-medal" aria-hidden="true" />
-                  <div className="package-tier__body">
-                    <div className="package-tier__top">
-                      <h4>{item.name}</h4>
-                      <span className="package-tier__time" aria-label={duration.full}>
-                        <b>{duration.minutes}</b>
-                        <small>{duration.label}</small>
-                      </span>
-                    </div>
-                    <p className="package-tier__promise">{item.title}</p>
-                  </div>
-                </article>
-              )
-            })}
+            {wellnessPackages.map((item) => (
+              <article className={`package-tier package-tier--${item.tone}`} key={item.id}>
+                <img
+                  className="package-medal"
+                  src="/logos/oo-master-white-transparent.webp"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <div className="package-tier__body">
+                  <h4>{item.name}</h4>
+                  <p className="package-tier__duration">{item.duration}</p>
+                  <p className="package-tier__title">{item.title}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className="package-rows" role="table" aria-label="Wellness package comparison">
@@ -98,20 +82,25 @@ export function PackagesSection() {
 
         <div className="package-mobile" aria-label="Wellness packages by tier">
           {wellnessPackages.map((tier) => (
-            <Reveal className={`package-mobile-card package-mobile-card--${tier.tone}`} key={tier.id}>
-              <h3>{tier.name}</h3>
-              <p>{tier.duration}</p>
-              <strong>{tier.title}</strong>
-              <ul>
-                {packageRows
-                  .filter((row) => row[tier.id])
-                  .map((row) => (
-                    <li key={row.label}>
-                      <Check aria-hidden="true" />
-                      {row.label}
-                    </li>
-                  ))}
-              </ul>
+            <Reveal className="package-mobile-reveal" key={tier.id}>
+              <details className={`package-mobile-card package-mobile-card--${tier.tone}`}>
+                <summary>
+                  <span className="package-mobile-card__name">{tier.name}</span>
+                  <span className="package-mobile-card__duration">{tier.duration}</span>
+                  <strong>{tier.title}</strong>
+                  <span className="package-mobile-card__toggle">View inclusions</span>
+                </summary>
+                <ul>
+                  {packageRows
+                    .filter((row) => row[tier.id])
+                    .map((row) => (
+                      <li key={row.label}>
+                        <Check aria-hidden="true" />
+                        {row.label}
+                      </li>
+                    ))}
+                </ul>
+              </details>
             </Reveal>
           ))}
         </div>

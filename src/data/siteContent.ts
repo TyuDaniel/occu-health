@@ -53,8 +53,7 @@ export type PackageRow = {
 }
 
 export const images = {
-  hero:
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1800&q=80',
+  hero: '/images/occupational-health-hero.webp',
 }
 
 export const navLinks = [
@@ -360,7 +359,7 @@ export const processSteps: ProcessStep[] = [
   {
     title: 'Book a Consultation',
     description:
-      'Contact Occuhealth to discuss your organisation\'s needs, headcount and preferred package. We provide a tailored quote and sign a Data Processing Agreement before any clinic takes place.',
+      'Contact OccUhealth to discuss your organisation\'s needs, headcount and preferred package. We provide a tailored quote and sign a Data Processing Agreement before any clinic takes place.',
   },
   {
     title: 'We Plan Your Clinic',
@@ -392,7 +391,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353838851340',
     initials: 'SC',
     image: '/images/sharon-portrait.webp',
-    imagePosition: 'center 68%',
+    imagePosition: 'center bottom',
   },
   {
     name: "Cathy O'Reilly",
@@ -401,7 +400,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353863095495',
     initials: 'CO',
     image: '/images/cathy-portrait.webp',
-    imagePosition: 'center 62%',
+    imagePosition: 'center bottom',
   },
 ]
 

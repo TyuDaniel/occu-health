@@ -14,7 +14,7 @@ export function WhoWeAre() {
 
         <Reveal className="who-copy" delay={90}>
           <p>
-            Occuhealth Ireland provides a comprehensive range of Occupational
+            OccUhealth Ireland provides a comprehensive range of Occupational
             Health and Environmental Health & Safety services to SMEs, national
             and global organisations across Ireland, delivering clear,
             practical and solutions-driven outcomes that support both compliance

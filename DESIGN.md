@@ -2,11 +2,11 @@
 
 ## System Overview
 
-Occuhealth Ireland uses a committed corporate healthcare palette: strong blue, bright lime, clean white space, and workplace photography with blue overlays. The website should feel more premium and fluid than the source decks while staying immediately recognisable as the same brand.
+OccUhealth Ireland uses a committed corporate healthcare palette: strong blue, bright lime, clean white space, and workplace photography with blue overlays. The website should feel more premium and fluid than the source decks while staying immediately recognisable as the same brand.
 
 ## Colour
 
-Core tokens are based on the master deck palette and expressed in OKLCH in CSS:
+Core tokens are based on the mini brand document and applied as exact brand hex values in CSS:
 
 - Brand blue: corporate, trustworthy, dominant.
 - Deep blue: section backgrounds, overlays, footer, high-contrast text.
@@ -18,7 +18,7 @@ Lime is not used for small low-contrast body copy on white. It works best as a l
 
 ## Typography
 
-Use one humanist/geometric sans family throughout, preferably Manrope loaded from Google Fonts. Headings are large, confident, tightly set, and balanced. Body text is generous and calm, with line lengths capped for readability. Avoid all-caps body copy; short labels can use restrained uppercase.
+Use the brand typography stack: Nexa Bold for headings and key messaging, Neue Haas Unica W1G Regular for body copy, and Helvetica as the practical system substitute where licensed fonts are not installed. Headings are large, confident, tightly set, and balanced. Body text is generous and calm, with line lengths capped for readability. Avoid all-caps body copy; short labels can use restrained uppercase.
 
 ## Layout
 
@@ -26,7 +26,7 @@ Use a spacious single-page structure with 1280px to 1400px content width. Sectio
 
 ## Motifs
 
-The Occuhealth "O" appears as cropped circular rings, circular image masks, timeline nodes, and subtle line work. It should support the brand rhythm rather than repeat the logo everywhere.
+The OccUhealth "O" appears as an official brand asset: cropped, enlarged, faded, used as a section device, bullet cue, highlight and subtle background motif. It should support the brand rhythm rather than repeat the logo everywhere.
 
 ## Components
 

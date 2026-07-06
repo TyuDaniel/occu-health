@@ -7,8 +7,8 @@ export function Footer() {
     <footer className="site-footer">
       <div className="page-shell footer-grid">
         <div className="footer-brand">
-          <Logo />
-          <p>Business Health. Made Personal.</p>
+          <Logo variant="inverse" />
+          <p>Occupational Health, Environmental Health & Safety Specialists</p>
         </div>
 
         <nav aria-label="Footer navigation">
@@ -38,7 +38,7 @@ export function Footer() {
       </div>
 
       <div className="page-shell footer-bottom">
-        <p>© {year} Occuhealth Ireland</p>
+        <p>© {year} OccUhealth Ireland</p>
       </div>
     </footer>
   )

@@ -6,6 +6,9 @@ import { Logo } from './Logo'
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [compactHeader, setCompactHeader] = useState(() =>
+    window.matchMedia('(max-width: 760px)').matches,
+  )
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -21,13 +24,23 @@ export function Navbar() {
     return () => document.body.classList.remove('menu-open')
   }, [menuOpen])
 
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 760px)')
+    const onChange = () => setCompactHeader(query.matches)
+
+    onChange()
+    query.addEventListener('change', onChange)
+
+    return () => query.removeEventListener('change', onChange)
+  }, [])
+
   return (
     <header
       className={`site-header${scrolled ? ' is-scrolled' : ''}`}
       data-menu-open={menuOpen}
     >
       <nav className="nav-shell" aria-label="Primary navigation">
-        <Logo />
+        <Logo variant={compactHeader || scrolled || menuOpen ? 'brand' : 'inverse'} />
 
         <button
           className="nav-toggle"

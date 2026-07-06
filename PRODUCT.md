@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Occuhealth Ireland's homepage is for HR leaders, business owners, senior managers, and Environmental Health & Safety decision-makers in Irish organisations. They arrive needing credible support for Occupational Health, Environmental Health & Safety, absence management, compliance, and workforce wellbeing.
+OccUhealth Ireland's homepage is for HR leaders, business owners, senior managers, and Environmental Health & Safety decision-makers in Irish organisations. They arrive needing credible support for Occupational Health, Environmental Health & Safety, absence management, compliance, and workforce wellbeing.
 
 ## Product Purpose
 
-The site presents Occuhealth Ireland as a trusted B2B healthcare and workplace risk partner. Success means visitors quickly understand the combined Occupational Health and EHS offer, recognise the company as established and clinically credible, and feel confident contacting the team.
+The site presents OccUhealth Ireland as a trusted B2B healthcare and workplace risk partner. Success means visitors quickly understand the combined Occupational Health and EHS offer, recognise the company as established and clinically credible, and feel confident contacting the team.
 
 ## Brand Personality
 

@@ -29,7 +29,11 @@ export function ValueSection() {
             </Reveal>
 
             <div className="value-divider" aria-hidden="true">
-              <span>Aligned impact</span>
+              <img
+                src="/logos/oo-master-transparent.webp"
+                alt=""
+                aria-hidden="true"
+              />
             </div>
 
             <Reveal className="value-column value-column--employees" delay={90}>

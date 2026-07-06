@@ -1,20 +1,49 @@
+@font-face {
+  font-family: 'Nexa';
+  src: url('/fonts/NexaBold.otf') format('opentype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700 900;
+}
+
+@font-face {
+  font-family: 'Neue Haas Unica W1G';
+  src: url('/fonts/NeueHaasUnicaW1G-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'OccuHelvetica';
+  src: url('/fonts/Helvetica-Regular.otf') format('opentype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
-  --brand-blue: oklch(47.01% 0.1262 250.01);
-  --brand-blue-dark: oklch(41.12% 0.1081 248.83);
-  --brand-blue-deep: oklch(35.67% 0.0944 249.37);
-  --brand-blue-light: oklch(52.85% 0.1101 246.49);
-  --brand-lime: oklch(77.45% 0.1495 119.87);
-  --brand-lime-bright: oklch(79.85% 0.1709 119.46);
-  --brand-lime-soft: oklch(92.54% 0.0444 118.35);
-  --white: oklch(100% 0 0);
-  --off-white: oklch(98.09% 0.0025 228.78);
-  --surface-light: oklch(97.07% 0.005 228.82);
-  --text-dark: oklch(30.83% 0.0546 247.43);
-  --text-muted: oklch(53.63% 0.0331 245.3);
-  --border-light: color-mix(in oklch, var(--brand-blue) 14%, transparent);
-  --border-on-blue: color-mix(in oklch, var(--white) 18%, transparent);
-  --lime-on-blue: oklch(86% 0.155 119.5);
-  --font-sans: 'Manrope Variable', Manrope, system-ui, sans-serif;
+  --brand-blue: #005b9d;
+  --brand-lime: #aac334;
+  --white: #f6f8f9;
+  --tier-bronze: #e0ad6b;
+  --tier-silver: #e6edf2;
+  --tier-gold: #f2c64f;
+  --brand-blue-dark: var(--brand-blue);
+  --brand-blue-deep: var(--brand-blue);
+  --brand-blue-light: color-mix(in srgb, var(--brand-blue) 72%, var(--white));
+  --brand-lime-bright: var(--brand-lime);
+  --brand-lime-soft: color-mix(in srgb, var(--brand-lime) 20%, var(--white));
+  --pure-white: var(--white);
+  --off-white: var(--white);
+  --surface-light: color-mix(in srgb, var(--brand-blue) 4%, var(--white));
+  --text-dark: var(--brand-blue);
+  --text-muted: color-mix(in srgb, var(--brand-blue) 72%, var(--white));
+  --border-light: color-mix(in srgb, var(--brand-blue) 14%, transparent);
+  --border-on-blue: color-mix(in srgb, var(--white) 18%, transparent);
+  --lime-on-blue: var(--brand-lime);
+  --font-heading: 'Nexa', 'OccuHelvetica', Helvetica, Arial, sans-serif;
+  --font-sans: 'Neue Haas Unica W1G', 'OccuHelvetica', Helvetica, Arial, sans-serif;
   --shell: min(100% - 48px, 1360px);
   --nav-height: 82px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -96,6 +125,7 @@ h1,
 h2,
 h3 {
   color: inherit;
+  font-family: var(--font-heading);
   font-weight: 800;
   letter-spacing: 0;
   text-wrap: balance;
