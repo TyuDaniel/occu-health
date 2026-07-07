@@ -1,10 +1,13 @@
 import { Check, Minus } from 'lucide-react'
+import { useState } from 'react'
 import { packageRows, wellnessPackages } from '../data/siteContent'
 import { Reveal } from './Reveal'
 
 const packageIds = wellnessPackages.map((item) => item.id)
 
 export function PackagesSection() {
+  const [activePackage, setActivePackage] = useState<string | null>(null)
+
   return (
     <section className="packages-section" id="packages">
       <div className="page-shell">
@@ -83,14 +86,28 @@ export function PackagesSection() {
         <div className="package-mobile" aria-label="Wellness packages by tier">
           {wellnessPackages.map((tier) => (
             <Reveal className="package-mobile-reveal" key={tier.id}>
-              <details className={`package-mobile-card package-mobile-card--${tier.tone}`}>
-                <summary>
+              <article
+                className={`package-mobile-card package-mobile-card--${tier.tone}${
+                  activePackage === tier.id ? ' is-open' : ''
+                }`}
+              >
+                <button
+                  className="package-mobile-card__summary"
+                  type="button"
+                  aria-expanded={activePackage === tier.id}
+                  aria-controls={`package-${tier.id}-inclusions`}
+                  onClick={() =>
+                    setActivePackage((current) => (current === tier.id ? null : tier.id))
+                  }
+                >
                   <span className="package-mobile-card__name">{tier.name}</span>
                   <span className="package-mobile-card__duration">{tier.duration}</span>
                   <strong>{tier.title}</strong>
-                  <span className="package-mobile-card__toggle">View inclusions</span>
-                </summary>
-                <ul>
+                  <span className="package-mobile-card__toggle">
+                    {activePackage === tier.id ? 'Hide inclusions' : 'View inclusions'}
+                  </span>
+                </button>
+                <ul id={`package-${tier.id}-inclusions`}>
                   {packageRows
                     .filter((row) => row[tier.id])
                     .map((row) => (
@@ -100,7 +117,7 @@ export function PackagesSection() {
                       </li>
                     ))}
                 </ul>
-              </details>
+              </article>
             </Reveal>
           ))}
         </div>

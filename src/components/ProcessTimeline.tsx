@@ -1,8 +1,12 @@
+import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 import { processSteps } from '../data/siteContent'
 import { Reveal } from './Reveal'
 import type { CSSProperties } from 'react'
 
 export function ProcessTimeline() {
+  const [activeStep, setActiveStep] = useState(-1)
+
   return (
     <section className="section section--soft process-section">
       <div className="page-shell">
@@ -20,7 +24,7 @@ export function ProcessTimeline() {
           <div className="timeline" aria-label="Wellness delivery process">
             {processSteps.map((step, index) => (
               <article
-                className="timeline-step"
+                className={`timeline-step${activeStep === index ? ' is-active' : ''}`}
                 key={step.title}
                 style={
                   {
@@ -29,11 +33,20 @@ export function ProcessTimeline() {
                   } as CSSProperties
                 }
               >
-                <div className="timeline-node">
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <button
+                  className="timeline-step__button"
+                  type="button"
+                  aria-expanded={activeStep === index}
+                  aria-controls={`process-step-${index + 1}`}
+                  onClick={() => setActiveStep((current) => (current === index ? -1 : index))}
+                >
+                  <span className="timeline-node">
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </span>
+                  <span className="timeline-step__title">{step.title}</span>
+                  <ChevronDown className="timeline-step__icon" aria-hidden="true" />
+                </button>
+                <p id={`process-step-${index + 1}`}>{step.description}</p>
               </article>
             ))}
           </div>

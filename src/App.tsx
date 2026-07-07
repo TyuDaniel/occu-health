@@ -50,8 +50,8 @@ function App() {
         <Services />
         <ValueSection />
         <WellnessFeature />
-        <PackagesSection />
         <BusinessCase />
+        <PackagesSection />
         <ProcessTimeline />
         <ContactCTA />
       </main>

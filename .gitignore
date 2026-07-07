@@ -13,6 +13,9 @@ dist-ssr
 tmp
 *.local
 
+# Local agent/tooling files
+.agents/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
