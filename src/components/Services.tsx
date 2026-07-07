@@ -42,7 +42,7 @@ export function Services() {
         </div>
 
         <Reveal className="services-assurance" delay={180}>
-          <img src="/logos/oo-master-transparent.webp" alt="" aria-hidden="true" />
+          <img src="/logos/oo-master-white-transparent.webp" alt="" aria-hidden="true" />
           <strong>Compliance note</strong>
           <p>
             {complianceNote.standards} Fully aligned with Irish, European and

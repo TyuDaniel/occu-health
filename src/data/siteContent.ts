@@ -68,11 +68,11 @@ export const services: Service[] = [
     id: 'occupational-health',
     title: 'Occupational Health Management',
     description:
-      'Fitness for work assessments, pre-employment screening, health surveillance and return to work support, defensible clinical guidance every time.',
+      'Fitness for work assessments, pre-employment screening, health surveillance, including audiometry, spirometry, vision screening, phlebotomy, and other health surveillance services, plus return to work support and defensible clinical guidance every time.',
     points: [
       'Fitness for work assessments',
       'Pre-employment screening',
-      'Health surveillance',
+      'Health surveillance, including audiometry, spirometry, vision screening and phlebotomy',
       'Return-to-work support',
     ],
     icon: Stethoscope,
@@ -108,9 +108,10 @@ export const services: Service[] = [
     id: 'ehs',
     title: 'Environmental Health & Safety',
     description:
-      'Risk assessments, safety statements, EHS audits and incident investigation, seamlessly integrated with your occupational health programme.',
+      'Risk assessments, DSE assessments, safety statements, EHS audits and incident investigation, seamlessly integrated with your occupational health programme.',
     points: [
       'Risk assessments',
+      'DSE assessments',
       'Safety statements',
       'EHS audits',
       'Incident investigation',
@@ -193,7 +194,7 @@ export const wellnessFeatures: Feature[] = [
   {
     title: 'Clinician-Led',
     description:
-      'Every assessment is delivered by registered Occupational Health Nurses and trained clinicians, not generic wellness vendors.',
+      'Every assessment is delivered by registered Occupational Health Specialists and trained clinicians, not generic wellness vendors.',
     icon: Stethoscope,
   },
   {

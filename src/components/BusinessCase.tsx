@@ -7,8 +7,8 @@ export function BusinessCase() {
       <div className="page-shell business-case__inner">
         <Reveal>
           <h2 id="business-case-title">
-            The Business
-            <span>Case.</span>
+            Did you
+            <span>know?</span>
           </h2>
         </Reveal>
 
