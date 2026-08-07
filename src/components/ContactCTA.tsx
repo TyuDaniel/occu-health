@@ -2,8 +2,10 @@ import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
 import { contactPeople, proofSignals } from '../data/siteContent'
 import { Reveal } from './Reveal'
 
-const mapsHref =
+const portlaoiseMapsHref =
   'https://www.google.com/maps/search/?api=1&query=OccUhealth%2C%20Vision%2085%2C%20Clonminam%20Business%20Park%2C%20Knockmay%2C%20Portlaoise%2C%20Co.%20Laois%2C%20R32%20F5T6'
+const galwayMapsHref =
+  'https://www.google.com/maps/search/?api=1&query=Platform%2094%2C%20Mervue%20Business%20Park%2C%20Galway%2C%20H91%20D932'
 
 export function ContactCTA() {
   return (
@@ -52,10 +54,15 @@ export function ContactCTA() {
                 <span>Email</span>
                 <strong>enquiries@occuhealth.ie</strong>
               </a>
-              <a href={mapsHref} rel="noreferrer" target="_blank">
+              <a href={portlaoiseMapsHref} rel="noreferrer" target="_blank">
                 <MapPin aria-hidden="true" />
-                <span>Location</span>
-                <strong>Portlaoise</strong>
+                <span>Portlaoise office</span>
+                <strong>Vision 85, Portlaoise</strong>
+              </a>
+              <a href={galwayMapsHref} rel="noreferrer" target="_blank">
+                <MapPin aria-hidden="true" />
+                <span>Galway office</span>
+                <strong>Platform 94, Mervue Business Park, Galway, H91 D932</strong>
               </a>
             </address>
 

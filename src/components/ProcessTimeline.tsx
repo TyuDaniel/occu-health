@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, MapPin } from 'lucide-react'
 import { useState } from 'react'
 import { processSteps } from '../data/siteContent'
 import { Reveal } from './Reveal'
@@ -8,50 +8,66 @@ export function ProcessTimeline() {
   const [activeStep, setActiveStep] = useState(-1)
 
   return (
-    <section className="section section--soft process-section">
-      <div className="page-shell">
-        <Reveal className="process-heading">
+    <div className="services-process">
+      <Reveal className="process-heading">
+        <div>
+          <p className="section-label">How We Work</p>
           <h2>
             Simple. Seamless.
-            <span>Delivered at Your Workplace.</span>
+            <span>Built Around Your Organisation.</span>
           </h2>
-          <p>
-            From first contact to completed clinic in as little as 3 weeks.
-          </p>
-        </Reveal>
+        </div>
+        <p>
+          From first conversation to a tailored occupational health programme,
+          our clinical team keeps every step clear and practical.
+        </p>
+      </Reveal>
 
-        <Reveal className="timeline-shell" delay={80}>
-          <div className="timeline" aria-label="Wellness delivery process">
-            {processSteps.map((step, index) => (
-              <article
-                className={`timeline-step${activeStep === index ? ' is-active' : ''}`}
-                key={step.title}
-                style={
-                  {
-                    '--node-delay': `${260 + index * 130}ms`,
-                    '--step-delay': `${180 + index * 130}ms`,
-                  } as CSSProperties
-                }
+      <Reveal className="timeline-shell" delay={80}>
+        <div className="timeline" aria-label="Occupational health service process">
+          {processSteps.map((step, index) => (
+            <article
+              className={`timeline-step${activeStep === index ? ' is-active' : ''}`}
+              key={step.title}
+              style={
+                {
+                  '--node-delay': `${260 + index * 130}ms`,
+                  '--step-delay': `${180 + index * 130}ms`,
+                } as CSSProperties
+              }
+            >
+              <button
+                className="timeline-step__button"
+                type="button"
+                aria-expanded={activeStep === index}
+                aria-controls={`process-step-${index + 1}`}
+                onClick={() => setActiveStep((current) => (current === index ? -1 : index))}
               >
-                <button
-                  className="timeline-step__button"
-                  type="button"
-                  aria-expanded={activeStep === index}
-                  aria-controls={`process-step-${index + 1}`}
-                  onClick={() => setActiveStep((current) => (current === index ? -1 : index))}
-                >
-                  <span className="timeline-node">
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </span>
-                  <span className="timeline-step__title">{step.title}</span>
-                  <ChevronDown className="timeline-step__icon" aria-hidden="true" />
-                </button>
-                <p id={`process-step-${index + 1}`}>{step.description}</p>
-              </article>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
+                <span className="timeline-node">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                </span>
+                <span className="timeline-step__title">{step.title}</span>
+                <ChevronDown className="timeline-step__icon" aria-hidden="true" />
+              </button>
+              <p id={`process-step-${index + 1}`}>{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal className="services-coverage" delay={140}>
+        <MapPin aria-hidden="true" />
+        <div>
+          <strong>
+            Occupational health services delivered nationwide, with offices in
+            Portlaoise and Galway.
+          </strong>
+          <p>
+            Vision 85, Portlaoise <span aria-hidden="true">·</span> Platform 94,
+            Mervue Business Park, Galway, H91 D932
+          </p>
+        </div>
+      </Reveal>
+    </div>
   )
 }

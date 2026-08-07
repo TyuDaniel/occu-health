@@ -31,11 +31,6 @@ export type ProcessStep = {
   description: string
 }
 
-export type BusinessCaseItem = {
-  stat: string
-  description: string
-}
-
 export type WellnessPackage = {
   id: 'bronze' | 'silver' | 'gold'
   name: string
@@ -68,12 +63,13 @@ export const services: Service[] = [
     id: 'occupational-health',
     title: 'Occupational Health Management',
     description:
-      'Fitness for work assessments, pre-employment screening, health surveillance, including audiometry, spirometry, vision screening, phlebotomy, and other health surveillance services, plus return to work support and defensible clinical guidance every time.',
+      'Clinician-led occupational health support that protects employees, helps employers meet their duties and enables clear, evidence-based decisions about fitness for work.',
     points: [
-      'Fitness for work assessments',
-      'Pre-employment screening',
-      'Health surveillance, including audiometry, spirometry, vision screening and phlebotomy',
-      'Return-to-work support',
+      'Pre-employment and pre-placement health screening',
+      'Fitness-for-work and return-to-work assessments',
+      'Role-specific health surveillance, including audiometry, spirometry and vision screening',
+      'Phlebotomy and other clinically indicated screening services',
+      'Clear clinical guidance and practical workplace recommendations',
     ],
     icon: Stethoscope,
     featured: true,
@@ -82,14 +78,16 @@ export const services: Service[] = [
     id: 'absence',
     title: 'Absence & Case Management',
     description:
-      'Structured, evidence based management of short and long-term absence, reducing costs, supporting employees and enabling fair HR decisions.',
+      'Structured clinical support for short-term, recurring and long-term absence, giving employees an appropriate route back to work and managers clear, impartial guidance.',
     points: [
-      'Short and long-term absence',
-      'Reducing costs',
-      'Supporting employees',
-      'Fair HR decisions',
+      'Early intervention and clinical case review',
+      'Support for recurring, complex and long-term absence',
+      'Return-to-work planning and workplace adjustments',
+      'Functional recommendations for fair, informed HR decisions',
+      'Ongoing review and case coordination where required',
     ],
     icon: ClipboardList,
+    featured: true,
   },
   {
     id: 'compliance',
@@ -217,26 +215,6 @@ export const wellnessFeatures: Feature[] = [
   },
 ]
 
-export const businessCase: BusinessCaseItem[] = [
-  {
-    stat: '1 in 4',
-    description: 'Irish employees has undiagnosed high blood pressure',
-  },
-  {
-    stat: '€1,500+',
-    description: 'average employer cost per employee absent day (IBEC)',
-  },
-  {
-    stat: 'ROI 3:1',
-    description: 'average return on corporate wellness investment',
-  },
-  {
-    stat: '37%',
-    description:
-      'of long-term absences are due to preventable lifestyle conditions',
-  },
-]
-
 export const wellnessPackages: WellnessPackage[] = [
   {
     id: 'bronze',
@@ -360,27 +338,22 @@ export const processSteps: ProcessStep[] = [
   {
     title: 'Book a Consultation',
     description:
-      'Contact OccUhealth to discuss your organisation\'s needs, headcount and preferred package. We provide a tailored quote and sign a Data Processing Agreement before any clinic takes place.',
+      'Book a consultation with OccUhealth to discuss your organisation\'s occupational health requirements, workforce profile and priorities.',
   },
   {
-    title: 'We Plan Your Clinic',
+    title: 'Tailor Your Programme',
     description:
-      'We confirm your room requirements, send employee information sheets and set the clinic schedule with appointment slots depending on package.',
+      'Speak with our team to create an occupational health programme tailored to your organisation\'s needs, risks and working environment.',
   },
   {
-    title: 'Clinic Day',
+    title: 'Plan & Deliver',
     description:
-      'Our clinicians arrive onsite, set up a private confidential screening area and conduct individual assessments using pre-calibrated, quality-controlled equipment.',
+      'We coordinate appointments, onsite clinics, referrals and documentation, delivering services nationwide with minimal disruption.',
   },
   {
-    title: 'Results Delivered',
+    title: 'Review & Support',
     description:
-      'Employees receive their personal wellness summary on the day. Your anonymised employer report is delivered within 10 working days of the clinic.',
-  },
-  {
-    title: 'Act on the Insights',
-    description:
-      'Use your tailored recommendations to design targeted wellbeing interventions, support your HR strategy and evidence your ESG commitments.',
+      'Receive clear clinical guidance and management reporting, with ongoing case support as your organisation\'s needs evolve.',
   },
 ]
 
