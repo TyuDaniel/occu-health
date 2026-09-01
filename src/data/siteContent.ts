@@ -1,14 +1,18 @@
 import type { LucideIcon } from 'lucide-react'
 import {
+  Activity,
+  AudioLines,
   BadgeCheck,
   BarChart3,
+  Brain,
   ClipboardList,
   GraduationCap,
-  HeartPulse,
   LockKeyhole,
   MapPin,
+  PersonStanding,
   ShieldCheck,
   Stethoscope,
+  TestTubes,
 } from 'lucide-react'
 
 export type Service = {
@@ -31,20 +35,11 @@ export type ProcessStep = {
   description: string
 }
 
-export type WellnessPackage = {
-  id: 'bronze' | 'silver' | 'gold'
-  name: string
-  duration: string
+export type WellnessCapability = {
   title: string
-  tone: 'bronze' | 'silver' | 'gold'
-}
-
-export type PackageRow = {
-  label: string
-  group?: string
-  bronze: boolean
-  silver: boolean
-  gold: boolean
+  description: string
+  examples: string
+  icon: LucideIcon
 }
 
 export const images = {
@@ -54,8 +49,7 @@ export const images = {
 export const navLinks = [
   { label: 'Who We Are', href: '#who-we-are' },
   { label: 'Services', href: '#services' },
-  { label: 'Wellness', href: '#wellness' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Occupational Health', href: '#wellness' },
 ]
 
 export const services: Service[] = [
@@ -90,19 +84,6 @@ export const services: Service[] = [
     featured: true,
   },
   {
-    id: 'compliance',
-    title: 'Statutory Compliance',
-    description:
-      'Fully compliant with Irish, European and global legislative frameworks.',
-    points: [
-      'Safety, Health & Welfare at Work Act',
-      'Chemical Regulations',
-      'EU Occupational Safety and Health Directives',
-      'REACH',
-    ],
-    icon: BadgeCheck,
-  },
-  {
     id: 'ehs',
     title: 'Environmental Health & Safety',
     description:
@@ -115,18 +96,6 @@ export const services: Service[] = [
       'Incident investigation',
     ],
     icon: ShieldCheck,
-  },
-  {
-    id: 'wellbeing',
-    title: 'Workforce Wellbeing Programmes',
-    description:
-      'Evidence based wellbeing initiatives that strengthen employee resilience, engagement and long-term performance.',
-    points: [
-      'Employee resilience',
-      'Engagement',
-      'Long-term performance',
-    ],
-    icon: HeartPulse,
   },
   {
     id: 'advisory',
@@ -215,122 +184,48 @@ export const wellnessFeatures: Feature[] = [
   },
 ]
 
-export const wellnessPackages: WellnessPackage[] = [
+export const wellnessCapabilities: WellnessCapability[] = [
   {
-    id: 'bronze',
-    name: 'Bronze',
-    duration: '15 minutes per employee',
-    title: 'Essential Health',
-    tone: 'bronze',
+    title: 'Core health checks',
+    description:
+      'Practical, clinician-led checks that give employees a clear picture of their current health.',
+    examples: 'Blood pressure, pulse, oxygen saturation, BMI and lifestyle review',
+    icon: Activity,
   },
   {
-    id: 'silver',
-    name: 'Silver',
-    duration: '20-25 minutes per employee',
-    title: 'Enhanced Screening + Blood Tests',
-    tone: 'silver',
+    title: 'Clinical screening',
+    description:
+      'Targeted testing selected around workforce demographics, workplace risks and programme goals.',
+    examples: 'Cholesterol, glucose, phlebotomy, cardiovascular risk and ECG',
+    icon: TestTubes,
   },
   {
-    id: 'gold',
-    name: 'Gold',
-    duration: '30-45 minutes per employee',
-    title: 'Premium OH-Led Programme',
-    tone: 'gold',
-  },
-]
-
-export const packageRows: PackageRow[] = [
-  {
-    label: 'Blood pressure, pulse and oxygen saturation',
-    bronze: true,
-    silver: true,
-    gold: true,
+    title: 'Hearing & respiratory health',
+    description:
+      'Role-appropriate surveillance and testing for teams exposed to noise, dust or respiratory hazards.',
+    examples: 'Audiometry, hearing checks and spirometry',
+    icon: AudioLines,
   },
   {
-    label: 'Height, weight and BMI',
-    bronze: true,
-    silver: true,
-    gold: true,
+    title: 'Musculoskeletal support',
+    description:
+      'Early identification of physical strain, with practical guidance employees and managers can act on.',
+    examples: 'Musculoskeletal review, ergonomic assessment and work ability guidance',
+    icon: PersonStanding,
   },
   {
-    label: 'Lifestyle, smoking and alcohol review',
-    bronze: true,
-    silver: true,
-    gold: true,
+    title: 'Mental wellbeing & fatigue',
+    description:
+      'Confidential screening that helps identify patterns early and supports healthier, more resilient teams.',
+    examples: 'Stress, burnout, sleep and fatigue assessment',
+    icon: Brain,
   },
   {
-    label: 'Stress and fatigue screening (PHQ-4)',
-    bronze: true,
-    silver: true,
-    gold: true,
-  },
-  {
-    label: 'Personal wellness summary and anonymous employer trend report',
-    bronze: true,
-    silver: true,
-    gold: true,
-  },
-  {
-    group: 'Everything in Bronze, plus:',
-    label: 'Finger-prick cholesterol and glucose (POCT)',
-    bronze: false,
-    silver: true,
-    gold: true,
-  },
-  {
-    label: 'Cardiovascular risk assessment (SCORE2)',
-    bronze: false,
-    silver: true,
-    gold: true,
-  },
-  {
-    label: 'Expanded mental wellbeing and burnout review',
-    bronze: false,
-    silver: true,
-    gold: true,
-  },
-  {
-    label: 'Sleep and fatigue assessment',
-    bronze: false,
-    silver: true,
-    gold: true,
-  },
-  {
-    group: 'Everything in Silver, plus:',
-    label: '12-lead ECG (heart tracing)',
-    bronze: false,
-    silver: false,
-    gold: true,
-  },
-  {
-    label: 'Spirometry / lung function testing',
-    bronze: false,
-    silver: false,
-    gold: true,
-  },
-  {
-    label: 'Musculoskeletal and ergonomic assessment',
-    bronze: false,
-    silver: false,
-    gold: true,
-  },
-  {
-    label: 'OH Nurse consultation and work ability review',
-    bronze: false,
-    silver: false,
-    gold: true,
-  },
-  {
-    label: 'Individual wellness action plan',
-    bronze: false,
-    silver: false,
-    gold: true,
-  },
-  {
-    label: 'Executive wellbeing report and ESG metrics',
-    bronze: false,
-    silver: false,
-    gold: true,
+    title: 'Insight & action planning',
+    description:
+      'Useful outputs for individuals and decision-makers, without compromising employee confidentiality.',
+    examples: 'Personal summaries, anonymised trends, action plans and management reporting',
+    icon: BarChart3,
   },
 ]
 

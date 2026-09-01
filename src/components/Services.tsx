@@ -1,92 +1,77 @@
-import { Check, ChevronDown } from 'lucide-react'
-import { useState } from 'react'
-import { complianceNote, services } from '../data/siteContent'
+import { Check } from 'lucide-react'
+import { services } from '../data/siteContent'
 import { ProcessTimeline } from './ProcessTimeline'
 import { Reveal } from './Reveal'
 
+const featuredServiceCopy = {
+  'occupational-health': {
+    headline:
+      'Protect employee health and make confident fitness-for-work decisions.',
+    summary:
+      "Clinical clarity around a person's health, their role and workplace exposure.",
+  },
+  absence: {
+    headline:
+      'Support employees back to work with fair, practical clinical guidance.',
+    summary:
+      'Impartial support when absence is recurring, complex or long-term.',
+  },
+} as const
+
+const featuredPointIndexes = [0, 1, 2, 4]
+
 export function Services() {
-  const [expandedService, setExpandedService] = useState<string | null>(null)
-
+  const featuredServices = services.filter(
+    (service) => service.id === 'occupational-health' || service.id === 'absence',
+  )
   return (
-    <section className="section section--soft services-section" id="services">
+    <section className="section services-section" id="services">
       <div className="page-shell services-shell">
-        <Reveal className="services-lede">
-          <div className="services-lede__title">
-            <p className="section-label">What We Deliver</p>
-            <h2>
-              Business Health.
-              <span>Made Personal.</span>
-            </h2>
+        <div className="services-frame">
+          <Reveal className="services-intro">
+            <img
+              className="services-intro__photo"
+              src="/images/occuhealth-personal-consultation.webp"
+              alt="An occupational health professional speaking with an employee"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="services-intro__copy">
+              <p>Clinical support for healthier workplaces</p>
+              <h2>Our services</h2>
+              <span>Two connected services, delivered by one clinical team.</span>
+            </div>
+          </Reveal>
+
+          <div className="services-core">
+            {featuredServices.map((service, index) => {
+              const copy =
+                featuredServiceCopy[
+                  service.id as keyof typeof featuredServiceCopy
+                ]
+
+              return (
+                <Reveal
+                  className={`service-feature service-feature--${service.id}`}
+                  delay={index * 80}
+                  key={service.id}
+                >
+                  <p className="service-feature__name">{service.title}</p>
+                  <h3>{copy.headline}</h3>
+                  <p className="service-feature__summary">{copy.summary}</p>
+                  <ul aria-label={`${service.title} services`}>
+                    {featuredPointIndexes.map((pointIndex) => (
+                      <li key={service.points[pointIndex]}>
+                        <Check aria-hidden="true" />
+                        <span>{service.points[pointIndex]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )
+            })}
           </div>
-          <p className="services-lede__copy">
-            Occupational Health, absence management, Environmental Health &
-            Safety, wellbeing and training support in one joined-up service.
-          </p>
-        </Reveal>
-
-        <div className="services-matrix">
-          {services.map((service, index) => {
-            const Icon = service.icon
-
-            return (
-              <Reveal
-                className={`service-panel service-panel--${service.id}${service.featured ? ' service-panel--featured' : ''}${expandedService === service.id ? ' is-expanded' : ''}`}
-                delay={index * 65}
-                key={service.id}
-              >
-                <h3>{service.title}</h3>
-                <div className="service-panel__body">
-                  <div className="service-panel__icon" aria-hidden="true">
-                    <Icon />
-                  </div>
-                  <div className="service-panel__copy">
-                    <p>{service.description}</p>
-                    {service.featured && (
-                      <>
-                        <button
-                          className="service-panel__toggle"
-                          type="button"
-                          aria-expanded={expandedService === service.id}
-                          aria-controls={`${service.id}-details`}
-                          onClick={() =>
-                            setExpandedService((current) =>
-                              current === service.id ? null : service.id,
-                            )
-                          }
-                        >
-                          {expandedService === service.id
-                            ? 'Hide service details'
-                            : 'View service details'}
-                          <ChevronDown aria-hidden="true" />
-                        </button>
-                        <ul
-                          id={`${service.id}-details`}
-                          aria-label={`${service.title} services`}
-                        >
-                          {service.points.map((point) => (
-                            <li key={point}>
-                              <Check aria-hidden="true" />
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            )
-          })}
         </div>
-
-        <Reveal className="services-assurance" delay={180}>
-          <img src="/logos/oo-master-white-transparent.webp" alt="" aria-hidden="true" />
-          <strong>Compliance note</strong>
-          <p>
-            {complianceNote.standards} Fully aligned with Irish, European and
-            global legislative frameworks.
-          </p>
-        </Reveal>
 
         <ProcessTimeline />
       </div>

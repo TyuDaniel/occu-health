@@ -26,9 +26,6 @@
   --brand-blue: #005b9d;
   --brand-lime: #aac334;
   --white: #f6f8f9;
-  --tier-bronze: #e0ad6b;
-  --tier-silver: #e6edf2;
-  --tier-gold: #f2c64f;
   --brand-blue-dark: var(--brand-blue);
   --brand-blue-deep: var(--brand-blue);
   --brand-blue-light: color-mix(in srgb, var(--brand-blue) 72%, var(--white));

@@ -3,7 +3,7 @@ import { ContactCTA } from './components/ContactCTA'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
-import { PackagesSection } from './components/PackagesSection'
+import { TailoredProgrammesSection } from './components/TailoredProgrammesSection'
 import { Services } from './components/Services'
 import { ValueSection } from './components/ValueSection'
 import { WellnessFeature } from './components/WellnessFeature'
@@ -48,7 +48,7 @@ function App() {
         <Services />
         <ValueSection />
         <WellnessFeature />
-        <PackagesSection />
+        <TailoredProgrammesSection />
         <ContactCTA />
       </main>
       <Footer />

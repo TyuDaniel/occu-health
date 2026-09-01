@@ -68,7 +68,7 @@ export function Navbar() {
             href="#contact"
             onClick={() => setMenuOpen(false)}
           >
-            <span>Speak to Our Team</span>
+            <span>Contact</span>
             <ArrowRight aria-hidden="true" />
           </a>
         </div>
