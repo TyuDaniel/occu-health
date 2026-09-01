@@ -18,6 +18,32 @@ export function WellnessFeature() {
           </p>
         </Reveal>
 
+        <Reveal className="wellness-collage" delay={90}>
+          <span className="wellness-collage__brand-ring" aria-hidden="true" />
+
+          <div className="wellness-collage__main">
+            <img
+              src="/images/workplace-wellness-screening.webp"
+              alt="An occupational health clinician reviewing a blood pressure reading with an employee."
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div className="wellness-collage__secondary">
+            <img
+              src="/images/workplace-ergonomic-guidance.webp"
+              alt="A workplace health specialist providing practical ergonomic guidance to an employee."
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </Reveal>
+
         <div className="wellness-grid">
           {wellnessFeatures.map((feature, index) => {
             const Icon = feature.icon

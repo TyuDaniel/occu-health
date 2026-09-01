@@ -3,7 +3,10 @@ import { services } from '../data/siteContent'
 import { ProcessTimeline } from './ProcessTimeline'
 import { Reveal } from './Reveal'
 
-const featuredServiceCopy = {
+const featuredServiceCopy: Record<
+  string,
+  { headline: string; summary: string }
+> = {
   'occupational-health': {
     headline:
       'Protect employee health and make confident fitness-for-work decisions.',
@@ -16,14 +19,26 @@ const featuredServiceCopy = {
     summary:
       'Impartial support when absence is recurring, complex or long-term.',
   },
-} as const
+}
 
-const featuredPointIndexes = [0, 1, 2, 4]
+const serviceGroups: ReadonlyArray<{
+  id: string
+  title: string
+  serviceIds: readonly string[]
+}> = [
+  {
+    id: 'occupational-health',
+    title: 'Occupational Health',
+    serviceIds: ['occupational-health', 'absence'],
+  },
+  {
+    id: 'environmental-health-safety',
+    title: 'Environmental Health & Safety',
+    serviceIds: ['ehs', 'advisory'],
+  },
+] as const
 
 export function Services() {
-  const featuredServices = services.filter(
-    (service) => service.id === 'occupational-health' || service.id === 'absence',
-  )
   return (
     <section className="section services-section" id="services">
       <div className="page-shell services-shell">
@@ -44,29 +59,54 @@ export function Services() {
           </Reveal>
 
           <div className="services-core">
-            {featuredServices.map((service, index) => {
-              const copy =
-                featuredServiceCopy[
-                  service.id as keyof typeof featuredServiceCopy
-                ]
+            {serviceGroups.map((group, groupIndex) => {
+              const groupedServices = services.filter((service) =>
+                group.serviceIds.includes(service.id),
+              )
+              const GroupIcon = groupedServices[0].icon
 
               return (
                 <Reveal
-                  className={`service-feature service-feature--${service.id}`}
-                  delay={index * 80}
-                  key={service.id}
+                  className={`service-group service-group--${group.id}`}
+                  delay={groupIndex * 80}
+                  key={group.id}
                 >
-                  <p className="service-feature__name">{service.title}</p>
-                  <h3>{copy.headline}</h3>
-                  <p className="service-feature__summary">{copy.summary}</p>
-                  <ul aria-label={`${service.title} services`}>
-                    {featuredPointIndexes.map((pointIndex) => (
-                      <li key={service.points[pointIndex]}>
-                        <Check aria-hidden="true" />
-                        <span>{service.points[pointIndex]}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="service-group__heading">
+                    <span className="service-group__icon" aria-hidden="true">
+                      <GroupIcon />
+                    </span>
+                    <h3>{group.title}</h3>
+                  </div>
+
+                  <div className="service-group__services">
+                    {groupedServices.map((service) => {
+                      const featuredCopy = featuredServiceCopy[service.id]
+
+                      return (
+                        <article className="service-entry" key={service.id}>
+                          <h4>{service.title}</h4>
+                          {featuredCopy ? (
+                            <>
+                              <p className="service-entry__headline">
+                                {featuredCopy.headline}
+                              </p>
+                              <p>{featuredCopy.summary}</p>
+                            </>
+                          ) : (
+                            <p>{service.description}</p>
+                          )}
+                          <ul aria-label={`${service.title} services`}>
+                            {service.points.map((point) => (
+                              <li key={point}>
+                                <Check aria-hidden="true" />
+                                <span>{point}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </article>
+                      )
+                    })}
+                  </div>
                 </Reveal>
               )
             })}
