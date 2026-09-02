@@ -3,6 +3,8 @@ import { ContactCTA } from './components/ContactCTA'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
+import { ProcessTimeline } from './components/ProcessTimeline'
+import { SectionTransition } from './components/SectionTransition'
 import { TailoredProgrammesSection } from './components/TailoredProgrammesSection'
 import { Services } from './components/Services'
 import { ValueSection } from './components/ValueSection'
@@ -44,11 +46,19 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <SectionTransition tone="blue-to-light" />
         <WhoWeAre />
+        <SectionTransition tone="light-to-blue" flip />
         <Services />
+        <SectionTransition tone="light-to-blue" />
         <ValueSection />
+        <SectionTransition tone="light-to-light" flip />
         <WellnessFeature />
+        <SectionTransition tone="blue-to-blue" />
         <TailoredProgrammesSection />
+        <SectionTransition tone="split-to-light" flip />
+        <ProcessTimeline />
+        <SectionTransition tone="light-to-blue" />
         <ContactCTA />
       </main>
       <Footer />

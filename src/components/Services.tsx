@@ -1,6 +1,5 @@
 import { Check } from 'lucide-react'
 import { services } from '../data/siteContent'
-import { ProcessTimeline } from './ProcessTimeline'
 import { Reveal } from './Reveal'
 
 const featuredServiceCopy: Record<
@@ -107,7 +106,6 @@ export function Services() {
           </Reveal>
         </div>
 
-        <ProcessTimeline />
       </div>
     </section>
   )
