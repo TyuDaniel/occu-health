@@ -21,22 +21,8 @@ const featuredServiceCopy: Record<
   },
 }
 
-const serviceGroups: ReadonlyArray<{
-  id: string
-  title: string
-  serviceIds: readonly string[]
-}> = [
-  {
-    id: 'occupational-health',
-    title: 'Occupational Health',
-    serviceIds: ['occupational-health', 'absence'],
-  },
-  {
-    id: 'environmental-health-safety',
-    title: 'Environmental Health & Safety',
-    serviceIds: ['ehs', 'advisory'],
-  },
-] as const
+const primaryServices = services.filter((service) => service.featured)
+const supportingServices = services.filter((service) => !service.featured)
 
 export function Services() {
   return (
@@ -58,59 +44,67 @@ export function Services() {
             </div>
           </Reveal>
 
-          <div className="services-core">
-            {serviceGroups.map((group, groupIndex) => {
-              const groupedServices = services.filter((service) =>
-                group.serviceIds.includes(service.id),
-              )
-              const GroupIcon = groupedServices[0].icon
+          <div className="services-core services-primary">
+            {primaryServices.map((service, index) => {
+              const Icon = service.icon
+              const copy = featuredServiceCopy[service.id]
 
               return (
                 <Reveal
-                  className={`service-group service-group--${group.id}`}
-                  delay={groupIndex * 80}
-                  key={group.id}
+                  className={`service-feature service-feature--${service.id}`}
+                  delay={index * 80}
+                  key={service.id}
                 >
-                  <div className="service-group__heading">
-                    <span className="service-group__icon" aria-hidden="true">
-                      <GroupIcon />
+                  <div className="service-feature__heading">
+                    <span className="service-feature__icon" aria-hidden="true">
+                      <Icon />
                     </span>
-                    <h3>{group.title}</h3>
+                    <p className="service-feature__name">{service.title}</p>
                   </div>
-
-                  <div className="service-group__services">
-                    {groupedServices.map((service) => {
-                      const featuredCopy = featuredServiceCopy[service.id]
-
-                      return (
-                        <article className="service-entry" key={service.id}>
-                          <h4>{service.title}</h4>
-                          {featuredCopy ? (
-                            <>
-                              <p className="service-entry__headline">
-                                {featuredCopy.headline}
-                              </p>
-                              <p>{featuredCopy.summary}</p>
-                            </>
-                          ) : (
-                            <p>{service.description}</p>
-                          )}
-                          <ul aria-label={`${service.title} services`}>
-                            {service.points.map((point) => (
-                              <li key={point}>
-                                <Check aria-hidden="true" />
-                                <span>{point}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </article>
-                      )
-                    })}
-                  </div>
+                  <h3>{copy.headline}</h3>
+                  <p className="service-feature__summary">{copy.summary}</p>
+                  <ul aria-label={`${service.title} services`}>
+                    {service.points.map((point) => (
+                      <li key={point}>
+                        <Check aria-hidden="true" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </Reveal>
               )
             })}
           </div>
+
+          <Reveal className="services-supporting" delay={100}>
+            <div className="services-supporting__intro">
+              <p>Supporting services</p>
+              <h3>Connected expertise when your programme needs it.</h3>
+            </div>
+
+            <div className="services-supporting__items">
+              {supportingServices.map((service) => {
+                const Icon = service.icon
+
+                return (
+                  <article className="supporting-service" key={service.id}>
+                    <span className="supporting-service__icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <div>
+                      <h4>{service.title}</h4>
+                      <p>{service.description}</p>
+                      <ul aria-label={`${service.title} includes`}>
+                        {service.points.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </Reveal>
         </div>
 
         <ProcessTimeline />
