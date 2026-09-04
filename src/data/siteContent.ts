@@ -7,8 +7,6 @@ import {
   Brain,
   ClipboardList,
   GraduationCap,
-  LockKeyhole,
-  MapPin,
   PersonStanding,
   ShieldCheck,
   Stethoscope,
@@ -19,20 +17,9 @@ export type Service = {
   id: string
   title: string
   description: string
-  points: string[]
+  items: Array<{ title: string; description: string }>
   icon: LucideIcon
-  featured?: boolean
-}
-
-export type Feature = {
-  title: string
-  description: string
-  icon: LucideIcon
-}
-
-export type ProcessStep = {
-  title: string
-  description: string
+  image?: { src: string; alt: string }
 }
 
 export type WellnessCapability = {
@@ -43,13 +30,13 @@ export type WellnessCapability = {
 }
 
 export const images = {
-  hero: '/images/occupational-health-hero.webp',
+  hero: '/images/value-workplace-partnership.webp',
 }
 
 export const navLinks = [
   { label: 'Who We Are', href: '#who-we-are' },
   { label: 'Services', href: '#services' },
-  { label: 'Occupational Health', href: '#wellness' },
+  { label: 'Workforce Wellbeing', href: '#workforce-wellbeing' },
 ]
 
 export const services: Service[] = [
@@ -57,58 +44,75 @@ export const services: Service[] = [
     id: 'occupational-health',
     title: 'Occupational Health Management',
     description:
-      'Clinician-led occupational health support that protects employees, helps employers meet their duties and enables clear, evidence-based decisions about fitness for work.',
-    points: [
-      'Pre-employment and pre-placement health screening',
-      'Fitness-for-work and return-to-work assessments',
-      'Role-specific health surveillance, including audiometry, spirometry and vision screening',
-      'Phlebotomy and other clinically indicated screening services',
-      'Clear clinical guidance and practical workplace recommendations',
+      'Clinician-led Occupational Health services that support employee health, attendance and productivity while helping employers meet their legal and duty-of-care responsibilities.',
+    items: [
+      { title: 'Pre-employment & fitness-for-work assessments', description: 'Assessing an employee’s health in relation to the requirements of their role, including fitness for specific duties and workplace environments.' },
+      { title: 'Absence & case management', description: 'Independent clinical assessments and practical recommendations to support employees experiencing illness, injury or prolonged absence.' },
+      { title: 'Return-to-work assessments', description: 'Supporting safe and sustainable returns following illness, injury, surgery or extended absence, with recommendations for reasonable adjustments where appropriate.' },
+      { title: 'Medical surveillance', description: 'Tailored health surveillance programmes designed around workplace risks and regulatory requirements, including respiratory and lung function testing, hearing and vision screening, occupational blood testing, skin assessments, vaccinations and other role-specific health assessments.' },
+      { title: 'Statutory & regulatory compliance', description: 'Supporting employers in meeting occupational health and workplace health requirements through appropriate assessment, surveillance and documentation.' },
+      { title: 'Health assessments & referrals', description: 'Confidential clinical assessments designed around the individual employee and the demands of their role.' },
+      { title: 'Workplace health advice', description: 'Accessible clinical guidance for managers and HR teams on health-related workplace matters.' },
     ],
     icon: Stethoscope,
-    featured: true,
+    image: {
+      src: '/images/occuhealth-personal-consultation.webp',
+      alt: 'A workplace health conversation taking place on site.',
+    },
   },
   {
-    id: 'absence',
-    title: 'Absence & Case Management',
-    description:
-      'Structured clinical support for short-term, recurring and long-term absence, giving employees an appropriate route back to work and managers clear, impartial guidance.',
-    points: [
-      'Early intervention and clinical case review',
-      'Support for recurring, complex and long-term absence',
-      'Return-to-work planning and workplace adjustments',
-      'Functional recommendations for fair, informed HR decisions',
-      'Ongoing review and case coordination where required',
-    ],
-    icon: ClipboardList,
-    featured: true,
-  },
-  {
-    id: 'ehs',
+    id: 'environmental-health-safety',
     title: 'Environmental Health & Safety',
     description:
-      'Risk assessments, DSE assessments, safety statements, EHS audits and incident investigation, seamlessly integrated with your occupational health programme.',
-    points: [
-      'Risk assessments',
-      'DSE assessments',
-      'Safety statements',
-      'EHS audits',
-      'Incident investigation',
+      'Practical workplace assessments that identify risks, protect employees and help organisations maintain a safe and compliant working environment.',
+    items: [
+      { title: 'Noise assessments', description: 'Identifying workplace noise risks and recommending appropriate control measures to protect employees.' },
+      { title: 'Radon assessments', description: 'Workplace radon testing and assessment to identify potential exposure and support appropriate mitigation.' },
+      { title: 'Air quality assessments', description: 'Assessing workplace environmental conditions and identifying potential risks affecting employee health.' },
+      { title: 'DSE/VDU assessments', description: 'Display Screen Equipment assessments to identify ergonomic risks and support healthier, more comfortable working environments.' },
+      { title: 'Ergonomic assessments', description: 'Practical recommendations to reduce musculoskeletal risks and improve workplace set-up.' },
+      { title: 'Workplace risk assessments', description: 'Identifying hazards, evaluating risk and recommending appropriate control measures.' },
+      { title: 'Health & safety audits', description: 'Reviewing workplace practices and documentation to identify areas for improvement.' },
+      { title: 'Audit & inspection preparation', description: 'Supporting organisations in preparing for internal and external health & safety audits and inspections.' },
     ],
-    icon: ShieldCheck,
+    icon: ClipboardList,
+    image: {
+      src: '/images/workplace-safety-inspection.png',
+      alt: 'A safety specialist reviewing equipment in an industrial workplace.',
+    },
   },
   {
-    id: 'advisory',
-    title: 'Strategic Advisory, Workshops & Training',
+    id: 'strategic-advisory-training',
+    title: 'Strategic Advisory & Training',
     description:
-      'Expert consultancy, policy development, training, and tailored workshops for managers and employees, designed to align with your organisation\'s culture and specific risk profile.',
-    points: [
-      'Expert consultancy',
-      'Policy development',
-      'Training',
-      'Tailored workshops',
+      'Expert advice, policy development and practical training that help organisations embed health, safety and wellbeing into everyday business practices.',
+    items: [
+      { title: 'Policy development & review', description: 'Developing practical workplace health, safety and wellbeing policies that reflect your organisation and its specific risks.' },
+      { title: 'Health & safety training', description: 'Practical training including First Aid, Manual Handling, DSE, Fire Safety, and other workplace health and safety courses.' },
+      { title: 'Toolbox talks', description: 'Short, focused sessions addressing specific workplace hazards, safe working practices and key health and safety topics.' },
+      { title: 'Management training', description: 'Equipping managers with the knowledge and confidence to manage workplace health, absence, employee wellbeing and safety effectively.' },
+      { title: 'Employee training', description: 'Practical training designed to improve awareness, encourage safer working practices and support employee health.' },
+      { title: 'Tailored workshops', description: 'Interactive sessions developed around your workforce, industry and organisational priorities.' },
+      { title: 'Strategic occupational health consultancy', description: 'Providing expert guidance to help organisations develop effective occupational health strategies.' },
+      { title: 'Health & wellbeing strategy', description: 'Helping organisations move from reactive health management towards a more proactive approach to workforce health.' },
+      { title: 'Workplace health reviews', description: 'Reviewing existing processes and identifying opportunities to improve employee health, compliance and organisational outcomes.' },
     ],
     icon: GraduationCap,
+  },
+  {
+    id: 'workforce-wellbeing',
+    title: 'Workforce Wellbeing',
+    description:
+      'Evidence-based workplace wellbeing programmes designed to promote healthier employees, improve engagement and support long-term workforce health.',
+    items: [
+      { title: 'Onsite wellbeing screening', description: 'Convenient workplace health checks designed to give employees greater insight into key health indicators. Flexible packages that can be tailored to the size, needs and priorities of your workforce.' },
+      { title: 'Workforce wellbeing programmes', description: 'Structured programmes supporting physical health, lifestyle and overall employee wellbeing.' },
+      { title: 'Health promotion initiatives', description: 'Targeted campaigns and initiatives designed to raise awareness around key health topics.' },
+      { title: 'Employee engagement initiatives', description: 'Interactive workplace activities that encourage participation and help make wellbeing part of workplace culture.' },
+      { title: 'Resilience & stress management', description: 'Workshops and initiatives supporting employees in managing workplace pressures and maintaining resilience.' },
+      { title: 'Health awareness days', description: 'Onsite events focused on specific health topics and designed to encourage employee engagement.' },
+    ],
+    icon: Activity,
   },
 ]
 
@@ -157,33 +161,6 @@ export const keyOutcomes = [
   },
 ]
 
-export const wellnessFeatures: Feature[] = [
-  {
-    title: 'Clinician-Led',
-    description:
-      'Every assessment is delivered by registered Occupational Health Specialists and trained clinicians, not generic wellness vendors.',
-    icon: Stethoscope,
-  },
-  {
-    title: 'GDPR Guaranteed',
-    description:
-      'Individual results are strictly confidential. Employers receive only anonymised, group-level reports. Zero individual data sharing.',
-    icon: LockKeyhole,
-  },
-  {
-    title: 'Actionable Insights',
-    description:
-      'Your anonymous employer report benchmarks your workforce against national Irish data (Healthy Ireland / SLAN) and provides prioritised recommendations.',
-    icon: BarChart3,
-  },
-  {
-    title: 'Onsite Delivery',
-    description:
-      'We come to you. Our clinicians set up a fully equipped screening clinic at your premises, with minimal disruption and maximum uptake.',
-    icon: MapPin,
-  },
-]
-
 export const wellnessCapabilities: WellnessCapability[] = [
   {
     title: 'Core health checks',
@@ -226,29 +203,6 @@ export const wellnessCapabilities: WellnessCapability[] = [
       'Useful outputs for individuals and decision-makers, without compromising employee confidentiality.',
     examples: 'Personal summaries, anonymised trends, action plans and management reporting',
     icon: BarChart3,
-  },
-]
-
-export const processSteps: ProcessStep[] = [
-  {
-    title: 'Book a Consultation',
-    description:
-      'Book a consultation with OccUhealth to discuss your organisation\'s occupational health requirements, workforce profile and priorities.',
-  },
-  {
-    title: 'Tailor Your Programme',
-    description:
-      'Speak with our team to create an occupational health programme tailored to your organisation\'s needs, risks and working environment.',
-  },
-  {
-    title: 'Plan & Deliver',
-    description:
-      'We coordinate appointments, onsite clinics, referrals and documentation, delivering services nationwide with minimal disruption.',
-  },
-  {
-    title: 'Review & Support',
-    description:
-      'Receive clear clinical guidance and management reporting, with ongoing case support as your organisation\'s needs evolve.',
   },
 ]
 

@@ -38,15 +38,17 @@ export function WhoWeAre() {
         </Reveal>
 
         <Reveal className="who-orbit" delay={140}>
-          <div className="who-orbit__frame">
-            <img
-              src="/images/value-workplace-partnership.webp"
-              alt="An occupational health clinician discussing workplace health with an employee."
-              width="1918"
-              height="820"
-              loading="lazy"
-              decoding="async"
-            />
+          <div className="who-orbit__visual">
+            <div className="who-orbit__frame">
+              <img
+                src="/images/sharon-cathy-founders.jpg"
+                alt="Sharon Cleary and Cathy O’Reilly, co-founders and directors of OccUhealth Ireland."
+                width="640"
+                height="428"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
         </Reveal>
       </div>

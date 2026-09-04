@@ -25,7 +25,7 @@
 :root {
   --brand-blue: #005b9d;
   --brand-lime: #aac334;
-  --white: #f6f8f9;
+  --white: #ffffff;
   --brand-blue-dark: var(--brand-blue);
   --brand-blue-deep: var(--brand-blue);
   --brand-blue-light: color-mix(in srgb, var(--brand-blue) 72%, var(--white));

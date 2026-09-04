@@ -15,7 +15,7 @@ export function Footer() {
           <h2>Navigation</h2>
           <a href="#who-we-are">Who We Are</a>
           <a href="#services">Services</a>
-          <a href="#wellness">Wellness</a>
+          <a href="#workforce-wellbeing">Workforce Wellbeing</a>
           <a href="#contact">Contact</a>
         </nav>
 

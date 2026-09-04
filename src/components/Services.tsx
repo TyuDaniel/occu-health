@@ -1,111 +1,58 @@
-import { Check } from 'lucide-react'
 import { services } from '../data/siteContent'
 import { Reveal } from './Reveal'
-
-const featuredServiceCopy: Record<
-  string,
-  { headline: string; summary: string }
-> = {
-  'occupational-health': {
-    headline:
-      'Protect employee health and make confident fitness-for-work decisions.',
-    summary:
-      "Clinical clarity around a person's health, their role and workplace exposure.",
-  },
-  absence: {
-    headline:
-      'Support employees back to work with fair, practical clinical guidance.',
-    summary:
-      'Impartial support when absence is recurring, complex or long-term.',
-  },
-}
-
-const primaryServices = services.filter((service) => service.featured)
-const supportingServices = services.filter((service) => !service.featured)
 
 export function Services() {
   return (
     <section className="section services-section" id="services">
-      <div className="page-shell services-shell">
-        <div className="services-frame">
-          <Reveal className="services-intro">
-            <img
-              className="services-intro__photo"
-              src="/images/occuhealth-personal-consultation.webp"
-              alt="An occupational health professional speaking with an employee"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="services-intro__copy">
-              <p>Clinical support for healthier workplaces</p>
-              <h2>Our services</h2>
-              <span>Two connected services, delivered by one clinical team.</span>
-            </div>
-          </Reveal>
+      <Reveal className="services-intro">
+        <img
+          className="services-intro__brand-o"
+          src="/logos/oo-master-white-transparent.webp"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="page-shell services-intro__copy">
+          <p>Clinical support for healthier workplaces</p>
+          <h2>Our services</h2>
+          <span>Occupational health, safety, strategic support and wellbeing — brought together around your organisation.</span>
+        </div>
+      </Reveal>
 
-          <div className="services-core services-primary">
-            {primaryServices.map((service, index) => {
-              const Icon = service.icon
-              const copy = featuredServiceCopy[service.id]
+      <div className="services-rows">
+        {services.map((service, index) => {
+          const Icon = service.icon
 
-              return (
-                <Reveal
-                  className={`service-feature service-feature--${service.id}`}
-                  delay={index * 80}
-                  key={service.id}
-                >
-                  <div className="service-feature__heading">
-                    <span className="service-feature__icon" aria-hidden="true">
-                      <Icon />
-                    </span>
-                    <p className="service-feature__name">{service.title}</p>
-                  </div>
-                  <h3>{copy.headline}</h3>
-                  <p className="service-feature__summary">{copy.summary}</p>
+          return (
+            <article
+              className={`service-row service-row--${index + 1}`}
+              id={service.id}
+              key={service.id}
+            >
+              <div className="page-shell service-row__layout">
+                <Reveal className="service-row__intro" delay={Math.min(index * 45, 150)}>
+                  <span className="service-row__icon" aria-hidden="true"><Icon /></span>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  {service.image && (
+                    <figure className="service-row__media">
+                      <img src={service.image.src} alt={service.image.alt} loading="lazy" />
+                    </figure>
+                  )}
+                </Reveal>
+                <Reveal className="service-row__items" delay={Math.min(index * 45 + 70, 220)}>
                   <ul aria-label={`${service.title} services`}>
-                    {service.points.map((point) => (
-                      <li key={point}>
-                        <Check aria-hidden="true" />
-                        <span>{point}</span>
+                    {service.items.map((item) => (
+                      <li key={item.title}>
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
                       </li>
                     ))}
                   </ul>
                 </Reveal>
-              )
-            })}
-          </div>
-
-          <Reveal className="services-supporting" delay={100}>
-            <div className="services-supporting__intro">
-              <p>Supporting services</p>
-              <h3>Connected expertise when your programme needs it.</h3>
-            </div>
-
-            <div className="services-supporting__items">
-              {supportingServices.map((service) => {
-                const Icon = service.icon
-
-                return (
-                  <article className="supporting-service" key={service.id}>
-                    <span className="supporting-service__icon" aria-hidden="true">
-                      <Icon />
-                    </span>
-                    <div>
-                      <h4>{service.title}</h4>
-                      <p>{service.description}</p>
-                      <ul aria-label={`${service.title} includes`}>
-                        {service.points.map((point) => (
-                          <li key={point}>{point}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                )
-              })}
-            </div>
-          </Reveal>
-        </div>
-
+              </div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )

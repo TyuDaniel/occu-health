@@ -7,7 +7,7 @@ export function Hero() {
       <img
         className="hero-section__image"
         src={images.hero}
-        alt="A medical professional speaking with a patient in an office consultation room."
+        alt="Occupational health and safety professionals carrying out an onsite workplace review."
         fetchPriority="high"
       />
       <div className="hero-section__overlay" aria-hidden="true" />
