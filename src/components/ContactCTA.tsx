@@ -19,16 +19,13 @@ export function ContactCTA() {
               alt="OccUhealth"
               loading="lazy"
             />
-            <p className="section-label">OccUhealth Ireland</p>
             <h2>
               Get
               <span>In Touch</span>
             </h2>
             <p>
-              Ready to make OccUhealth your preferred Occupational Health &
-              Safety partner? Speak to our team today, we'd love to understand
-              your challenges and show you what fully integrated Occupational
-              Health and EHS can deliver for your organisation.
+              Speak directly with the specialist team behind your Occupational
+              Health, EHS and workforce wellbeing programme.
             </p>
             <a className="button button--lime" href="mailto:enquiries@occuhealth.ie">
               Start the Conversation <ArrowRight aria-hidden="true" />
@@ -67,24 +64,18 @@ export function ContactCTA() {
             </address>
 
             <div className="contact-team-note">
-              <p className="contact-team-note__label">Led by qualified occupational health nurses</p>
+              <p className="contact-team-note__label">Led by qualified occupational health specialists</p>
               <p>
-                Speak directly with the clinical team behind your Occupational
-                Health, EHS and workforce wellbeing programme.
+                Ready to make OccUhealth your preferred Occupational Health &amp;
+                Safety partner? Speak to our team today. We&apos;d love to understand
+                your challenges and show you what fully integrated Occupational
+                Health and EHS can deliver for your organisation.
               </p>
             </div>
 
             <div className="contact-people-list">
               {contactPeople.map((person) => (
                 <article className="contact-person" key={person.name}>
-                  <div className="contact-person__photo">
-                    <img
-                      src={person.image}
-                      alt={`${person.name}, ${person.role}`}
-                      loading="lazy"
-                      style={{ objectPosition: person.imagePosition }}
-                    />
-                  </div>
                   <div className="contact-person__body">
                     <p>{person.role}</p>
                     <h3>{person.name}</h3>

@@ -5,7 +5,6 @@ export function WhoWeAre() {
     <section className="section section--white" id="who-we-are">
       <div className="page-shell who-grid">
         <Reveal className="who-type">
-          <p className="section-label">Who Are We?</p>
           <h2>
             One partner.
             <span>Complete coverage.</span>

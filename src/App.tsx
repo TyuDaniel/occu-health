@@ -8,6 +8,7 @@ import { Services } from './components/Services'
 import { ValueSection } from './components/ValueSection'
 import { WhoWeAre } from './components/WhoWeAre'
 import './App.css'
+import './redesign.css'
 
 function App() {
   useEffect(() => {

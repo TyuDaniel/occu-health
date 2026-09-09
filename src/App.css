@@ -3,6 +3,7 @@
   margin-inline: auto;
 }
 
+
 .section {
   position: relative;
   display: grid;
@@ -2991,7 +2992,7 @@
 
 #who-we-are .who-type h2 {
   max-width: 10ch;
-  margin-top: 14px;
+  margin-top: 0;
   font-size: clamp(2.75rem, 4.1vw, 4.35rem);
   line-height: 0.98;
 }
@@ -4482,5 +4483,82 @@
       width: 3px;
       height: 100%;
     }
+  }
+}
+
+/* Final cascade for the redesigned services and footer. */
+.services-section {
+  padding: clamp(64px, 7vw, 104px) 0 0;
+  color: var(--brand-blue);
+  background: var(--white);
+}
+
+.site-footer {
+  color: var(--brand-blue);
+  background: var(--white);
+}
+
+.site-footer .footer-brand p {
+  max-width: 36ch;
+  margin-top: 18px;
+  color: var(--brand-blue);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.site-footer h2 {
+  margin-bottom: 16px;
+  color: var(--brand-blue);
+  font-size: 0.95rem;
+}
+
+.site-footer nav,
+.site-footer address {
+  display: flex;
+  flex-direction: column;
+  align-content: initial;
+  gap: 10px;
+}
+
+.site-footer a,
+.site-footer .footer-grid p,
+.site-footer .footer-email,
+.site-footer .footer-email span {
+  color: var(--brand-blue);
+}
+
+.site-footer .footer-grid {
+  grid-template-columns: 0.7fr 1.25fr 1fr 1.15fr;
+  gap: clamp(30px, 4vw, 64px);
+  padding: clamp(40px, 4.5vw, 64px) 0;
+}
+
+.site-footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0 28px;
+  border-top: 1px solid var(--border-light);
+  color: var(--brand-blue);
+}
+
+@media (max-width: 1050px) {
+  .site-footer .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
   }
 }

@@ -1,45 +1,63 @@
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { Logo } from './Logo'
+
+const serviceLinks = [
+  ['Occupational Health', '#occupational-health'],
+  ['Environmental Health & Safety', '#environmental-health-safety'],
+  ['Strategic Advisory & Training', '#strategic-advisory-training'],
+  ['Workforce Wellbeing', '#workforce-wellbeing'],
+]
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
     <footer className="site-footer">
-      <div className="page-shell footer-grid">
+      <div className="page-shell footer-lead">
         <div className="footer-brand">
-          <Logo variant="inverse" />
-          <p>Occupational Health, Environmental Health & Safety Specialists</p>
+          <Logo />
+          <p>Occupational Health, Environmental Health &amp; Safety Specialists.</p>
         </div>
+        <a className="footer-email" href="mailto:enquiries@occuhealth.ie">
+          <span>Start a conversation</span>
+          enquiries@occuhealth.ie
+          <ArrowUpRight aria-hidden="true" />
+        </a>
+      </div>
 
+      <div className="page-shell footer-grid">
         <nav aria-label="Footer navigation">
-          <h2>Navigation</h2>
+          <h2>Explore</h2>
           <a href="#who-we-are">Who We Are</a>
           <a href="#services">Services</a>
           <a href="#workforce-wellbeing">Workforce Wellbeing</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <div>
+        <nav aria-label="Service navigation">
           <h2>Services</h2>
-          <p>Occupational Health</p>
-          <p>Environmental Health & Safety</p>
-          <p>Workforce Wellbeing</p>
-          <p>Absence & Case Management</p>
-        </div>
+          {serviceLinks.map(([label, href]) => (
+            <a href={href} key={href}>{label}</a>
+          ))}
+        </nav>
 
-        <address>
+        <address className="footer-contact">
           <h2>Contact</h2>
-          <a href="https://www.occuhealth.ie">www.occuhealth.ie</a>
-          <a href="mailto:enquiries@occuhealth.ie">enquiries@occuhealth.ie</a>
-          <a href="tel:+353838851340">083 885 1340</a>
-          <a href="tel:+353863095495">086 309 5495</a>
-          <span>Vision 85, Portlaoise</span>
-          <span>Platform 94, Mervue Business Park, Galway, H91 D932</span>
+          <a href="tel:+353838851340"><Phone aria-hidden="true" />083 885 1340</a>
+          <a href="tel:+353863095495"><Phone aria-hidden="true" />086 309 5495</a>
+          <a href="mailto:enquiries@occuhealth.ie"><Mail aria-hidden="true" />enquiries@occuhealth.ie</a>
+        </address>
+
+        <address className="footer-offices">
+          <h2>Our offices</h2>
+          <p><MapPin aria-hidden="true" /><span>Vision 85<br />Portlaoise</span></p>
+          <p><MapPin aria-hidden="true" /><span>Platform 94, Mervue Business Park<br />Galway, H91 D932</span></p>
         </address>
       </div>
 
       <div className="page-shell footer-bottom">
         <p>© {year} OccUhealth Ireland</p>
+        <p>Supporting organisations across Ireland.</p>
       </div>
     </footer>
   )

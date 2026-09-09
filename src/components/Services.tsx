@@ -1,51 +1,67 @@
 import { services } from '../data/siteContent'
 import { Reveal } from './Reveal'
 
+const serviceImages = [
+  {
+    src: '/images/occuhealth-personal-consultation.webp',
+    alt: 'An occupational health consultation between a clinician and an employee.',
+    position: 'center',
+  },
+  {
+    src: '/images/workplace-safety-inspection.png',
+    alt: 'A workplace safety specialist carrying out an on-site inspection.',
+    position: 'center',
+  },
+  {
+    src: '/images/workplace-ergonomic-guidance.webp',
+    alt: 'Practical workplace guidance being delivered to an employee.',
+    position: 'center',
+  },
+  {
+    src: '/images/workplace-wellness-screening.webp',
+    alt: 'A clinician carrying out a workplace wellbeing screening.',
+    position: 'center',
+  },
+]
+
 export function Services() {
   return (
     <section className="section services-section" id="services">
-      <Reveal className="services-intro">
-        <img
-          className="services-intro__brand-o"
-          src="/logos/oo-master-white-transparent.webp"
-          alt=""
-          aria-hidden="true"
-        />
-        <div className="page-shell services-intro__copy">
-          <p>Clinical support for healthier workplaces</p>
+      <div className="page-shell services-heading">
+        <Reveal>
           <h2>Our services</h2>
-          <span>Occupational health, safety, strategic support and wellbeing — brought together around your organisation.</span>
-        </div>
-      </Reveal>
+          <p>One trusted partner for healthier, safer workplaces.</p>
+        </Reveal>
+      </div>
 
-      <div className="services-rows">
+      <div className="services-chapters">
         {services.map((service, index) => {
+          const image = serviceImages[index]
           const Icon = service.icon
 
           return (
             <article
-              className={`service-row service-row--${index + 1}`}
+              className={`service-chapter service-chapter--${index + 1}`}
               id={service.id}
               key={service.id}
             >
-              <div className="page-shell service-row__layout">
-                <Reveal className="service-row__intro" delay={Math.min(index * 45, 150)}>
-                  <span className="service-row__icon" aria-hidden="true"><Icon /></span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                  {service.image && (
-                    <figure className="service-row__media">
-                      <img src={service.image.src} alt={service.image.alt} loading="lazy" />
-                    </figure>
-                  )}
+              <div className="page-shell service-chapter__layout">
+                <Reveal className="service-chapter__media" delay={40}>
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading={index > 0 ? 'lazy' : 'eager'}
+                    style={{ objectPosition: image.position }}
+                  />
+                  <span className="service-chapter__icon" aria-hidden="true"><Icon /></span>
                 </Reveal>
-                <Reveal className="service-row__items" delay={Math.min(index * 45 + 70, 220)}>
+
+                <Reveal className="service-chapter__content" delay={120}>
+                  <h3>{service.title}</h3>
+                  <p className="service-chapter__summary">{service.description}</p>
                   <ul aria-label={`${service.title} services`}>
                     {service.items.map((item) => (
-                      <li key={item.title}>
-                        <h4>{item.title}</h4>
-                        <p>{item.description}</p>
-                      </li>
+                      <li key={item.title}>{item.title}</li>
                     ))}
                   </ul>
                 </Reveal>
