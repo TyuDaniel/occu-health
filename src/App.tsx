@@ -14,6 +14,7 @@ import { WhoWeAreImageTreatments } from './components/WhoWeAreImageTreatments'
 import './App.css'
 import './redesign.css'
 import './components/WhoWeAreFinal.css'
+import './brand-alignment.css'
 
 function App() {
   const isWhoWeAreConceptGallery =

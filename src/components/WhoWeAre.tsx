@@ -27,12 +27,19 @@ export function WhoWeAre() {
           <figure>
             <div className="who-final__image">
               <img
+                className="who-final__photo"
                 src="/images/sharon-cathy-founders-centered.webp"
                 alt="Cathy O’Reilly on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland."
                 width="1254"
                 height="1254"
                 loading="lazy"
                 decoding="async"
+              />
+              <img
+                className="who-final__symbol"
+                src="/brand/symbol-blue-slim.svg"
+                alt=""
+                aria-hidden="true"
               />
             </div>
             <figcaption aria-label="OccUhealth co-founders">

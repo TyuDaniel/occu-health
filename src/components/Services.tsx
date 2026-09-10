@@ -5,22 +5,30 @@ const serviceImages = [
   {
     src: '/images/occuhealth-personal-consultation.webp',
     alt: 'An occupational health consultation between a clinician and an employee.',
-    position: 'center',
+    position: '54% center',
+    width: 1500,
+    height: 1000,
   },
   {
-    src: '/images/workplace-safety-inspection.png',
-    alt: 'A workplace safety specialist carrying out an on-site inspection.',
-    position: 'center',
+    src: '/images/ehs-team-on-site.webp',
+    alt: 'Two workplace safety specialists reviewing an on-site inspection together.',
+    position: '32% center',
+    width: 740,
+    height: 400,
   },
   {
     src: '/images/workplace-ergonomic-guidance.webp',
     alt: 'Practical workplace guidance being delivered to an employee.',
-    position: 'center',
+    position: '46% center',
+    width: 1536,
+    height: 1024,
   },
   {
     src: '/images/workplace-wellness-screening.webp',
     alt: 'A clinician carrying out a workplace wellbeing screening.',
     position: 'center',
+    width: 1536,
+    height: 1024,
   },
 ]
 
@@ -43,7 +51,11 @@ export function Services() {
                   <img
                     src={image.src}
                     alt={image.alt}
+                    width={image.width}
+                    height={image.height}
                     loading={index > 0 ? 'lazy' : 'eager'}
+                    decoding="async"
+                    sizes="(max-width: 920px) 100vw, 46vw"
                     style={{ objectPosition: image.position }}
                   />
                   <span className="service-chapter__icon" aria-hidden="true"><Icon /></span>

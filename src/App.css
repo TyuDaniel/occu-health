@@ -43,16 +43,12 @@
 }
 
 .accent {
-  color: var(--brand-blue-deep);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 0.09em;
-  text-underline-offset: 0.1em;
+  color: var(--brand-lime);
+  text-decoration: none;
 }
 
 .section-heading--inverse .accent {
   color: var(--brand-lime-bright);
-  text-decoration-color: color-mix(in srgb, var(--white) 42%, transparent);
 }
 
 .button {
@@ -155,7 +151,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  transition: min-height 220ms var(--ease-out);
+  transition: none;
 }
 
 .site-header.is-scrolled .nav-shell,
@@ -168,7 +164,7 @@
   width: clamp(176px, 15vw, 252px);
   text-decoration: none;
   flex: 0 0 auto;
-  transition: width 220ms var(--ease-out);
+  transition: none;
 }
 
 .site-header.is-scrolled .brand-logo,
@@ -374,11 +370,8 @@
 
 .who-type h2 span {
   display: block;
-  color: var(--brand-blue-deep);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 0.09em;
-  text-underline-offset: 0.1em;
+  color: var(--brand-lime);
+  text-decoration: none;
 }
 
 .who-copy {
@@ -1123,11 +1116,8 @@
 .wellness-intro h2 span,
 .process-heading h2 span {
   display: block;
-  color: var(--brand-blue-deep);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 0.09em;
-  text-underline-offset: 0.1em;
+  color: var(--brand-lime);
+  text-decoration: none;
 }
 
 .wellness-intro > p:last-child {

@@ -25,19 +25,19 @@
 :root {
   --brand-blue: #005b9d;
   --brand-lime: #aac334;
-  --white: #ffffff;
+  --white: #f6f8f9;
   --brand-blue-dark: var(--brand-blue);
   --brand-blue-deep: var(--brand-blue);
-  --brand-blue-light: color-mix(in srgb, var(--brand-blue) 72%, var(--white));
+  --brand-blue-light: var(--brand-blue);
   --brand-lime-bright: var(--brand-lime);
-  --brand-lime-soft: color-mix(in srgb, var(--brand-lime) 20%, var(--white));
+  --brand-lime-soft: var(--brand-lime);
   --pure-white: var(--white);
   --off-white: var(--white);
-  --surface-light: color-mix(in srgb, var(--brand-blue) 4%, var(--white));
+  --surface-light: var(--white);
   --text-dark: var(--brand-blue);
-  --text-muted: color-mix(in srgb, var(--brand-blue) 72%, var(--white));
-  --border-light: color-mix(in srgb, var(--brand-blue) 14%, transparent);
-  --border-on-blue: color-mix(in srgb, var(--white) 18%, transparent);
+  --text-muted: var(--brand-blue);
+  --border-light: var(--brand-blue);
+  --border-on-blue: var(--white);
   --lime-on-blue: var(--brand-lime);
   --font-heading: 'Nexa', 'OccuHelvetica', Helvetica, Arial, sans-serif;
   --font-sans: 'Neue Haas Unica W1G', 'OccuHelvetica', Helvetica, Arial, sans-serif;
@@ -107,7 +107,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--brand-lime-bright);
+  outline: 3px solid var(--brand-blue);
   outline-offset: 4px;
 }
 

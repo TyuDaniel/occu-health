@@ -4,9 +4,9 @@ type LogoProps = {
 }
 
 const logoSources = {
-  brand: '/logos/Horizontal%20Logo_Blue%20Green%20Trans.svg',
-  inverse: '/logos/Horizontal%20Logo_White%20Green%20Trans.svg',
-  inverseBlue: '/logos/Horizontal%20Logo_White%20Blue%20Trans.svg',
+  brand: '/brand/wordmark-blue.svg',
+  inverse: '/brand/wordmark-inverse.svg',
+  inverseBlue: '/brand/wordmark-white-blue.svg',
 }
 
 export function Logo({ variant = 'brand', className = '' }: LogoProps) {

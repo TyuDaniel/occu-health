@@ -6,9 +6,7 @@ import { Logo } from './Logo'
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [compactHeader, setCompactHeader] = useState(() =>
-    window.matchMedia('(max-width: 760px)').matches,
-  )
+  const [activeHref, setActiveHref] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -19,20 +17,58 @@ export function Navbar() {
   }, [])
 
   useEffect(() => {
-    document.body.classList.toggle('menu-open', menuOpen)
+    const sections = navLinks
+      .map((link) => document.querySelector<HTMLElement>(link.href))
+      .filter((section): section is HTMLElement => section !== null)
+    let frame = 0
 
-    return () => document.body.classList.remove('menu-open')
-  }, [menuOpen])
+    const updateActiveSection = () => {
+      frame = 0
+      const readingLine = window.scrollY + 96 + window.innerHeight * 0.18
+      const currentSection = [...sections]
+        .reverse()
+        .find((section) => section.offsetTop <= readingLine)
+
+      setActiveHref(currentSection ? `#${currentSection.id}` : '')
+    }
+
+    const onScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(updateActiveSection)
+    }
+
+    updateActiveSection()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
 
   useEffect(() => {
-    const query = window.matchMedia('(max-width: 760px)')
-    const onChange = () => setCompactHeader(query.matches)
+    document.body.classList.toggle('menu-open', menuOpen)
 
-    onChange()
-    query.addEventListener('change', onChange)
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
 
-    return () => query.removeEventListener('change', onChange)
-  }, [])
+    const desktopMenu = window.matchMedia('(min-width: 1101px)')
+    const onBreakpointChange = (event: MediaQueryListEvent) => {
+      if (event.matches) setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    desktopMenu.addEventListener('change', onBreakpointChange)
+
+    return () => {
+      document.body.classList.remove('menu-open')
+      window.removeEventListener('keydown', onKeyDown)
+      desktopMenu.removeEventListener('change', onBreakpointChange)
+    }
+  }, [menuOpen])
 
   return (
     <header
@@ -40,7 +76,7 @@ export function Navbar() {
       data-menu-open={menuOpen}
     >
       <nav className="nav-shell" aria-label="Primary navigation">
-        <Logo variant={compactHeader || scrolled || menuOpen ? 'brand' : 'inverse'} />
+        <Logo variant="brand" />
 
         <button
           className="nav-toggle"
@@ -57,7 +93,15 @@ export function Navbar() {
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} onClick={() => setMenuOpen(false)}>
+                <a
+                  className={activeHref === link.href ? 'is-active' : undefined}
+                  href={link.href}
+                  aria-current={activeHref === link.href ? 'location' : undefined}
+                  onClick={() => {
+                    setActiveHref(link.href)
+                    setMenuOpen(false)
+                  }}
+                >
                   {link.label}
                 </a>
               </li>

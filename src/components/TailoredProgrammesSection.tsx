@@ -17,14 +17,17 @@ export function TailoredProgrammesSection() {
         <div className="tailored-orbit__photo">
           <img
             className="tailored-orbit__workplace"
-            src="/images/workplace-health-surveillance.webp"
-            alt="A worker wearing protective equipment in an industrial workplace."
+            src="/images/workplace-safety-inspection.webp"
+            alt="A workplace safety specialist inspecting equipment in an industrial facility."
+            width="1536"
+            height="1024"
             loading="lazy"
+            decoding="async"
+            sizes="(max-width: 900px) 100vw, 44vw"
           />
           <div className="tailored-orbit__wash" aria-hidden="true" />
 
           <Reveal className="tailored-orbit__heading">
-            <p className="section-label">Designed around real workplace needs</p>
             <h2 id="tailored-title">
               Built around
               <span>your organisation.</span>

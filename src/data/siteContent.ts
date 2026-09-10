@@ -34,9 +34,10 @@ export const images = {
 }
 
 export const navLinks = [
-  { label: 'Who We Are', href: '#who-we-are' },
+  { label: 'About us', href: '#who-we-are' },
   { label: 'Services', href: '#services' },
-  { label: 'Workforce Wellbeing', href: '#workforce-wellbeing' },
+  { label: 'Why OccUhealth', href: '#value-we-bring' },
+  { label: 'Programmes', href: '#packages' },
 ]
 
 export const services: Service[] = [
@@ -214,7 +215,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353838851340',
     initials: 'SC',
     image: '/images/sharon-portrait.webp',
-    imagePosition: 'center bottom',
+    imagePosition: 'center 36%',
   },
   {
     name: "Cathy O'Reilly",
@@ -223,7 +224,7 @@ export const contactPeople = [
     phoneHref: 'tel:+353863095495',
     initials: 'CO',
     image: '/images/cathy-portrait.webp',
-    imagePosition: 'center bottom',
+    imagePosition: 'center 36%',
   },
 ]
 

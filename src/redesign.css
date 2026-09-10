@@ -182,35 +182,10 @@
 
 @media (max-width: 920px) {
   .service-chapter__layout,
-  .service-chapter--3 .service-chapter__layout {
-    min-height: 560px;
-    grid-template-columns: minmax(250px, 0.76fr) minmax(0, 1.24fr);
-    grid-template-areas: 'media content';
-    gap: 0;
-  }
-
   .service-chapter:nth-child(even) .service-chapter__layout,
   .service-chapter--2 .service-chapter__layout,
+  .service-chapter--3 .service-chapter__layout,
   .service-chapter--4 .service-chapter__layout {
-    min-height: 560px;
-    grid-template-columns: minmax(0, 1.24fr) minmax(250px, 0.76fr);
-    grid-template-areas: 'content media';
-    gap: 0;
-  }
-
-  .service-chapter__content,
-  .service-chapter:nth-child(even) .service-chapter__content {
-    padding: 48px clamp(28px, 5vw, 52px);
-  }
-
-  .service-chapter__content ul {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-  .service-chapter__layout,
-  .service-chapter:nth-child(even) .service-chapter__layout {
     min-height: 0;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -226,7 +201,19 @@
 
   .service-chapter__content,
   .service-chapter:nth-child(even) .service-chapter__content {
+    padding: 48px clamp(28px, 5vw, 52px);
+  }
+
+}
+
+@media (max-width: 700px) {
+  .service-chapter__content,
+  .service-chapter:nth-child(even) .service-chapter__content {
     padding: 48px max(16px, calc((100vw - 1360px) / 2)) 56px;
+  }
+
+  .service-chapter__content ul {
+    grid-template-columns: 1fr;
   }
 
   .service-chapter:nth-child(even) .service-chapter__icon {
@@ -333,11 +320,8 @@
 .contact-banner__contact-list a:focus-visible,
 .contact-banner__offices a:hover,
 .contact-banner__offices a:focus-visible {
-  color: var(--brand-blue);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  color: var(--brand-lime);
+  text-decoration: none;
 }
 
 .contact-banner__email:hover > svg:last-child,
@@ -718,11 +702,8 @@
 
 .contact-card a:hover,
 .contact-card a:focus-visible {
-  color: var(--brand-blue);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  color: var(--brand-lime);
+  text-decoration: none;
 }
 
 .contact-card a svg {
@@ -897,12 +878,9 @@
 
 .site-footer .footer-grid a:hover,
 .site-footer .footer-grid a:focus-visible {
-  color: var(--brand-blue);
+  color: var(--brand-lime);
   transform: translateX(3px);
-  text-decoration: underline;
-  text-decoration-color: var(--brand-lime);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 
 .footer-contact a,

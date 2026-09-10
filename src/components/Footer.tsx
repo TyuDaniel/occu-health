@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
+import { Logo } from './Logo'
 
 const serviceLinks = [
   ['Occupational Health', '#occupational-health'],
@@ -12,6 +13,11 @@ export function Footer() {
 
   return (
     <footer className="site-footer">
+      <div className="page-shell footer-brand-row">
+        <Logo variant="brand" />
+        <p>Occupational Health, Environmental Health &amp; Safety Specialists</p>
+      </div>
+
       <div className="page-shell footer-grid">
         <nav aria-label="Footer navigation">
           <h2>Explore</h2>

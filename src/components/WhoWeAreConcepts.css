@@ -139,10 +139,8 @@
 }
 
 .concept-one__intro h1 span {
-  text-decoration: underline;
-  text-decoration-color: #aac334;
-  text-decoration-thickness: .07em;
-  text-underline-offset: .1em;
+  color: #aac334;
+  text-decoration: none;
 }
 
 .concept-one__intro .concept-story {

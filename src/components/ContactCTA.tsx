@@ -36,40 +36,39 @@ export function ContactCTA() {
             </a>
           </Reveal>
 
-          <Reveal className="contact-banner__people" delay={80}>
-            <img
-              src="/images/occupational-health-assessment.png"
-              alt="An occupational health clinician carrying out a hearing assessment with an employee."
-              loading="lazy"
-            />
-          </Reveal>
-
           <Reveal className="contact-banner__details" delay={140}>
-            <div className="contact-banner__contact-list">
-              {contactPeople.map((person) => (
-                <a href={person.phoneHref} key={person.name}>
-                  <Phone aria-hidden="true" />
-                  <span>
-                    <small>{person.name}</small>
-                    {person.phone}
-                  </span>
-                </a>
-              ))}
+            <div className="contact-banner__group contact-banner__team">
+              <h3>Speak with our team</h3>
+              <div className="contact-banner__contact-list">
+                {contactPeople.map((person) => (
+                  <a href={person.phoneHref} key={person.name}>
+                    <Phone aria-hidden="true" />
+                    <span>
+                      <small>{person.name}</small>
+                      {person.phone}
+                    </span>
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <div className="contact-banner__offices">
-              {offices.map((office) => (
-                <address key={office.city}>
-                  <MapPin aria-hidden="true" />
-                  <span>
-                    <strong>{office.city}</strong>
-                    {office.address}
-                    <a href={office.href} rel="noreferrer" target="_blank">
-                      View on map <ArrowUpRight aria-hidden="true" />
-                    </a>
-                  </span>
-                </address>
-              ))}
+            <div className="contact-banner__group contact-banner__locations">
+              <h3>Find us</h3>
+              <div className="contact-banner__offices">
+                {offices.map((office) => (
+                  <address key={office.city}>
+                    <MapPin aria-hidden="true" />
+                    <span>
+                      <strong>{office.city}</strong>
+                      <span>{office.address}</span>
+                      <a href={office.href} rel="noreferrer" target="_blank">
+                        View on map <ArrowUpRight aria-hidden="true" />
+                      </a>
+                    </span>
+                  </address>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>

@@ -26,7 +26,7 @@ export function ValueSection() {
             </Reveal>
 
             <div className="value-divider" aria-hidden="true">
-              <img src="/logos/oo-master-white-transparent.webp" alt="" />
+              <img src="/brand/symbol-blue.svg" alt="" />
             </div>
 
             <Reveal className="value-column value-column--employees" delay={90}>
