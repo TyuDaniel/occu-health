@@ -3,52 +3,49 @@ import { Reveal } from './Reveal'
 export function WhoWeAre() {
   return (
     <section className="section section--white" id="who-we-are">
-      <div className="page-shell who-grid">
-        <Reveal className="who-type">
+      <div className="page-shell who-final">
+        <Reveal className="who-final__copy">
           <h2>
-            One partner.
+            One partner.<br />
             <span>Complete coverage.</span>
           </h2>
-        </Reveal>
-
-        <Reveal className="who-copy" delay={90}>
-          <p>
-            OccUhealth Ireland provides a comprehensive range of Occupational
-            Health and Environmental Health & Safety services to SMEs, national
-            and global organisations across Ireland, delivering clear,
-            practical and solutions-driven outcomes that support both compliance
-            and business performance.
-          </p>
-          <p>
-            What sets us apart is our ability to integrate Occupational Health
-            with Environmental Health & Safety. We provide a multi-faceted
-            solution tailored to your business, delivering both operational
-            efficiencies and cost synergies.
-          </p>
-          <p>
-            By understanding both the clinical and workplace risk perspectives
-            simultaneously, we deliver aligned, holistic solutions that support
-            employee wellbeing, strengthen safety frameworks and enhance
-            organisational performance.
-          </p>
-          <div className="clinical-statement">
-            Clear, practical and solutions-driven outcomes.
+          <div className="who-final__story">
+            <p>
+              OccUhealth Ireland provides integrated Occupational Health and
+              Environmental Health &amp; Safety services to organisations across
+              Ireland.
+            </p>
+            <p>
+              By bringing clinical insight and workplace risk expertise together,
+              we deliver practical solutions that protect people, strengthen
+              compliance and improve organisational performance.
+            </p>
           </div>
         </Reveal>
 
-        <Reveal className="who-orbit" delay={140}>
-          <div className="who-orbit__visual">
-            <div className="who-orbit__frame">
+        <Reveal className="who-final__portrait" delay={120}>
+          <figure>
+            <div className="who-final__image">
               <img
-                src="/images/sharon-cathy-founders.jpg"
-                alt="Sharon Cleary and Cathy O’Reilly, co-founders and directors of OccUhealth Ireland."
-                width="640"
-                height="428"
+                src="/images/sharon-cathy-founders-centered.webp"
+                alt="Cathy O’Reilly on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland."
+                width="1254"
+                height="1254"
                 loading="lazy"
                 decoding="async"
               />
             </div>
-          </div>
+            <figcaption aria-label="OccUhealth co-founders">
+              <span>
+                <strong>Cathy O’Reilly</strong>
+                <small>Co-Founder · Director</small>
+              </span>
+              <span>
+                <strong>Sharon Cleary</strong>
+                <small>Co-Founder · Director</small>
+              </span>
+            </figcaption>
+          </figure>
         </Reveal>
       </div>
     </section>

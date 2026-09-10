@@ -27,13 +27,6 @@ const serviceImages = [
 export function Services() {
   return (
     <section className="section services-section" id="services">
-      <div className="page-shell services-heading">
-        <Reveal>
-          <h2>Our services</h2>
-          <p>One trusted partner for healthier, safer workplaces.</p>
-        </Reveal>
-      </div>
-
       <div className="services-chapters">
         {services.map((service, index) => {
           const image = serviceImages[index]

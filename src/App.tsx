@@ -7,10 +7,24 @@ import { TailoredProgrammesSection } from './components/TailoredProgrammesSectio
 import { Services } from './components/Services'
 import { ValueSection } from './components/ValueSection'
 import { WhoWeAre } from './components/WhoWeAre'
+import { WhoWeAreConcepts } from './components/WhoWeAreConcepts'
+import { WhoWeAreRefinedConcepts } from './components/WhoWeAreRefinedConcepts'
+import { WhoWeAreFinalists } from './components/WhoWeAreFinalists'
+import { WhoWeAreImageTreatments } from './components/WhoWeAreImageTreatments'
 import './App.css'
 import './redesign.css'
+import './components/WhoWeAreFinal.css'
 
 function App() {
+  const isWhoWeAreConceptGallery =
+    new URLSearchParams(window.location.search).get('view') === 'who-we-are-concepts'
+  const isWhoWeAreRefinedGallery =
+    new URLSearchParams(window.location.search).get('view') === 'who-we-are-refined'
+  const isWhoWeAreFinalists =
+    new URLSearchParams(window.location.search).get('view') === 'who-we-are-finalists'
+  const isWhoWeAreImageTreatments =
+    new URLSearchParams(window.location.search).get('view') === 'who-we-are-image-treatments'
+
   useEffect(() => {
     const scrollToHash = () => {
       const id = window.location.hash.slice(1)
@@ -38,6 +52,22 @@ function App() {
       window.removeEventListener('hashchange', scrollToHash)
     }
   }, [])
+
+  if (isWhoWeAreConceptGallery) {
+    return <WhoWeAreConcepts />
+  }
+
+  if (isWhoWeAreRefinedGallery) {
+    return <WhoWeAreRefinedConcepts />
+  }
+
+  if (isWhoWeAreFinalists) {
+    return <WhoWeAreFinalists />
+  }
+
+  if (isWhoWeAreImageTreatments) {
+    return <WhoWeAreImageTreatments />
+  }
 
   return (
     <>

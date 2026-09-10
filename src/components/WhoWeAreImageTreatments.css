@@ -1,0 +1,372 @@
+.treatments-gallery {
+  min-width: 320px;
+  color: #005b9d;
+  background: #f6f8f9;
+}
+
+.treatments-header,
+.treatment,
+.treatment-label {
+  width: min(100% - 48px, 1440px);
+  margin-inline: auto;
+}
+
+.treatments-header {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.treatments-header img {
+  width: 210px;
+}
+
+.treatments-header div {
+  display: grid;
+  text-align: right;
+}
+
+.treatments-header strong,
+.treatment-label strong {
+  font-family: var(--font-heading);
+}
+
+.treatments-header span,
+.treatment-label span {
+  font-size: .86rem;
+}
+
+.treatment {
+  display: grid;
+  grid-template-columns: minmax(300px, .82fr) minmax(460px, 1.18fr);
+  gap: clamp(52px, 7vw, 112px);
+  min-height: 740px;
+  align-items: center;
+  overflow: hidden;
+  background: #f6f8f9;
+}
+
+.treatment-copy h1 {
+  max-width: 10ch;
+  font-size: clamp(3.1rem, 5.1vw, 5.55rem);
+  line-height: .96;
+}
+
+.treatment-copy h1 span {
+  color: #aac334;
+}
+
+.treatment-story {
+  display: grid;
+  gap: 15px;
+  max-width: 57ch;
+  margin-top: 38px;
+  font-size: clamp(.96rem, 1.08vw, 1.08rem);
+  line-height: 1.58;
+}
+
+.treatment-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.treatment-image {
+  position: relative;
+  aspect-ratio: 1.42 / 1;
+  overflow: hidden;
+}
+
+.treatment-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 39%;
+}
+
+.treatment-names {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.treatment-names > span {
+  position: relative;
+  display: block;
+  min-width: 0;
+  padding: 18px 22px 20px;
+}
+
+.treatment-names > span + span {
+  border-left: 1px solid color-mix(in srgb, #005b9d 18%, transparent);
+}
+
+.treatment-names strong,
+.treatment-names small {
+  display: block;
+}
+
+.treatment-names strong {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.35vw, 1.28rem);
+  line-height: 1.2;
+}
+
+.treatment-names small {
+  margin-top: 4px;
+  font-size: .82rem;
+}
+
+.treatment-label {
+  display: flex;
+  padding: 18px 0 56px;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.treatment-label span {
+  text-align: right;
+}
+
+/* 01 — no visible container edge; photography feathers into the page. */
+.treatment--fade {
+  padding: clamp(60px, 6vw, 92px);
+  border: 1px solid color-mix(in srgb, #005b9d 12%, transparent);
+}
+
+.treatment-visual--fade .treatment-image {
+  margin: -34px -34px 0 -72px;
+  aspect-ratio: 1.5 / 1;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 100%);
+}
+
+.treatment-visual--fade .treatment-image::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 16%;
+  background: linear-gradient(0deg, #f6f8f9, transparent);
+  content: '';
+}
+
+.treatment-visual--fade .treatment-names {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 48px);
+  margin: -28px 0 0 auto;
+  border-top: 3px solid #aac334;
+  background: #f6f8f9;
+}
+
+/* 02 — the official symbol becomes a photographic aperture. */
+.treatment--aperture {
+  padding: clamp(60px, 6vw, 92px);
+  border-top: 8px solid #aac334;
+}
+
+.treatment-visual--aperture {
+  position: relative;
+  padding: 52px 0 0 64px;
+}
+
+.treatment-aperture__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
+  opacity: .15;
+}
+
+.treatment-visual--aperture .treatment-image {
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 18px 40px color-mix(in srgb, #005b9d 13%, transparent);
+}
+
+.treatment-visual--aperture .treatment-names {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 44px);
+  margin: -13px 0 0 auto;
+  gap: 14px;
+}
+
+.treatment-visual--aperture .treatment-names > span {
+  border-top: 4px solid #aac334;
+  background: #f6f8f9;
+  box-shadow: 0 10px 24px color-mix(in srgb, #005b9d 10%, transparent);
+}
+
+.treatment-visual--aperture .treatment-names > span + span {
+  border-left: 0;
+}
+
+/* 03 — image breaks to the section edge; no card or frame. */
+.treatment--edge {
+  grid-template-columns: minmax(300px, .78fr) minmax(470px, 1.22fr);
+  padding-left: clamp(58px, 7vw, 104px);
+  border: 1px solid color-mix(in srgb, #005b9d 12%, transparent);
+}
+
+.treatment-visual--edge,
+.treatment-visual--edge .treatment-image {
+  height: 100%;
+  min-height: 740px;
+}
+
+.treatment-visual--edge .treatment-image {
+  aspect-ratio: auto;
+}
+
+.treatment-visual--edge .treatment-image::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 12%;
+  background: linear-gradient(90deg, #f6f8f9, transparent);
+  content: '';
+}
+
+.treatment-visual--edge .treatment-image > img {
+  object-position: center 38%;
+}
+
+.treatment-names--overlay {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  left: 56px;
+  z-index: 2;
+  gap: 12px;
+}
+
+.treatment-names--overlay > span {
+  padding: 16px 20px 18px;
+  border-top: 4px solid #aac334;
+  background: #f6f8f9;
+  box-shadow: 0 10px 28px color-mix(in srgb, #005b9d 14%, transparent);
+}
+
+.treatment-names--overlay > span + span {
+  border-left: 0;
+}
+
+@media (max-width: 920px) {
+  .treatment,
+  .treatment--edge {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .treatment--fade,
+  .treatment--aperture {
+    padding: 68px 34px 42px;
+  }
+
+  .treatment-visual--fade .treatment-image {
+    margin-left: -34px;
+  }
+
+  .treatment--edge {
+    padding: 68px 0 0;
+  }
+
+  .treatment--edge .treatment-copy {
+    padding-inline: 34px;
+  }
+
+  .treatment-visual--edge,
+  .treatment-visual--edge .treatment-image {
+    min-height: 590px;
+  }
+}
+
+@media (max-width: 600px) {
+  .treatments-header,
+  .treatment,
+  .treatment-label {
+    width: min(100% - 24px, 1440px);
+  }
+
+  .treatments-header {
+    min-height: 82px;
+  }
+
+  .treatments-header img {
+    width: 150px;
+  }
+
+  .treatments-header div span {
+    display: none;
+  }
+
+  .treatment-label {
+    display: grid;
+    gap: 3px;
+    padding-bottom: 42px;
+  }
+
+  .treatment-label span {
+    text-align: left;
+  }
+
+  .treatment--fade,
+  .treatment--aperture {
+    padding: 52px 22px 28px;
+  }
+
+  .treatment-copy h1 {
+    font-size: clamp(2.65rem, 13vw, 4rem);
+  }
+
+  .treatment-image {
+    aspect-ratio: 1.18 / 1;
+  }
+
+  .treatment-visual--fade .treatment-image {
+    margin-inline: -22px;
+    aspect-ratio: 1.18 / 1;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .treatment-visual--aperture {
+    padding: 34px 0 0 20px;
+  }
+
+  .treatment-aperture__mark {
+    width: 145px;
+  }
+
+  .treatment-names > span {
+    padding-inline: 10px;
+  }
+
+  .treatment-names strong {
+    font-size: .88rem;
+  }
+
+  .treatment-names small {
+    font-size: .68rem;
+  }
+
+  .treatment--edge {
+    padding-top: 54px;
+  }
+
+  .treatment--edge .treatment-copy {
+    padding-inline: 22px;
+  }
+
+  .treatment-visual--edge,
+  .treatment-visual--edge .treatment-image {
+    min-height: 520px;
+  }
+
+  .treatment-names--overlay {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    gap: 8px;
+  }
+}

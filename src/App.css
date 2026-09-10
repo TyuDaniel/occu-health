@@ -3041,44 +3041,32 @@
 
 .who-orbit__visual {
   position: relative;
-  padding: clamp(24px, 3vw, 42px);
+  padding: clamp(50px, 5vw, 68px);
   isolation: isolate;
 }
 
 .who-orbit__visual::before,
 .who-orbit__visual::after {
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  content: '';
-  pointer-events: none;
-}
-
-.who-orbit__visual::before {
-  inset: 3% 0 0 7%;
-  border: clamp(18px, 2.4vw, 34px) solid var(--brand-blue);
-  z-index: -2;
-}
-
-.who-orbit__visual::after {
-  inset: 8% 7% -2% 0;
-  border: clamp(10px, 1.45vw, 20px) solid var(--brand-lime);
-  z-index: -1;
+  display: none;
 }
 
 .who-orbit__frame {
   aspect-ratio: 1;
   overflow: hidden;
-  border: 7px solid var(--white);
+  border: 6px solid var(--white);
   border-radius: 50%;
-  box-shadow: 0 18px 50px color-mix(in srgb, var(--brand-blue) 18%, transparent);
+  box-shadow:
+    0 0 0 12px var(--brand-lime),
+    0 0 0 20px var(--white),
+    0 0 0 clamp(36px, 3.2vw, 44px) var(--brand-blue),
+    0 22px 50px 34px color-mix(in srgb, var(--brand-blue) 16%, transparent);
 }
 
 .who-orbit__frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% center;
+  object-position: center;
 }
 
 .services-section {
@@ -3641,11 +3629,20 @@
   }
 
   .who-orbit {
-    padding: 26px;
+    padding: 0;
+  }
+
+  .who-orbit__visual {
+    padding: 42px;
   }
 
   .who-orbit__frame {
     border-width: 5px;
+    box-shadow:
+      0 0 0 9px var(--brand-lime),
+      0 0 0 15px var(--white),
+      0 0 0 28px var(--brand-blue),
+      0 18px 38px 24px color-mix(in srgb, var(--brand-blue) 15%, transparent);
   }
 
   .wellness-intro {
@@ -4266,32 +4263,53 @@
 .who-founders {
   position: relative;
   z-index: 2;
-  width: calc(100% - clamp(34px, 5vw, 72px));
-  margin: -20px auto 0;
-  overflow: hidden;
-  gap: 0;
+  width: calc(100% - clamp(64px, 7vw, 104px));
+  margin: -34px auto 0;
+  overflow: visible;
+  gap: clamp(12px, 1.6vw, 20px);
   color: var(--white);
-  background: var(--brand-blue);
-  box-shadow: 0 16px 32px color-mix(in srgb, var(--brand-blue-deep) 22%, transparent);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .who-founders div {
-  padding: 18px clamp(18px, 2.2vw, 28px) 20px;
+  position: relative;
+  padding: 17px clamp(16px, 2vw, 24px) 19px;
+  text-align: center;
+  border: 1px solid var(--brand-blue);
+  border-top: 4px solid var(--brand-lime);
+  border-radius: 10px;
+  background: var(--brand-blue);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--brand-blue) 16%, transparent);
+}
+
+.who-founders div::before {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  width: 2px;
+  height: 13px;
+  background: var(--brand-lime);
+  content: '';
+  transform: translateX(-50%);
 }
 
 .who-founders div + div {
   padding-left: clamp(18px, 2.2vw, 28px);
-  border-left-color: color-mix(in srgb, var(--white) 30%, transparent);
+  border-left-color: var(--brand-blue);
 }
 
 .who-founders strong {
   color: var(--white);
-  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+  font-size: clamp(1.08rem, 1.55vw, 1.42rem);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .who-founders span {
   margin-top: 5px;
-  color: color-mix(in srgb, var(--white) 85%, var(--brand-lime));
+  color: var(--white);
   font-size: 0.86rem;
 }
 
@@ -4434,15 +4452,21 @@
 
 @media (max-width: 480px) {
   .who-founders {
-    grid-template-columns: 1fr;
-    gap: 0;
+    width: calc(100% - 28px);
+    margin-top: -22px;
+    gap: 8px;
   }
 
-  .who-founders div + div {
-    padding-top: 18px;
-    padding-left: 0;
-    border-top: 1px solid color-mix(in srgb, var(--white) 30%, transparent);
-    border-left: 0;
+  .who-founders div {
+    padding: 13px 6px 15px;
+  }
+
+  .who-founders strong {
+    font-size: 0.98rem;
+  }
+
+  .who-founders span {
+    font-size: 0.72rem;
   }
 }
 
