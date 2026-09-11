@@ -25,7 +25,7 @@ Use the bundled Nexa Bold for headings and key messaging, Neue Haas Unica W1G Re
 Use a spacious single-page layout with a maximum content width of 1360px. Alternate cobalt sections with off-white sections and people-focused imagery.
 
 - Split hero: blue text panel beside natural photography, with a headline capped at 4rem and no introductory eyebrow. An off-white navigation bar and service links establish a consistent frame.
-- The original shared founder photograph inside the official double-O, with Cathy O’Reilly labelled on the left and Sharon Cleary on the right.
+- The original shared founder photograph inside the official double-O, with Cathy Mullen labelled on the left and Sharon Cleary on the right.
 - Blue Services section with photographic panels, off-white content, oval navigation and all service titles visible.
 - Off-white Value section with green/blue benefit headings and a blue outcomes band below.
 - Screening programmes pairing a workplace photograph with concise capability summaries.

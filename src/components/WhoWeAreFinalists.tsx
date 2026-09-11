@@ -20,11 +20,11 @@ function FoundersPhoto({ styleName }: { styleName: string }) {
       <div className="finalist-photo__image">
         <img
           src="/images/sharon-cathy-founders-centered.webp"
-          alt="Cathy O’Reilly on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland"
+          alt="Cathy Mullen on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland"
         />
       </div>
       <figcaption>
-        <Founder name="Cathy O’Reilly" />
+        <Founder name="Cathy Mullen" />
         <Founder name="Sharon Cleary" />
       </figcaption>
     </figure>
@@ -62,7 +62,7 @@ export function WhoWeAreFinalists() {
 
       <section className="finalist finalist--one" aria-labelledby="finalist-one-title">
         <div className="finalist-one__copy">
-          <h1 id="finalist-one-title">One partner.<br /><span>Complete coverage.</span></h1>
+          <h1 id="finalist-one-title">One Partner.<br /><span>Complete Coverage.</span></h1>
           <div className="finalist-body">{about}</div>
         </div>
         <FoundersPhoto styleName="finalist-photo--classic" />
@@ -75,7 +75,7 @@ export function WhoWeAreFinalists() {
 
       <section className="finalist finalist--two" aria-labelledby="finalist-two-title">
         <div className="finalist-two__copy">
-          <h2 id="finalist-two-title">One partner.<br /><span>Complete coverage.</span></h2>
+          <h2 id="finalist-two-title">One Partner.<br /><span>Complete Coverage.</span></h2>
           <div className="finalist-body">{about}</div>
           <div className="finalist-two__disciplines" aria-label="OccUhealth areas of expertise">
             <span>Occupational Health</span>
@@ -93,7 +93,7 @@ export function WhoWeAreFinalists() {
       <section className="finalist finalist--three" aria-labelledby="finalist-three-title">
         <div className="finalist-three__copy">
           <div className="finalist-body">{about}</div>
-          <h2 id="finalist-three-title">One partner.<br /><span>Complete coverage.</span></h2>
+          <h2 id="finalist-three-title">One Partner.<br /><span>Complete Coverage.</span></h2>
         </div>
         <FoundersPhoto styleName="finalist-photo--signature" />
       </section>

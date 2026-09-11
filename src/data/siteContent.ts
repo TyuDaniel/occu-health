@@ -218,11 +218,11 @@ export const contactPeople = [
     imagePosition: 'center 36%',
   },
   {
-    name: "Cathy O'Reilly",
+    name: 'Cathy Mullen',
     role: 'Co-Founder · Director',
     phone: '086 309 5495',
     phoneHref: 'tel:+353863095495',
-    initials: 'CO',
+    initials: 'CM',
     image: '/images/cathy-portrait.webp',
     imagePosition: 'center 36%',
   },

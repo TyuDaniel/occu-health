@@ -9,8 +9,7 @@ export function ValueSection() {
       <div className="page-shell value-shell">
         <Reveal>
           <SectionHeading title="We Bring" accent="The Value">
-            Integrated Occupational Health and EHS support for your organisation,
-            your employees and your key outcomes.
+            Integrated Occupational Health and EHS support for your organisation.
           </SectionHeading>
         </Reveal>
 
@@ -39,7 +38,7 @@ export function ValueSection() {
             </Reveal>
           </div>
 
-          <div className="outcomes-grid" aria-label="Supporting outcomes">
+          <div className="outcomes-grid" aria-label="Supporting Outcomes">
             {keyOutcomes.map((outcome, index) => (
               <Reveal className="outcome" delay={index * 60} key={outcome.title}>
                 <span>{String(index + 1).padStart(2, '0')}</span>

@@ -9,11 +9,19 @@ export function Navbar() {
   const [activeHref, setActiveHref] = useState('')
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onScroll = () => {
+      const revealPoint = Math.min(160, Math.max(72, window.innerHeight * 0.14))
+      setScrolled(window.scrollY > revealPoint)
+    }
+
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
 
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   useEffect(() => {

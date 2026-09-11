@@ -20,18 +20,18 @@ function Portrait({ treatment }: { treatment: 'caption' | 'labels' | 'overlay' }
       <div className="refined-portrait__image">
         <img
           src="/images/sharon-cathy-founders-centered.webp"
-          alt="Cathy O’Reilly on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland"
+          alt="Cathy Mullen on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland"
         />
         {treatment === 'overlay' && (
           <div className="refined-portrait__overlay-names">
-            <Founder name="Cathy O’Reilly" />
+            <Founder name="Cathy Mullen" />
             <Founder name="Sharon Cleary" />
           </div>
         )}
       </div>
       {treatment !== 'overlay' && (
         <div className="refined-portrait__names">
-          <Founder name="Cathy O’Reilly" />
+          <Founder name="Cathy Mullen" />
           <Founder name="Sharon Cleary" />
         </div>
       )}
@@ -61,7 +61,7 @@ export function WhoWeAreRefinedConcepts() {
 
       <section className="refined-concept refined-concept--one" aria-labelledby="refined-one-title">
         <div className="refined-one__copy">
-          <h1 id="refined-one-title">One partner.<br /><span>Complete coverage.</span></h1>
+          <h1 id="refined-one-title">One Partner.<br /><span>Complete Coverage.</span></h1>
           <div className="refined-description">{description}</div>
         </div>
         <Portrait treatment="caption" />
@@ -79,7 +79,7 @@ export function WhoWeAreRefinedConcepts() {
           <div className="refined-two__promise">
             <span>Occupational Health</span>
             <span>Environmental Health &amp; Safety</span>
-            <strong>One partner. Complete coverage.</strong>
+            <strong>One Partner. Complete Coverage.</strong>
           </div>
         </div>
         <Portrait treatment="labels" />
@@ -96,7 +96,7 @@ export function WhoWeAreRefinedConcepts() {
             <h2 id="refined-three-title">Healthier people.<br />Safer workplaces.</h2>
             <div className="refined-description refined-description--inverse">{description}</div>
           </div>
-          <p>One partner.<br /><span>Complete coverage.</span></p>
+          <p>One Partner.<br /><span>Complete Coverage.</span></p>
         </div>
         <Portrait treatment="overlay" />
       </section>

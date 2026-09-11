@@ -18,7 +18,7 @@ function FounderNames({ inverse = false }: { inverse?: boolean }) {
   return (
     <div className={`concept-founders${inverse ? ' concept-founders--inverse' : ''}`}>
       <div>
-        <strong>Cathy O’Reilly</strong>
+        <strong>Cathy Mullen</strong>
         <span>Co-Founder · Director</span>
       </div>
       <div>
@@ -43,7 +43,7 @@ export function WhoWeAreConcepts() {
       <section className="concept concept--one" aria-labelledby="concept-one-title">
         <div className="concept-number" aria-hidden="true">01</div>
         <div className="concept-one__intro">
-          <h1 id="concept-one-title">One partner.<br /><span>Complete coverage.</span></h1>
+          <h1 id="concept-one-title">One Partner.<br /><span>Complete Coverage.</span></h1>
           <div className="concept-story">{story}</div>
           <p className="concept-note">Two disciplines. One clear view of your workplace.</p>
         </div>
@@ -51,7 +51,7 @@ export function WhoWeAreConcepts() {
           <div className="concept-one__portrait">
             <img
               src="/images/sharon-cathy-founders-centered.webp"
-              alt="Cathy O’Reilly and Sharon Cleary, co-founders of OccUhealth Ireland"
+              alt="Cathy Mullen and Sharon Cleary, co-founders of OccUhealth Ireland"
             />
           </div>
           <FounderNames />
@@ -67,7 +67,7 @@ export function WhoWeAreConcepts() {
         <div className="concept-two__photo">
           <img
             src="/images/sharon-cathy-founders-centered.webp"
-            alt="Cathy O’Reilly and Sharon Cleary standing together at OccUhealth Ireland"
+              alt="Cathy Mullen and Sharon Cleary standing together at OccUhealth Ireland"
           />
           <FounderNames inverse />
         </div>
@@ -77,7 +77,7 @@ export function WhoWeAreConcepts() {
             <h2 id="concept-two-title">Your whole workplace.<br /><span>One trusted partner.</span></h2>
             <div className="concept-story concept-story--inverse">{story}</div>
           </div>
-          <p className="concept-two__promise">One partner. Complete coverage.</p>
+          <p className="concept-two__promise">One Partner. Complete Coverage.</p>
         </div>
       </section>
 
@@ -94,13 +94,13 @@ export function WhoWeAreConcepts() {
         <div className="concept-three__body">
           <div className="concept-three__founder concept-three__founder--cathy">
             <span>Clinical health</span>
-            <strong>Cathy O’Reilly</strong>
+            <strong>Cathy Mullen</strong>
             <small>Co-Founder · Director</small>
           </div>
           <div className="concept-three__portrait">
             <img
               src="/images/sharon-cathy-founders-centered.webp"
-              alt="Cathy O’Reilly and Sharon Cleary, combining clinical health and workplace safety expertise"
+              alt="Cathy Mullen and Sharon Cleary, combining clinical health and workplace safety expertise"
             />
           </div>
           <div className="concept-three__founder concept-three__founder--sharon">
@@ -111,7 +111,7 @@ export function WhoWeAreConcepts() {
         </div>
         <div className="concept-three__footer">
           <div className="concept-story">{story}</div>
-          <p>One partner.<br /><span>Complete coverage.</span></p>
+          <p>One Partner.<br /><span>Complete Coverage.</span></p>
         </div>
       </section>
 

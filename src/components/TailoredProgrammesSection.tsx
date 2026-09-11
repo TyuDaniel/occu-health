@@ -43,9 +43,8 @@ export function TailoredProgrammesSection() {
           <Reveal className="tailored-orbit__intro">
             <h3>Occupational health that fits your business.</h3>
             <p>
-              There is no off-the-shelf package. We tailor the right mix of screening,
-              surveillance and clinical support around your people, workplace risks and
-              priorities.
+              We tailor the right mix of screening, surveillance and clinical support
+              around your people, workplace risks and priorities.
             </p>
           </Reveal>
 

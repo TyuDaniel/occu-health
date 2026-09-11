@@ -17,7 +17,7 @@ const story = (
 function Copy() {
   return (
     <div className="treatment-copy">
-      <h1>One partner.<br /><span>Complete coverage.</span></h1>
+      <h1>One Partner.<br /><span>Complete Coverage.</span></h1>
       <div className="treatment-story">{story}</div>
     </div>
   )
@@ -27,7 +27,7 @@ function Names({ overlay = false }: { overlay?: boolean }) {
   return (
     <figcaption className={overlay ? 'treatment-names treatment-names--overlay' : 'treatment-names'}>
       <span>
-        <strong>Cathy O’Reilly</strong>
+        <strong>Cathy Mullen</strong>
         <small>Co-Founder · Director</small>
       </span>
       <span>
@@ -62,7 +62,7 @@ export function WhoWeAreImageTreatments() {
         <Copy />
         <figure className="treatment-visual treatment-visual--fade">
           <div className="treatment-image">
-            <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy O’Reilly and Sharon Cleary at OccUhealth Ireland" />
+          <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy Mullen and Sharon Cleary at OccUhealth Ireland" />
           </div>
           <Names />
         </figure>
@@ -78,7 +78,7 @@ export function WhoWeAreImageTreatments() {
         <figure className="treatment-visual treatment-visual--aperture">
           <img className="treatment-aperture__mark" src="/brand/symbol-blue.svg" alt="" />
           <div className="treatment-image">
-            <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy O’Reilly and Sharon Cleary at OccUhealth Ireland" />
+          <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy Mullen and Sharon Cleary at OccUhealth Ireland" />
           </div>
           <Names />
         </figure>
@@ -93,7 +93,7 @@ export function WhoWeAreImageTreatments() {
         <Copy />
         <figure className="treatment-visual treatment-visual--edge">
           <div className="treatment-image">
-            <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy O’Reilly and Sharon Cleary at OccUhealth Ireland" />
+          <img src="/images/sharon-cathy-founders-centered.webp" alt="Cathy Mullen and Sharon Cleary at OccUhealth Ireland" />
             <Names overlay />
           </div>
         </figure>

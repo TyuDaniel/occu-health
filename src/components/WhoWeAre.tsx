@@ -6,8 +6,8 @@ export function WhoWeAre() {
       <div className="page-shell who-final">
         <Reveal className="who-final__copy">
           <h2>
-            One partner.<br />
-            <span>Complete coverage.</span>
+            One Partner.<br />
+            <span>Complete Coverage.</span>
           </h2>
           <div className="who-final__story">
             <p>
@@ -34,7 +34,7 @@ export function WhoWeAre() {
               <img
                 className="who-final__photo"
                 src="/images/sharon-cathy-founders-centered.webp"
-                alt="Cathy O’Reilly on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland."
+                alt="Cathy Mullen on the left and Sharon Cleary on the right, co-founders of OccUhealth Ireland."
                 width="1254"
                 height="1254"
                 loading="lazy"
@@ -49,7 +49,7 @@ export function WhoWeAre() {
             </div>
             <figcaption aria-label="OccUhealth co-founders">
               <span>
-                <strong>Cathy O’Reilly</strong>
+                <strong>Cathy Mullen</strong>
                 <small>Co-Founder · Director</small>
               </span>
               <span>
