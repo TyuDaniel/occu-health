@@ -1881,5 +1881,13 @@ h3,
 }
 
 .outcomes-grid {
+  background: var(--brand-blue);
   border-top: 3px solid var(--brand-lime);
+}
+
+/* Replace the older mixed footer strip with the shared section separator. */
+.site-footer::before {
+  height: 3px;
+  background: var(--brand-lime);
+  border-top: 0;
 }
