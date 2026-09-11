@@ -39,10 +39,7 @@ export function Hero() {
 
         <div className="hero-actions" aria-label="Primary actions">
           <a className="hero-services-link" href="#services">
-            Explore our services <ArrowRight aria-hidden="true" />
-          </a>
-          <a className="button hero-contact-button" href="#contact">
-            Speak to Our Team <ArrowRight aria-hidden="true" />
+            See how we can help <ArrowRight aria-hidden="true" />
           </a>
         </div>
       </div>
