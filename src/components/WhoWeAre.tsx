@@ -13,12 +13,17 @@ export function WhoWeAre() {
             <p>
               OccUhealth Ireland provides integrated Occupational Health and
               Environmental Health &amp; Safety services to organisations across
-              Ireland.
+              Ireland. We help employers understand the health needs of their
+              people and the risks within their working environments, so they
+              can take clear, practical action.
             </p>
             <p>
               By bringing clinical insight and workplace risk expertise together,
               we deliver practical solutions that protect people, strengthen
-              compliance and improve organisational performance.
+              compliance and improve organisational performance. Our support can
+              include health assessments, absence and case management, workplace
+              risk assessments, audits, training and wellbeing programmes,
+              shaped around each organisation.
             </p>
           </div>
         </Reveal>

@@ -29,7 +29,7 @@ export function TailoredProgrammesSection() {
 
           <Reveal className="tailored-orbit__heading">
             <h2 id="tailored-title">
-              Built around
+              Built around{' '}
               <span>your organisation.</span>
             </h2>
             <p>

@@ -35,6 +35,25 @@ const serviceImages = [
 export function Services() {
   return (
     <section className="section services-section" id="services">
+      <div className="services-transition">
+        <div className="page-shell services-transition__inner">
+          <p>
+            Health, safety and wellbeing <strong>— together.</strong>
+          </p>
+          <span className="services-transition__rule" aria-hidden="true" />
+        </div>
+      </div>
+
+      <header className="services-section__heading">
+        <div className="page-shell">
+          <h2>How we support organisations</h2>
+          <p>
+            Practical support across occupational health, environmental health &amp; safety, and
+            workforce wellbeing for organisations across Ireland.
+          </p>
+        </div>
+      </header>
+
       <div className="services-chapters">
         {services.map((service, index) => {
           const image = serviceImages[index]

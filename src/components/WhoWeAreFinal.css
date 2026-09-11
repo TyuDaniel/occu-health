@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: minmax(300px, .82fr) minmax(460px, 1.18fr);
   gap: clamp(40px, 5vw, 80px);
-  align-items: center;
+  align-items: start;
 }
 
 .who-final__copy h2 {
@@ -20,6 +20,12 @@
   color: #005b9d;
   font-size: clamp(3.1rem, 5.1vw, 5.55rem);
   line-height: .96;
+}
+
+@media (min-width: 921px) {
+  .who-final__copy {
+    padding-top: clamp(36px, 4vw, 64px);
+  }
 }
 
 .who-final__copy h2 span {
@@ -100,6 +106,10 @@
   .who-final {
     grid-template-columns: 1fr;
     gap: 44px;
+  }
+
+  .who-final__copy {
+    padding-top: 0;
   }
 
   .who-final__portrait {
