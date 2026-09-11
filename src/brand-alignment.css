@@ -767,10 +767,11 @@ h3,
 }
 
 .tailored-orbit__photo {
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .tailored-orbit__workplace {
+  border-radius: 0;
   filter: none;
 }
 
@@ -1830,6 +1831,33 @@ h3,
   }
 }
 
+/* Keep the value statement attached to its heading without turning it into a second headline. */
+@media (min-width: 1000px) {
+  .value-section .section-heading {
+    position: relative;
+    display: block;
+    max-width: none;
+    padding-bottom: clamp(18px, 1.8vw, 26px);
+  }
+
+  .value-section .section-heading::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    height: 4px;
+    background: var(--brand-lime);
+    content: '';
+  }
+
+  .value-section .section-heading p {
+    max-width: none;
+    margin-top: 14px;
+    padding-bottom: 0;
+    white-space: nowrap;
+  }
+}
+
 /* Let display copy use the full width of its composition. Natural wrapping now
    happens at the layout boundary instead of an arbitrary character count. */
 .who-final__copy h2,
@@ -1839,4 +1867,19 @@ h3,
 .tailored-orbit__intro,
 .tailored-orbit__intro h3 {
   max-width: none;
+}
+
+/* A consistent marker at every cobalt/off-white hand-off. It sits outside the
+   image panels, so the visual change remains clean on every breakpoint. */
+.hero-section + #who-we-are,
+#who-we-are + .services-section,
+.service-chapter + .service-chapter,
+.services-section + .value-section,
+.value-section + .tailored-section,
+.tailored-section + .contact-cta {
+  border-top: 3px solid var(--brand-lime);
+}
+
+.outcomes-grid {
+  border-top: 3px solid var(--brand-lime);
 }
