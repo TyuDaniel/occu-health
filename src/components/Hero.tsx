@@ -14,8 +14,8 @@ export function Hero() {
                 Better Futures.
               </h1>
               <p className="hero-copy">
-                Integrated Occupational Health, Environmental Health & Safety and
-                workforce wellbeing solutions for organisations across Ireland.
+                One trusted partner for Occupational Health, Environmental Health
+                & Safety, and workforce wellbeing across Ireland.
               </p>
 
               <div className="hero-actions" aria-label="Primary actions">

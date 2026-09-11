@@ -127,7 +127,7 @@
 }
 
 .tailored-orbit__workplace {
-  object-position: 69% center;
+  object-position: 30% center;
 }
 
 @media (max-width: 980px) {
@@ -443,8 +443,8 @@ h3,
 .who-final__image .who-final__photo {
   position: relative;
   z-index: 0;
-  width: 82%;
-  height: 82%;
+  width: 86%;
+  height: 86%;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 39%;

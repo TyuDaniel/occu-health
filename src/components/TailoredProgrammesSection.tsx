@@ -17,8 +17,8 @@ export function TailoredProgrammesSection() {
         <div className="tailored-orbit__photo">
           <img
             className="tailored-orbit__workplace"
-            src="/images/workplace-safety-inspection.webp"
-            alt="A workplace safety specialist inspecting equipment in an industrial facility."
+            src="/images/built-around-your-organisation.png"
+            alt="A construction worker in protective equipment operating an elevated work platform at an industrial building site."
             width="1536"
             height="1024"
             loading="lazy"

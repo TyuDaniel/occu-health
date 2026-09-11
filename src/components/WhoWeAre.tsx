@@ -37,7 +37,7 @@ export function WhoWeAre() {
               />
               <img
                 className="who-final__symbol"
-                src="/brand/symbol-blue-slim.svg"
+                src="/brand/symbol-blue-slim-thin.svg"
                 alt=""
                 aria-hidden="true"
               />
