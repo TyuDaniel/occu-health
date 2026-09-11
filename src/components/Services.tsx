@@ -3,11 +3,11 @@ import { Reveal } from './Reveal'
 
 const serviceImages = [
   {
-    src: '/images/occuhealth-personal-consultation.webp',
-    alt: 'An occupational health consultation between a clinician and an employee.',
+    src: '/images/occupational-health-audiometry.webp',
+    alt: 'An occupational health clinician carrying out a hearing assessment with a maintenance technician.',
     position: '54% center',
-    width: 1500,
-    height: 1000,
+    width: 1536,
+    height: 1024,
   },
   {
     src: '/images/ehs-team-on-site.webp',

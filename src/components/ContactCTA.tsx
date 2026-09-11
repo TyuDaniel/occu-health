@@ -1,5 +1,15 @@
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import {
+  ArrowUpRight,
+  BadgeCheck,
+  ClipboardCheck,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  TrendingUp,
+} from 'lucide-react'
 import { contactPeople } from '../data/siteContent'
+import { Logo } from './Logo'
 import { Reveal } from './Reveal'
 
 const offices = [
@@ -15,60 +25,89 @@ const offices = [
   },
 ]
 
+const contactOutcomes = [
+  { label: 'Reduced absenteeism', Icon: ClipboardCheck },
+  { label: 'Lower regulatory risk', Icon: ShieldCheck },
+  { label: 'Increased productivity', Icon: TrendingUp },
+  { label: 'Compliance focused', Icon: BadgeCheck },
+]
+
 export function ContactCTA() {
   return (
     <section className="contact-cta" id="contact">
       <div className="page-shell">
         <div className="contact-banner">
           <Reveal className="contact-banner__intro">
-            <h2>Get in touch</h2>
+            <Logo variant="inverse" className="contact-banner__wordmark" />
             <p>
               Let&apos;s talk about how OccUhealth can support your people and
               your workplace.
             </p>
             <a className="contact-banner__email" href="mailto:enquiries@occuhealth.ie">
               <Mail aria-hidden="true" />
-              <span>
-                <small>Email our team</small>
-                enquiries@occuhealth.ie
-              </span>
+              <span>Start the conversation</span>
               <ArrowUpRight aria-hidden="true" />
             </a>
+            <ul className="contact-banner__assurances" aria-label="Why contact OccUhealth">
+              {contactOutcomes.map(({ label, Icon }) => (
+                <li key={label}>
+                  <Icon aria-hidden="true" />
+                  <span>{label}</span>
+                </li>
+              ))}
+            </ul>
           </Reveal>
 
           <Reveal className="contact-banner__details" delay={140}>
-            <div className="contact-banner__group contact-banner__team">
-              <h3>Speak with our team</h3>
-              <div className="contact-banner__contact-list">
-                {contactPeople.map((person) => (
-                  <a href={person.phoneHref} key={person.name}>
+            <div className="contact-banner__utilities">
+              <a className="contact-banner__utility contact-banner__utility--email" href="mailto:enquiries@occuhealth.ie">
+                <Mail aria-hidden="true" />
+                <span>
+                  <small>Email</small>
+                  enquiries@occuhealth.ie
+                </span>
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              {offices.map((office) => (
+                <a
+                  className="contact-banner__utility"
+                  href={office.href}
+                  key={office.city}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <MapPin aria-hidden="true" />
+                  <span>
+                    <small>{office.city} office</small>
+                    {office.address}
+                  </span>
+                  <ArrowUpRight aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+
+            <div className="contact-banner__team-intro">
+              <h3>Speak directly with our occupational specialists</h3>
+              <p>Practical guidance from the people behind your Occupational Health, EHS and workforce wellbeing support.</p>
+            </div>
+
+            <div className="contact-banner__contact-list">
+              {contactPeople.map((person) => (
+                <article className="contact-banner__person" key={person.name}>
+                  <div>
+                    <small>{person.role}</small>
+                    <h3>{person.name}</h3>
+                  </div>
+                  <a href={person.phoneHref}>
                     <Phone aria-hidden="true" />
                     <span>
-                      <small>{person.name}</small>
+                      <small>Phone</small>
                       {person.phone}
                     </span>
                     <ArrowUpRight aria-hidden="true" />
                   </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="contact-banner__group contact-banner__locations">
-              <h3>Find us</h3>
-              <div className="contact-banner__offices">
-                {offices.map((office) => (
-                  <address key={office.city}>
-                    <MapPin aria-hidden="true" />
-                    <span>
-                      <strong>{office.city}</strong>
-                      <span>{office.address}</span>
-                      <a href={office.href} rel="noreferrer" target="_blank">
-                        View on map <ArrowUpRight aria-hidden="true" />
-                      </a>
-                    </span>
-                  </address>
-                ))}
-              </div>
+                </article>
+              ))}
             </div>
           </Reveal>
         </div>

@@ -40,7 +40,7 @@ export function Hero() {
           <img
             className="hero-section__image"
             src={images.hero}
-            alt="Occupational health and safety professionals carrying out an onsite workplace review."
+            alt="A workplace safety specialist carrying out an inspection in an industrial facility."
             width="1918"
             height="820"
             sizes="(max-width: 980px) 100vw, 54vw"

@@ -30,7 +30,7 @@ export type WellnessCapability = {
 }
 
 export const images = {
-  hero: '/images/value-workplace-partnership.webp',
+  hero: '/images/workplace-safety-inspection.webp',
 }
 
 export const navLinks = [

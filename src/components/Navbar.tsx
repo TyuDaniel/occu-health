@@ -76,7 +76,7 @@ export function Navbar() {
       data-menu-open={menuOpen}
     >
       <nav className="nav-shell" aria-label="Primary navigation">
-        <Logo variant="brand" />
+        <Logo variant={scrolled || menuOpen ? 'brand' : 'inverse'} />
 
         <button
           className="nav-toggle"
