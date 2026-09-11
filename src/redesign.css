@@ -152,17 +152,15 @@
 .service-chapter__content ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(24px, 3vw, 42px);
+  gap: 10px clamp(24px, 3vw, 42px);
   margin-top: clamp(28px, 3.5vw, 46px);
-  border-top: 1px solid color-mix(in srgb, currentColor 28%, transparent);
   list-style: none;
 }
 
 .service-chapter__content li {
   position: relative;
   min-width: 0;
-  padding: 16px 0 17px 22px;
-  border-bottom: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  padding: 8px 0 8px 22px;
   color: currentColor;
   font-family: var(--font-heading);
   font-size: clamp(0.94rem, 1.05vw, 1.06rem);
@@ -171,7 +169,7 @@
 
 .service-chapter__content li::before {
   position: absolute;
-  top: 1.35em;
+  top: 0.95em;
   left: 0;
   width: 8px;
   height: 8px;

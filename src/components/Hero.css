@@ -128,7 +128,7 @@
   width: var(--shell);
   max-width: 1360px;
   margin-inline: auto;
-  padding: clamp(162px, 21vh, 230px) 0 clamp(58px, 8vh, 92px);
+  padding: clamp(104px, 12vh, 144px) 0 clamp(46px, 6vh, 70px);
 }
 
 .hero-copy-stack {
@@ -140,8 +140,8 @@
 .hero-section h1 {
   max-width: 12ch;
   color: var(--brand-off-white);
-  font-size: clamp(3.45rem, 6.1vw, 5.8rem);
-  line-height: 0.96;
+  font-size: clamp(3rem, 4.25vw, 4rem);
+  line-height: 1.04;
   letter-spacing: -0.035em;
   text-shadow: 0 2px 0 color-mix(in srgb, var(--brand-blue) 34%, transparent);
   text-wrap: balance;
@@ -257,7 +257,8 @@
 
   .hero-section__content {
     width: var(--shell);
-    padding-top: clamp(148px, 22vh, 210px);
+    padding-top: clamp(112px, 16vh, 176px);
+    padding-bottom: clamp(46px, 8vh, 78px);
   }
 
   .hero-section h1 {
@@ -282,8 +283,8 @@
 
 @media (max-width: 620px) {
   .hero-section__content {
-    padding-top: 136px;
-    padding-bottom: 52px;
+    padding-top: 104px;
+    padding-bottom: 44px;
   }
 
   .hero-section h1 {

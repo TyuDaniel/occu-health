@@ -21,7 +21,7 @@ export function Footer() {
       <div className="page-shell footer-grid">
         <nav aria-label="Footer navigation">
           <h2>Explore</h2>
-          <a href="#who-we-are">Who We Are</a>
+          <a href="#who-we-are">About us</a>
           <a href="#services">Services</a>
           <a href="#workforce-wellbeing">Workforce Wellbeing</a>
           <a href="#contact">Contact</a>

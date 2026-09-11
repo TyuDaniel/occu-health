@@ -1309,7 +1309,7 @@
 .tailored-orbit__intro {
   max-width: 650px;
   padding-bottom: clamp(18px, 2vw, 24px);
-  border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 18%, transparent);
+  border-bottom: 0;
 }
 
 .tailored-orbit__intro h3 {
@@ -1346,7 +1346,7 @@
   gap: 16px;
   align-items: center;
   padding: clamp(12px, 1vw, 16px) 0;
-  border-top: 1px solid color-mix(in srgb, var(--brand-blue) 17%, transparent);
+  border-top: 0;
 }
 
 .tailored-orbit__capability:nth-child(-n + 2) {
@@ -1462,7 +1462,7 @@
   }
 
   .tailored-orbit__capability:nth-child(2) {
-    border-top: 1px solid color-mix(in srgb, var(--brand-blue) 17%, transparent);
+    border-top: 0;
   }
 
   .tailored-orbit__footer {
@@ -3833,7 +3833,6 @@
   line-height: 1.02;
 }
 
-#who-we-are h2,
 .tailored-orbit__heading h2 {
   font-size: clamp(2.7rem, 5vw, 4.7rem);
   line-height: 1.02;

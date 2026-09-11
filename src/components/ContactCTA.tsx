@@ -29,7 +29,7 @@ const contactOutcomes = [
   { label: 'Reduced absenteeism', Icon: ClipboardCheck },
   { label: 'Lower regulatory risk', Icon: ShieldCheck },
   { label: 'Increased productivity', Icon: TrendingUp },
-  { label: 'Compliance focused', Icon: BadgeCheck },
+  { label: 'Compliance-focused', Icon: BadgeCheck },
 ]
 
 export function ContactCTA() {

@@ -524,7 +524,7 @@ h3,
 .service-chapter--4 .service-chapter__layout {
   width: var(--shell);
   max-width: 1360px;
-  min-height: 540px;
+  min-height: 460px;
   margin-inline: auto;
   gap: clamp(34px, 5vw, 76px);
   grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
@@ -537,7 +537,7 @@ h3,
 }
 
 .service-chapter__media {
-  min-height: 540px;
+  min-height: 460px;
   border-radius: 10px;
 }
 
@@ -574,13 +574,13 @@ h3,
 
 .service-chapter__content,
 .service-chapter:nth-child(even) .service-chapter__content {
-  padding: clamp(36px, 5vw, 70px) 0;
+  padding: clamp(28px, 3.5vw, 48px) 0;
 }
 
 .service-chapter__content h3 {
   max-width: 17ch;
-  font-size: clamp(2.15rem, 3.5vw, 3rem);
-  line-height: 1.06;
+  font-size: clamp(1.95rem, 2.6vw, 2.55rem);
+  line-height: 1.08;
 }
 
 .service-chapter:nth-child(odd) .service-chapter__summary {
@@ -605,6 +605,14 @@ h3,
 
 .service-chapter__content li {
   font-weight: 700;
+}
+
+.service-chapter__content ul {
+  border-top: 0;
+}
+
+.service-chapter__content li {
+  border-bottom: 0;
 }
 
 /* Value: benefits remain paired; outcomes become the specified cobalt band below. */
@@ -1374,7 +1382,7 @@ h3,
   }
 
   .service-chapter__content h3 {
-    font-size: clamp(2rem, 10vw, 2.75rem);
+    font-size: clamp(1.9rem, 8.5vw, 2.45rem);
   }
 
   .value-columns {

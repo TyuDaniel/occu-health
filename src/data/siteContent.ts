@@ -210,7 +210,7 @@ export const wellnessCapabilities: WellnessCapability[] = [
 export const contactPeople = [
   {
     name: 'Sharon Cleary',
-    role: 'Co-Founder | Director',
+    role: 'Co-Founder · Director',
     phone: '083 885 1340',
     phoneHref: 'tel:+353838851340',
     initials: 'SC',
@@ -219,7 +219,7 @@ export const contactPeople = [
   },
   {
     name: "Cathy O'Reilly",
-    role: 'Co-Founder | Director',
+    role: 'Co-Founder · Director',
     phone: '086 309 5495',
     phoneHref: 'tel:+353863095495',
     initials: 'CO',
