@@ -16,6 +16,13 @@ export function Hero() {
         />
       </div>
 
+      <img
+        className="hero-section__symbol"
+        src="/brand/symbol-inverse.svg"
+        alt=""
+        aria-hidden="true"
+      />
+
       <div className="hero-section__content">
         <div className="hero-section__lockup">
           <img

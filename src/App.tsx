@@ -16,6 +16,7 @@ import './redesign.css'
 import './components/WhoWeAreFinal.css'
 import './brand-alignment.css'
 import './components/Hero.css'
+import './homepage-refinements.css'
 
 function App() {
   const isWhoWeAreConceptGallery =

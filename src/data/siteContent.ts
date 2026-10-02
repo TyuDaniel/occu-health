@@ -145,21 +145,9 @@ export const valueColumns = [
 ]
 
 export const keyOutcomes = [
-  {
-    title: 'Integrated Risk Intelligence',
-    description:
-      'Clinical OH insight and EHS risk management working together; hazard identification informs health decisions, health data shapes safety priorities.',
-  },
-  {
-    title: 'Unified Compliance Assurance',
-    description:
-      'One partner managing both OH and EHS obligations means no gaps, no duplication and full alignment across audits, inspections and regulatory reviews.',
-  },
-  {
-    title: 'Performance-Driven Outcomes',
-    description:
-      'Reduced absenteeism, lower incident rates and a healthier workforce translate directly into cost savings, productivity gains and stronger ESG credentials.',
-  },
+  { title: 'Integrated Risk Intelligence' },
+  { title: 'Unified Compliance Assurance' },
+  { title: 'Performance‑Driven Outcomes' },
 ]
 
 export const wellnessCapabilities: WellnessCapability[] = [
@@ -204,27 +192,6 @@ export const wellnessCapabilities: WellnessCapability[] = [
       'Useful outputs for individuals and decision-makers, without compromising employee confidentiality.',
     examples: 'Personal summaries, anonymised trends, action plans and management reporting',
     icon: BarChart3,
-  },
-]
-
-export const contactPeople = [
-  {
-    name: 'Sharon Cleary',
-    role: 'Co-Founder · Director',
-    phone: '083 885 1340',
-    phoneHref: 'tel:+353838851340',
-    initials: 'SC',
-    image: '/images/sharon-portrait.webp',
-    imagePosition: 'center 36%',
-  },
-  {
-    name: 'Cathy Mullen',
-    role: 'Co-Founder · Director',
-    phone: '086 309 5495',
-    phoneHref: 'tel:+353863095495',
-    initials: 'CM',
-    image: '/images/cathy-portrait.webp',
-    imagePosition: 'center 36%',
   },
 ]
 

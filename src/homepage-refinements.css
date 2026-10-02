@@ -1,0 +1,655 @@
+/* Final homepage layout and readable type scale. Loaded after the existing theme. */
+
+/* Keep the founding promise on one centred line above the hero divider. */
+.hero-section__symbol {
+  position: absolute;
+  z-index: 1;
+  top: auto;
+  right: auto;
+  bottom: clamp(-180px, -12vw, -120px);
+  left: clamp(-150px, -10vw, -88px);
+  width: clamp(270px, 30vw, 420px);
+  height: auto;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* Blue-on-white O marks the two light service chapters without repeating the motif
+   across every section. */
+.service-chapter--2::before,
+.service-chapter--4::before {
+  position: absolute;
+  z-index: 0;
+  right: auto;
+  bottom: clamp(-100px, -7vw, -64px);
+  left: clamp(-150px, -8vw, -60px);
+  width: clamp(320px, 30vw, 440px);
+  aspect-ratio: 1;
+  background: url('/brand/symbol-blue.svg') center / contain no-repeat;
+  content: '';
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.service-chapter--2 .service-chapter__layout,
+.service-chapter--4 .service-chapter__layout {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-rail {
+  display: flex;
+  min-height: 128px;
+  padding: 12px 0 18px;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 0;
+  text-align: center;
+}
+
+.hero-copy {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.hero-actions {
+  width: 100%;
+  min-height: 48px;
+  padding-top: 10px;
+  justify-content: flex-end;
+  border-top: 1px solid color-mix(in srgb, var(--brand-off-white) 52%, transparent);
+}
+
+.hero-services-link,
+.nav-menu a:not(.button),
+.nav-cta {
+  font-size: 1.05rem;
+}
+
+.hero-section h1 {
+  font-size: clamp(1.7rem, 2.65vw, 2.9rem);
+}
+
+/* More room for the story; the founders sit at the right edge of the shell. */
+.who-final {
+  grid-template-columns: minmax(0, 1.4fr) minmax(340px, 0.78fr);
+  gap: clamp(36px, 4.5vw, 68px);
+  align-items: center;
+}
+
+.who-final__copy {
+  min-width: 0;
+}
+
+.who-final__copy h2 {
+  font-size: clamp(2.7rem, 4vw, 3.55rem);
+}
+
+.who-final__story {
+  display: grid;
+  max-width: none;
+  margin-top: 24px;
+  gap: 13px;
+  list-style: none;
+  font-size: 1.18rem;
+  line-height: 1.48;
+}
+
+.who-final__story li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.who-final__story li::before {
+  position: absolute;
+  top: 0.66em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-lime);
+  content: '';
+}
+
+.who-final__portrait {
+  width: 100%;
+  justify-self: end;
+}
+
+.who-final__image,
+.who-final__portrait figcaption {
+  width: min(100%, 460px);
+  margin-right: 0;
+}
+
+.who-final__portrait strong {
+  font-size: 1.1rem;
+}
+
+.who-final__portrait small {
+  font-size: 0.9rem;
+}
+
+/* Photographs take 38% of each chapter and fade into the adjoining copy. */
+.service-chapter__layout,
+.service-chapter--3 .service-chapter__layout {
+  grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+}
+
+.service-chapter:nth-child(even) .service-chapter__layout,
+.service-chapter--2 .service-chapter__layout,
+.service-chapter--4 .service-chapter__layout {
+  grid-template-columns: minmax(0, 62%) minmax(0, 38%);
+}
+
+.service-chapter__media {
+  display: block;
+}
+
+.service-chapter__media::after,
+.service-chapter:nth-child(even) .service-chapter__media::after {
+  display: block;
+}
+
+.service-chapter__media::after {
+  background: linear-gradient(
+    90deg,
+    transparent 42%,
+    color-mix(in srgb, var(--brand-blue) 14%, transparent) 70%,
+    var(--brand-blue) 100%
+  );
+}
+
+.service-chapter:nth-child(even) .service-chapter__media::after {
+  background: linear-gradient(
+    90deg,
+    var(--brand-off-white) 0%,
+    color-mix(in srgb, var(--brand-off-white) 14%, transparent) 30%,
+    transparent 58%
+  );
+}
+
+.service-chapter__media img,
+.service-chapter__media.is-visible img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.86) contrast(1.01);
+  transform: none;
+}
+
+.service-chapter:nth-child(even) .service-chapter__media {
+  background: var(--brand-off-white);
+}
+
+.service-chapter__content h3 {
+  font-size: clamp(2.45rem, 3.6vw, 3.25rem);
+}
+
+.service-chapter__summary {
+  font-size: 1.18rem;
+}
+
+.service-chapter__content li {
+  font-size: 1.11rem;
+  line-height: 1.38;
+}
+
+/* The three value statements form a clear, premium outcome path below the benefits. */
+.value-layout-grid,
+.value-section .value-layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(26px, 3vw, 40px);
+}
+
+.value-section .section-heading h2 {
+  font-size: clamp(2.7rem, 4vw, 3.45rem);
+}
+
+.value-section .section-heading p {
+  font-size: 1.18rem;
+}
+
+.value-flow {
+  position: relative;
+  padding: clamp(10px, 1vw, 16px);
+  border: 1px solid color-mix(in srgb, var(--brand-blue) 16%, transparent);
+  border-radius: 20px;
+  background: var(--brand-off-white);
+}
+
+.outcomes-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  list-style: none;
+}
+
+.value-flow__track {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.value-flow__track--vertical {
+  display: none;
+}
+
+.value-flow__outline,
+.value-flow__connector {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.value-flow__outline {
+  stroke: var(--brand-blue);
+  stroke-width: 2.5;
+}
+
+.value-flow__connector {
+  stroke: var(--brand-lime);
+  stroke-width: 3.5;
+}
+
+.outcome,
+.outcome + .outcome {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 168px;
+  padding: 48px clamp(36px, 4vw, 56px) 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  color: var(--brand-blue);
+  background: transparent;
+  text-align: center;
+}
+
+.outcome::before {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  width: 34px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--brand-lime);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.outcome h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 17ch;
+  margin: 0;
+  color: var(--brand-blue);
+  font-size: clamp(1.3rem, 1.9vw, 1.72rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.value-flow .outcome {
+  align-items: center;
+  justify-content: center;
+  padding-block: 36px;
+}
+
+.value-flow .outcome h3 {
+  align-self: center;
+  margin-block: 0;
+}
+
+.value-column h3 {
+  font-size: clamp(1.95rem, 2.4vw, 2.3rem);
+}
+
+.value-column li {
+  font-size: 1.08rem;
+  line-height: 1.42;
+}
+
+/* Keep the remaining sections at the same comfortable reading size. */
+.tailored-orbit__heading h2 {
+  font-size: clamp(2.6rem, 4vw, 3.35rem);
+}
+
+.tailored-orbit__heading > p:last-child,
+.tailored-orbit__intro p,
+.tailored-orbit__capability p,
+.tailored-orbit__footer span {
+  font-size: 1.12rem;
+}
+
+.tailored-orbit__intro h3 {
+  font-size: clamp(1.9rem, 2.5vw, 2.4rem);
+}
+
+.tailored-orbit__capability h3,
+.tailored-orbit__footer strong {
+  font-size: 1.18rem;
+}
+
+.contact-banner__intro > p,
+.contact-banner__utility {
+  font-size: 1.08rem;
+}
+
+.contact-banner__email {
+  font-size: 1.05rem;
+}
+
+.contact-banner__utility small {
+  font-size: 0.91rem;
+}
+
+.contact-banner {
+  min-height: 0;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 72px);
+}
+
+.contact-banner__utilities {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-banner__utility--email {
+  grid-column: auto;
+}
+
+.footer-brand p,
+.site-footer .footer-grid a,
+.site-footer .footer-grid p {
+  font-size: 1.04rem;
+}
+
+.site-footer h2,
+.footer-email span,
+.site-footer .footer-bottom {
+  font-size: 1rem;
+}
+
+@media (max-width: 1100px) and (min-width: 981px) {
+  .service-chapter__content ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  .service-chapter__layout,
+  .service-chapter:nth-child(even) .service-chapter__layout,
+  .service-chapter--2 .service-chapter__layout,
+  .service-chapter--3 .service-chapter__layout,
+  .service-chapter--4 .service-chapter__layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'media' 'content';
+  }
+
+  .service-chapter__media {
+    aspect-ratio: 16 / 7;
+  }
+
+  .service-chapter__media::after {
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      color-mix(in srgb, var(--brand-blue) 14%, transparent) 70%,
+      var(--brand-blue) 100%
+    );
+  }
+
+  .service-chapter:nth-child(even) .service-chapter__media::after {
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      color-mix(in srgb, var(--brand-off-white) 14%, transparent) 70%,
+      var(--brand-off-white) 100%
+    );
+  }
+
+}
+
+@media (min-width: 761px) and (max-width: 980px) {
+  .outcome,
+  .outcome + .outcome {
+    min-height: 138px;
+    padding-inline: 28px;
+  }
+
+  .outcome h3 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .who-final {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .who-final__portrait {
+    width: min(100%, 620px);
+    justify-self: center;
+  }
+
+  .who-final__image,
+  .who-final__portrait figcaption {
+    margin-inline: auto;
+  }
+
+  .contact-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .service-chapter--2::before,
+  .service-chapter--4::before {
+    right: auto;
+    bottom: -76px;
+    left: -82px;
+    width: 260px;
+  }
+
+  .hero-section__symbol {
+    top: auto;
+    right: auto;
+    bottom: -134px;
+    left: -86px;
+    width: 220px;
+    opacity: 0.1;
+  }
+
+  .hero-section__content {
+    padding-bottom: 196px;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+  }
+
+  .hero-rail {
+    min-height: 156px;
+    gap: 12px;
+    padding: 12px 0 18px;
+  }
+
+  .hero-actions {
+    justify-content: flex-end;
+  }
+
+  .hero-copy {
+    display: block;
+    max-width: 56ch;
+    font-size: 1.04rem;
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .hero-services-link {
+    font-size: 1.06rem;
+  }
+
+  .who-final__copy h2,
+  .value-section .section-heading h2 {
+    font-size: clamp(2.3rem, 9vw, 3.1rem);
+  }
+
+  .who-final__story {
+    font-size: 1.12rem;
+  }
+
+  .service-chapter__content h3 {
+    font-size: clamp(2.15rem, 8vw, 2.7rem);
+  }
+
+  .service-chapter__summary,
+  .service-chapter__content li,
+  .value-column li {
+    font-size: 1.08rem;
+  }
+
+  .contact-banner__utilities {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer .footer-grid {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 830px) {
+  .value-flow {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .value-flow__track {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .value-flow__track--horizontal {
+    display: none;
+  }
+
+  .value-flow__track--vertical {
+    display: block;
+  }
+
+  .outcome,
+  .outcome + .outcome {
+    min-height: 120px;
+    padding: 42px 36px 20px;
+    margin-left: 0;
+  }
+
+  .value-flow .outcome,
+  .value-flow .outcome:first-child,
+  .value-flow .outcome:last-child {
+    padding-block: 31px;
+  }
+
+  .outcome::before {
+    top: 22px;
+  }
+
+  .outcome h3 {
+    max-width: 20ch;
+    margin-top: 18px;
+    font-size: clamp(1.25rem, 4.8vw, 1.55rem);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .outcome {
+    transition: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-section__content {
+    padding-bottom: 196px;
+  }
+
+  .hero-rail {
+    min-height: 164px;
+  }
+
+  .hero-copy {
+    font-size: 0.98rem;
+  }
+
+  .hero-services-link {
+    width: auto;
+  }
+
+  .who-final__portrait figcaption > span {
+    padding-inline: 6px;
+  }
+
+  .who-final__portrait strong {
+    font-size: 0.94rem;
+  }
+
+  .who-final__portrait small {
+    font-size: 0.83rem;
+  }
+}
+
+/* Give the first service photo a wider column and keep both people in view. */
+.service-chapter--1 .service-chapter__layout {
+  grid-template-columns: clamp(300px, 32vw, 460px) minmax(0, 1fr);
+}
+
+.service-chapter--1 .service-chapter__media img {
+  object-position: center;
+}
+
+@media (max-width: 920px) {
+  .service-chapter--1 .service-chapter__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-chapter--1 .service-chapter__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-chapter--1 .service-chapter__media img {
+    object-position: center top;
+  }
+}

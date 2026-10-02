@@ -1,14 +1,9 @@
 import {
   ArrowUpRight,
-  BadgeCheck,
-  ClipboardCheck,
   Mail,
   MapPin,
   Phone,
-  ShieldCheck,
-  TrendingUp,
 } from 'lucide-react'
-import { contactPeople } from '../data/siteContent'
 import { Logo } from './Logo'
 import { Reveal } from './Reveal'
 
@@ -23,13 +18,6 @@ const offices = [
     address: 'Platform 94, Mervue Business Park, Galway, H91 D932',
     href: 'https://www.google.com/maps/search/?api=1&query=Platform%2094%2C%20Mervue%20Business%20Park%2C%20Galway%2C%20H91%20D932',
   },
-]
-
-const contactOutcomes = [
-  { label: 'Reduced absenteeism', Icon: ClipboardCheck },
-  { label: 'Lower regulatory risk', Icon: ShieldCheck },
-  { label: 'Increased productivity', Icon: TrendingUp },
-  { label: 'Compliance-focused', Icon: BadgeCheck },
 ]
 
 export function ContactCTA() {
@@ -48,14 +36,6 @@ export function ContactCTA() {
               <span>Start the conversation</span>
               <ArrowUpRight aria-hidden="true" />
             </a>
-            <ul className="contact-banner__assurances" aria-label="Why contact OccUhealth">
-              {contactOutcomes.map(({ label, Icon }) => (
-                <li key={label}>
-                  <Icon aria-hidden="true" />
-                  <span>{label}</span>
-                </li>
-              ))}
-            </ul>
           </Reveal>
 
           <Reveal className="contact-banner__details" delay={140}>
@@ -65,6 +45,14 @@ export function ContactCTA() {
                 <span>
                   <small>Email</small>
                   enquiries@occuhealth.ie
+                </span>
+                <ArrowUpRight aria-hidden="true" />
+              </a>
+              <a className="contact-banner__utility contact-banner__utility--phone" href="tel:+353838851340">
+                <Phone aria-hidden="true" />
+                <span>
+                  <small>Phone</small>
+                  083 885 1340
                 </span>
                 <ArrowUpRight aria-hidden="true" />
               </a>
@@ -86,29 +74,6 @@ export function ContactCTA() {
               ))}
             </div>
 
-            <div className="contact-banner__team-intro">
-              <h3>Speak directly with our occupational specialists</h3>
-              <p>Practical guidance from the people behind your Occupational Health, EHS and workforce wellbeing support.</p>
-            </div>
-
-            <div className="contact-banner__contact-list">
-              {contactPeople.map((person) => (
-                <article className="contact-banner__person" key={person.name}>
-                  <div>
-                    <small>{person.role}</small>
-                    <h3>{person.name}</h3>
-                  </div>
-                  <a href={person.phoneHref}>
-                    <Phone aria-hidden="true" />
-                    <span>
-                      <small>Phone</small>
-                      {person.phone}
-                    </span>
-                    <ArrowUpRight aria-hidden="true" />
-                  </a>
-                </article>
-              ))}
-            </div>
           </Reveal>
         </div>
       </div>

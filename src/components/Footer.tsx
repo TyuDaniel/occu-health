@@ -37,7 +37,6 @@ export function Footer() {
         <address className="footer-contact">
           <h2>Contact</h2>
           <a href="tel:+353838851340"><Phone aria-hidden="true" />083 885 1340</a>
-          <a href="tel:+353863095495"><Phone aria-hidden="true" />086 309 5495</a>
           <a href="mailto:enquiries@occuhealth.ie"><Mail aria-hidden="true" />enquiries@occuhealth.ie</a>
         </address>
 

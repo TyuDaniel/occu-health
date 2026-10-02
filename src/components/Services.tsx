@@ -3,11 +3,11 @@ import { Reveal } from './Reveal'
 
 const serviceImages = [
   {
-    src: '/images/occupational-health-audiometry.webp',
-    alt: 'An occupational health clinician carrying out a hearing assessment with a maintenance technician.',
-    position: '54% center',
-    width: 1536,
-    height: 1024,
+    src: '/images/occupational-health-hearing-assessment-ai.webp',
+    alt: 'An occupational health clinician records results as an employee completes a hearing test inside an audiometry booth.',
+    position: 'center',
+    width: 1086,
+    height: 1448,
   },
   {
     src: '/images/ehs-team-on-site.webp',
@@ -54,7 +54,7 @@ export function Services() {
                     height={image.height}
                     loading={index > 0 ? 'lazy' : 'eager'}
                     decoding="async"
-                    sizes="(max-width: 920px) 100vw, 24vw"
+                    sizes="(max-width: 980px) 100vw, 38vw"
                     style={{ objectPosition: image.position }}
                   />
                 </Reveal>
