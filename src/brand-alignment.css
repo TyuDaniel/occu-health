@@ -1603,7 +1603,7 @@ a.contact-banner__utility:focus-visible > svg:last-child {
 
   .value-divider::before,
   .value-divider::after {
-    height: 50%;
+    height: calc(50% - 47px);
   }
 
   .value-divider img {
