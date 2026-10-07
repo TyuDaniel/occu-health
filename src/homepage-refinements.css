@@ -807,25 +807,13 @@
   }
 }
 
-/* Preserve the independent first service photo framing from the prior stylesheet. */
+/* Match the first service photo width to the other service panels. */
 .service-chapter--1 .service-chapter__layout {
-  grid-template-columns: clamp(300px, 32vw, 460px) minmax(0, 1fr);
-}
-
-.service-chapter--1 .service-chapter__media img {
-  object-position: center;
+  grid-template-columns: minmax(0, 38%) minmax(0, 62%);
 }
 
 @media (max-width: 920px) {
   .service-chapter--1 .service-chapter__layout {
     grid-template-columns: 1fr;
-  }
-
-  .service-chapter--1 .service-chapter__media {
-    aspect-ratio: 4 / 3;
-  }
-
-  .service-chapter--1 .service-chapter__media img {
-    object-position: center top;
   }
 }
