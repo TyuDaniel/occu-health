@@ -48,14 +48,16 @@ export function ContactCTA() {
                 </span>
                 <ArrowUpRight aria-hidden="true" />
               </a>
-              <a className="contact-banner__utility contact-banner__utility--phone" href="tel:+353838851340">
+              <div className="contact-banner__utility contact-banner__utility--phone">
                 <Phone aria-hidden="true" />
                 <span>
                   <small>Phone</small>
-                  083 885 1340
+                  <span className="contact-banner__phone-numbers">
+                    <a href="tel:+353838851340">083 885 1340</a>
+                    <a href="tel:+353863095495">086 309 5495</a>
+                  </span>
                 </span>
-                <ArrowUpRight aria-hidden="true" />
-              </a>
+              </div>
               {offices.map((office) => (
                 <a
                   className="contact-banner__utility"

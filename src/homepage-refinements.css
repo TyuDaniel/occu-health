@@ -250,17 +250,11 @@
   display: none;
 }
 
-.value-flow__outline,
 .value-flow__connector {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
-}
-
-.value-flow__outline {
-  stroke: var(--brand-blue);
-  stroke-width: 2.5;
 }
 
 .value-flow__connector {
@@ -631,7 +625,189 @@
   }
 }
 
-/* Give the first service photo a wider column and keep both people in view. */
+/* Keep the selected cobalt section while preserving the established Value layout. */
+.value-section {
+  min-height: 0;
+  padding: clamp(48px, 6vw, 84px) 0 clamp(46px, 5vw, 72px);
+  color: var(--brand-off-white);
+  background: var(--brand-blue);
+}
+
+.value-section::before {
+  background-image: url('/brand/symbol-inverse.svg');
+}
+
+.value-section .value-shell {
+  padding-block: 0;
+}
+
+.value-section .section-heading {
+  position: relative;
+  max-width: none;
+  margin: 0 0 clamp(28px, 3vw, 40px);
+  padding-bottom: clamp(18px, 1.8vw, 26px);
+  border: 0;
+}
+
+.value-section .section-heading::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 72px;
+  height: 4px;
+  background: var(--brand-lime);
+  content: '';
+}
+
+.value-section .section-heading h2 {
+  color: var(--brand-off-white);
+}
+
+.value-section .section-heading .accent {
+  color: var(--brand-lime);
+}
+
+.value-section .section-heading p {
+  color: var(--brand-off-white);
+}
+
+.value-section .value-layout-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+.value-section .value-columns {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brand-blue) 44%, transparent);
+  border-radius: 10px;
+  background: var(--brand-off-white);
+}
+
+.value-section .value-column,
+.value-section .value-column--employees {
+  min-width: 0;
+  padding: clamp(28px, 3.4vw, 46px);
+  border: 0;
+  border-radius: 0;
+  color: var(--brand-blue);
+  background: transparent;
+}
+
+.value-section .value-column li,
+.value-section .value-column h3 {
+  color: var(--brand-blue);
+}
+
+.value-section .value-divider::before,
+.value-section .value-divider::after {
+  background: color-mix(in srgb, var(--brand-blue) 30%, transparent);
+}
+
+.value-section .value-divider img {
+  width: 90px;
+  padding: 0;
+  background: transparent;
+}
+
+.value-section .value-flow {
+  margin-top: clamp(30px, 4vw, 48px);
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: var(--brand-off-white);
+}
+
+.value-section .outcome::before {
+  display: none;
+}
+
+.value-section .outcome {
+  min-height: 146px;
+}
+
+.value-section .value-flow .outcome,
+.value-section .value-flow .outcome + .outcome {
+  padding-block: 24px;
+}
+
+.value-section .outcome h3::after {
+  display: block;
+  width: 34px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: var(--brand-lime);
+  content: '';
+}
+
+@media (max-width: 830px) {
+  .value-section .value-flow {
+    width: 100%;
+    max-width: 520px;
+    margin: 28px auto 0;
+    padding: 12px;
+    border-radius: 0;
+  }
+
+  .value-section .outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .value-section .outcome,
+  .value-section .outcome + .outcome {
+    min-height: 120px;
+    padding: 31px 36px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .value-section {
+    padding-inline: 0;
+  }
+
+  .value-section .value-shell {
+    width: min(calc(100% - 40px), 1360px);
+  }
+
+  .value-section .value-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .value-section .value-column,
+  .value-section .value-column--employees {
+    padding: 24px 22px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .value-section .value-divider {
+    display: grid;
+    width: 100%;
+    min-height: 64px;
+  }
+
+  .value-section .value-divider::before,
+  .value-section .value-divider::after {
+    top: 50%;
+    bottom: auto;
+    width: calc(50% - 46px);
+    height: 1px;
+  }
+
+  .value-section .value-divider::before { left: 0; }
+  .value-section .value-divider::after { right: 0; }
+
+  .value-section .value-divider img {
+    width: 62px;
+  }
+}
+
+/* Preserve the independent first service photo framing from the prior stylesheet. */
 .service-chapter--1 .service-chapter__layout {
   grid-template-columns: clamp(300px, 32vw, 460px) minmax(0, 1fr);
 }

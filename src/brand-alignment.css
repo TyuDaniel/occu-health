@@ -1020,8 +1020,13 @@ h3,
   grid-column: 1 / -1;
 }
 
-.contact-banner__utility:hover,
-.contact-banner__utility:focus-visible {
+.contact-banner__utility--phone {
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+}
+
+a.contact-banner__utility:hover,
+a.contact-banner__utility:focus-visible {
   color: var(--brand-off-white);
   background: color-mix(in srgb, var(--brand-off-white) 16%, transparent);
   transform: translateY(-2px);
@@ -1036,15 +1041,15 @@ h3,
   background: var(--brand-lime);
 }
 
-.contact-banner__utility > svg:last-child {
+a.contact-banner__utility > svg:last-child {
   width: 16px;
   height: 16px;
   color: var(--brand-lime);
   transition: transform 220ms var(--ease-out);
 }
 
-.contact-banner__utility:hover > svg:last-child,
-.contact-banner__utility:focus-visible > svg:last-child {
+a.contact-banner__utility:hover > svg:last-child,
+a.contact-banner__utility:focus-visible > svg:last-child {
   transform: translate(3px, -3px);
 }
 
@@ -1057,6 +1062,41 @@ h3,
   display: block;
   margin-bottom: 3px;
   font-size: 0.78rem;
+}
+
+.contact-banner__phone-numbers {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-banner__phone-numbers a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: var(--brand-off-white);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+  text-underline-offset: 3px;
+  transition:
+    background-color 180ms var(--ease-out),
+    color 180ms var(--ease-out);
+  white-space: nowrap;
+}
+
+.contact-banner__phone-numbers a:hover,
+.contact-banner__phone-numbers a:focus-visible {
+  color: var(--brand-blue);
+  background: var(--brand-off-white);
+}
+
+.contact-banner__phone-numbers a:focus-visible {
+  outline: 2px solid var(--brand-off-white);
+  outline-offset: 2px;
 }
 
 .contact-banner__team-intro {
@@ -1285,6 +1325,15 @@ h3,
   border-radius: 50%;
   color: var(--brand-blue);
   background: var(--brand-lime);
+}
+
+.footer-contact a.footer-contact__phone {
+  min-height: 44px;
+  align-items: center;
+}
+
+.footer-contact a.footer-contact__phone svg {
+  margin-top: 0;
 }
 
 .site-footer .footer-bottom {

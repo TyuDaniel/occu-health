@@ -3,11 +3,11 @@ import { Reveal } from './Reveal'
 
 const serviceImages = [
   {
-    src: '/images/occupational-health-hearing-assessment-ai.webp',
+    src: '/images/occupational-health-hearing-assessment-landscape.webp',
     alt: 'An occupational health clinician records results as an employee completes a hearing test inside an audiometry booth.',
     position: 'center',
-    width: 1086,
-    height: 1448,
+    width: 1536,
+    height: 1024,
   },
   {
     src: '/images/ehs-team-on-site.webp',
