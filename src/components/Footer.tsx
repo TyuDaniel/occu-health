@@ -43,7 +43,7 @@ export function Footer() {
 
         <address className="footer-offices">
           <h2>Our offices</h2>
-          <p><MapPin aria-hidden="true" /><span>Vision 85<br />Portlaoise</span></p>
+          <p><MapPin aria-hidden="true" /><span>Vision 85, Clonminam Business Park<br />Knockmay, Portlaoise, Co. Laois, R32 F5T6</span></p>
           <p><MapPin aria-hidden="true" /><span>Platform 94, Mervue Business Park<br />Galway, H91 D932</span></p>
         </address>
       </div>
