@@ -15,7 +15,23 @@ export function Footer() {
     <footer className="site-footer">
       <div className="page-shell footer-brand-row">
         <Logo variant="brand" />
-        <p>Occupational Health, Environmental Health &amp; Safety Specialists</p>
+        <div className="footer-brand-row__aside">
+          <p>Occupational Health, Environmental Health &amp; Safety Specialists</p>
+          <a
+            className="footer-membership"
+            href="https://www.sfa.ie"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/logos/sfa-member.webp"
+              alt="Small Firms Association member"
+              width="480"
+              height="248"
+              loading="lazy"
+            />
+          </a>
+        </div>
       </div>
 
       <div className="page-shell footer-grid">

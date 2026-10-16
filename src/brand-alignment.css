@@ -1296,11 +1296,28 @@ a.contact-banner__utility:focus-visible > svg:last-child {
   width: clamp(220px, 22vw, 320px);
 }
 
-.footer-brand-row > p {
+.footer-brand-row__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.footer-brand-row__aside > p {
   max-width: 38ch;
   color: var(--brand-blue);
   font-weight: 400;
   text-align: right;
+}
+
+.footer-membership {
+  display: block;
+  line-height: 0;
+}
+
+.footer-membership img {
+  width: clamp(120px, 11vw, 150px);
+  height: auto;
 }
 
 .site-footer .footer-grid {
@@ -1480,7 +1497,11 @@ a.contact-banner__utility:focus-visible > svg:last-child {
     flex-direction: column;
   }
 
-  .footer-brand-row > p {
+  .footer-brand-row__aside {
+    align-items: flex-start;
+  }
+
+  .footer-brand-row__aside > p {
     text-align: left;
   }
 }

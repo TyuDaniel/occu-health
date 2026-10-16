@@ -817,3 +817,87 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Mobile polish: legibility over photography, even tap rhythm and no nested
+   card chrome on small screens. */
+@media (max-width: 760px) {
+  .value-section .section-heading p {
+    margin-top: 14px;
+  }
+
+  .tailored-orbit__wash {
+    background: linear-gradient(
+      0deg,
+      var(--brand-blue) 0%,
+      var(--brand-blue) 38%,
+      transparent 88%
+    );
+    opacity: 0.92;
+  }
+
+  .tailored-orbit__heading h2 {
+    font-size: clamp(2rem, 8.6vw, 2.75rem);
+    text-wrap: balance;
+  }
+
+  .tailored-orbit__capability {
+    align-items: start;
+  }
+
+  .contact-banner__intro {
+    min-height: 0;
+  }
+
+  .contact-banner__phone-numbers {
+    gap: 0;
+  }
+
+  .contact-banner__phone-numbers a {
+    min-height: 36px;
+    padding-inline: 0;
+  }
+
+  .site-footer nav,
+  .site-footer .footer-contact {
+    gap: 0;
+  }
+
+  .site-footer .footer-grid nav a,
+  .site-footer .footer-contact a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-banner {
+    padding: 8px 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .contact-banner__email {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-banner__email {
+    gap: 10px;
+    padding-inline: 14px;
+    font-size: 1rem;
+  }
+
+  /* The whole card is the link; drop the trailing arrow so the email address
+     fits on one line. */
+  .contact-banner__utility {
+    grid-template-columns: 34px minmax(0, 1fr);
+    font-size: 1rem;
+  }
+
+  a.contact-banner__utility > svg:last-child {
+    display: none;
+  }
+}
